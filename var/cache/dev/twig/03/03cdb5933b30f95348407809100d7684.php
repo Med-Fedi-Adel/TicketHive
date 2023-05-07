@@ -446,6 +446,11 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
       </div>
     </div>
   </body>
+<<<<<<< HEAD
 </html>", "login_signup/index.html.twig", "C:\\Users\\user\\OneDrive\\Bureau\\projetphp\\templates\\login_signup\\index.html.twig");
+=======
+</html>
+", "login_signup/index.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\login_signup\\index.html.twig");
+>>>>>>> f7c4b9e8387af1fad763c96f6219ee7d25a45a68
     }
 }

@@ -17,7 +17,12 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
+<<<<<<< HEAD
     'app_event' => [[], ['_controller' => 'App\\Controller\\EventController::addEvent'], [], [['text', '/event']], [], [], []],
+=======
+    'event_description' => [['id'], ['_controller' => 'App\\Controller\\DescriptionController::showEventAction'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/event']], [], [], []],
+    'event' => [[], ['_controller' => 'App\\Controller\\EventController::index'], [], [['text', '/event']], [], [], []],
+>>>>>>> f7c4b9e8387af1fad763c96f6219ee7d25a45a68
     'feedback' => [[], ['_controller' => 'App\\Controller\\FeedbackController::index'], [], [['text', '/feedback']], [], [], []],
     'login_signup' => [[], ['_controller' => 'App\\Controller\\LoginSignupController::index'], [], [['text', '/loginsignup']], [], [], []],
     'login_signin' => [[], ['_controller' => 'App\\Controller\\LoginSignupController::signin'], [], [['text', '/loginsigin']], [], [], []],

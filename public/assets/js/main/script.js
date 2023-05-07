@@ -291,3 +291,94 @@ logoutli.addEventListener('click',()=>{
 addeventli.addEventListener('click',()=>{
   window.location.href = "http://localhost:8000/event";
 })
+
+
+
+
+/***CART FUNCTIONALITY START***/
+// CART WINDOW JS
+// Find the cart icon link and the cart modal container
+const openCartIcon = document.getElementById('open-cart-icon');
+const cartModalContainer = document.querySelector('.modal-container');
+// Add an event listener to the cart icon link
+openCartIcon.addEventListener('click', showCartModal);
+function showCartModal() {
+  // Show the cart modal container
+  cartModalContainer.classList.remove('hidden');
+}
+// Update the price when the quantity is changed
+const cartQuantities = document.querySelectorAll('.cart-quantity');
+const cartPrices = document.querySelectorAll('.cart-price');
+const totalPriceEl = document.getElementById('total-price');
+cartQuantities.forEach((cartQuantity, index) => {
+  cartQuantity.addEventListener('input', function () {
+    // Get initial item price and item quantity
+    const initialPrice = parseFloat(cartQuantity.dataset.initialPrice);
+    const quantity = parseInt(cartQuantity.value);
+    // Update the item price based on new quantity
+    const newPrice = initialPrice * quantity;
+    cartPrices[index].innerText = newPrice;
+    // Update the total price
+    let total = 0;
+    cartPrices.forEach(priceEl => {
+      total += parseFloat(priceEl.innerText);
+    });
+    totalPriceEl.innerText = total;
+  });
+});
+
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', hideCartModal);
+
+function hideCartModal() {
+  cartModalContainer.classList.add('hidden');
+}
+
+
+const checkoutBtn = document.querySelector('.btn');
+
+checkoutBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const items = [];
+
+  const cartItems = document.querySelectorAll('.cart-box');
+
+  cartItems.forEach((cartItem) => {
+    const name = cartItem.querySelector('.cart-product-title').textContent;
+    const quantity = cartItem.querySelector('.cart-quantity').value;
+    const price = cartItem.querySelector('.cart-price').textContent;
+
+    const item = {
+      name: name,
+      quantity: quantity,
+      price: price
+    };
+
+    items.push(item);
+  });
+
+  const total = document.querySelector('#total-price').textContent;
+
+  const form = document.createElement('form');
+  form.setAttribute('method', 'POST');
+  form.setAttribute('action', "{{ path('cart_payment') }}");
+
+  const itemsInput = document.createElement('input');
+  itemsInput.setAttribute('type', 'hidden');
+  itemsInput.setAttribute('name', 'items');
+  itemsInput.setAttribute('value', JSON.stringify(items));
+  form.appendChild(itemsInput);
+
+  const totalInput = document.createElement('input');
+  totalInput.setAttribute('type', 'hidden');
+  totalInput.setAttribute('name', 'total');
+  totalInput.setAttribute('value', total);
+  form.appendChild(totalInput);
+
+  document.body.appendChild(form);
+  form.submit();
+});
+
+/***CART FUNCTIONALITY END***/
+
