@@ -79,16 +79,27 @@
         <!-- Login container -->
 
         <div class="form-box login">
-          <form action="#">
+          <form method="POST" action="{{path('login_signin')}}">
             <h2>Sign In</h2>
             <div class="input-box">
               <span class="icon"><i class="bx bxs-envelope"></i></span>
-              <input type="email" name="email" required />
+              <input type="email" 
+              
+              {% if emailnon is defined and emailnon is not empty %}
+                style="border:1px solid red;"
+              {% endif %}
+
+              name="email" required />
               <label>Email</label>
             </div>
             <div class="input-box">
               <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-              <input type="password" name="password" required />
+              <input type="password"
+              name="password" 
+              {% if passwordnon is defined and passwordnon is not empty%}
+                style="border:1px solid red;"
+              {% endif %}
+              required />
               <label>Password</label>
             </div>
             <div class="remember-forgot">
@@ -112,7 +123,7 @@
         <!-- Register container -->
 
         <div class="form-box register">
-          <form action="#">
+          <form method="POST" action="{{path('login_signup')}}">
             <h2>Sign Up</h2>
             <div class="input-box">
               <span class="icon"><i class="bx bxs-user"></i></span>

@@ -52,12 +52,12 @@ btnScrollTo.addEventListener("click", function (e) {
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(e.target);
+  
 
   // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
-    console.log(id);
+
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
@@ -150,7 +150,6 @@ allSections.forEach(function (section) {
 // Slider
 const slider = function () {
   const slides = document.querySelectorAll(".slide");
-  console.log(slides);
   const btnLeft = document.querySelector(".slider__btn--left");
   const btnRight = document.querySelector(".slider__btn--right");
   const dotContainer = document.querySelector(".dots");
@@ -214,7 +213,6 @@ const slider = function () {
   btnLeft.addEventListener("click", prevSlide);
 
   document.addEventListener("keydown", function (e) {
-    console.log(e);
     if (e.key === "ArrowLeft") prevSlide();
     if (e.key === "ArrowRight") nextSlide();
   });
@@ -259,3 +257,37 @@ function animateLetters() {
 }
 
 animateLetters();
+
+
+//dropdown for user to update , addevent and logout
+
+const button_profile = document.getElementById('userprofile')
+const updateli = document.querySelector('#update')
+const addeventli = document.querySelector('#addevent')
+const logoutli = document.querySelector('#logout')
+
+
+button_profile.addEventListener('click',()=>{
+  document.querySelector('.dropdown-user').style.opacity = 1-document.querySelector('.dropdown-user').style.opacity
+})
+
+
+logoutli.addEventListener('click',()=>{
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:8000/delete', true);
+    //xhr.open("POST","{{path('delete_session')}}",true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = ()=>{
+      location.reload();
+    }
+    xhr.send();
+    //console.log(sessionStorage);
+    //sessionStorage.removeItem('username');
+    //location.reload();
+})
+
+//go to addevent page
+
+addeventli.addEventListener('click',()=>{
+  window.location.href = "http://localhost:8000/event";
+})
