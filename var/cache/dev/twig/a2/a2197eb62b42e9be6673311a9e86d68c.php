@@ -44,16 +44,13 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 <html lang=\"en\">
   <head>
     <meta charset=\"UTF-8\" />
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
-    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />
     <link rel=\"shortcut icon\" type=\"image/png\" href=\"images/icon.png\" />
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">
 
-    <link
-      href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\"
-      rel=\"stylesheet\"
-    />
-    <link rel=\"stylesheet\" href=\"";
+
+    ";
         // line 13
+        echo "    <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/main/style.css"), "html", null, true);
         echo "\" />
     <title>TicketHive</title>
@@ -81,9 +78,38 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             <a class=\"nav__link\" href=\"#section--3\">Testimonials</a>
           </li>
           <li class=\"nav__item\">
-            <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\"
-              >Log in</a
-            >
+          ";
+        // line 36
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "session", [], "any", false, false, false, 36), "get", [0 => "username"], "method", false, false, false, 36)) {
+            // line 37
+            echo "            <div class=\"app-header-actions\">
+            <button class=\"user-profile\">
+                <span>
+                  <i class=\"fa-solid fa-basket-shopping fa-xl\"></i>
+                </span>
+              </button>
+              <button class=\"user-profile\" id=\"userprofile\">
+                <span>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "session", [], "any", false, false, false, 44), "get", [0 => "username"], "method", false, false, false, 44), "html", null, true);
+            echo "</span>
+                <span>
+                  <!-- <img src=\"https://assets.codepen.io/285131/almeria-avatar.jpeg\" /> -->
+                  ";
+            // line 47
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "session", [], "any", false, false, false, 47), "get", [0 => "username"], "method", false, false, false, 47), 0, 1), "html", null, true);
+            echo "
+                </span>
+              </button>
+            </div>
+            ";
+        } else {
+            // line 52
+            echo "              <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\">Log in</a>
+          ";
+        }
+        // line 54
+        echo "            
           </li>
         </ul>
       </nav>
@@ -102,6 +128,19 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
       </div>
     </header>
 
+    ";
+        // line 73
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 73, $this->source); })()), "session", [], "any", false, false, false, 73), "get", [0 => "username"], "method", false, false, false, 73)) {
+            // line 74
+            echo "      <div class=\"dropdown-user\">
+      <li id=\"update\">Update</li>
+      <li id=\"addevent\">Add Event</li>
+      <li id=\"logout\">Logout</li>
+    </div>
+    ";
+        }
+        // line 80
+        echo "
     <section class=\"section section--hidden\" id=\"section--1\">
       <div class=\"section__title\">
         <h2 class=\"section__description\">Events</h2>
@@ -153,69 +192,45 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
       <div class=\"team\">
         <ul class=\"auto-grid\" role=\"list\">
           <li>
-            <a href=\"";
-        // line 108
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/festivals.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Festivals</h2>
+            ";
+        // line 133
+        echo "              <h2 class=\"card__name\">Festivals</h2>
               <p class=\"catP\">Discover the hottest festivals in town and experience the ultimate party scene.</p>
             </a>
           </li>
           <li>
-            <a href=\"";
-        // line 114
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/sport.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Sport</h2>
+            ";
+        // line 139
+        echo "              <h2 class=\"card__name\">Sport</h2>
               <p class=\"catP\">Get your adrenaline pumping with our thrilling sports events and buy your tickets now.</p>
             </a>
           </li>
           <li>
-            <a href=\"";
-        // line 120
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/concerts.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Concerts</h2>
+            ";
+        // line 145
+        echo "              <h2 class=\"card__name\">Concerts</h2>
               <p class=\"catP\">Immerse yourself in the music and attend the most happening concerts in the city.</p>
             </a>
           </li>
       
           <li>
-            <a href=\"";
-        // line 127
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/theatre.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Theatre</h2>
+            ";
+        // line 152
+        echo "              <h2 class=\"card__name\">Theatre</h2>
               <p class=\"catP\">Indulge in the world of drama and witness the finest plays and theatre performances.</p>
             </a>
           </li>
           <li>
-            <a href=\"";
-        // line 133
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/cinema.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Cinema</h2>
+            ";
+        // line 158
+        echo "              <h2 class=\"card__name\">Cinema</h2>
               <p class=\"catP\">Get your popcorn ready and browse our collection of movies and cinema experiences.</p>
             </a>
           </li>
           <li>
-            <a href=\"";
-        // line 139
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
-        echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/other.jpg"), "html", null, true);
-        echo "');\">
-              <h2 class=\"card__name\">Other</h2>
+            ";
+        // line 164
+        echo "              <h2 class=\"card__name\">Other</h2>
               <p class=\"catP\">Explore a diverse range of unique events that don't fit into the other categories.</p>
             </a>
           </li>
@@ -297,7 +312,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         <div class=\"slide\"><img src=\"img/img-2.jpg\" alt=\"Photo 2\" /></div>
         <div class=\"slide\"><img src=\"img/img-3.jpg\" alt=\"Photo 3\" /></div>
         <div class=\"slide\"><img src=\"img/img-4.jpg\" alt=\"Photo 4\" /></div> -->
-        <button class=\"slider__btn slider__btn--left\"><</button>
+        <button class=\"slider__btn slider__btn--left\"> < </button>
         <button class=\"slider__btn slider__btn--right\">></button>
         <div class=\"dots\"></div>
       </div>
@@ -361,8 +376,11 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         Open your account <br />
         in just <span class=\"highlight\"> 5 minutes</span>
       </h2>
-      <form class=\"modal__form form-box login\">
-        <form action=\"#\">
+      <div class=\"modal__form form-box login\">
+        <form method=\"POST\" action=\"";
+        // line 311
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login_signin");
+        echo "\">
           <div class=\"input-box\">
             <span class=\"icon\"><i class=\"bx bxs-envelope\"></i></span>
             <input type=\"email\" name=\"email\" required />
@@ -385,12 +403,12 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             <p>
               Don't have an account?
               <a href=\"";
-        // line 309
+        // line 333
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login_signup");
         echo "\" class=\"register-link\">Sign up</a>
             </p>
           </div>
-      </form>
+      </div>
     </div>
     <div class=\"overlay hidden\"></div>
   </body>
@@ -416,7 +434,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 
     public function getDebugInfo()
     {
-        return array (  389 => 309,  214 => 139,  203 => 133,  192 => 127,  180 => 120,  169 => 114,  158 => 108,  63 => 16,  57 => 13,  43 => 1,);
+        return array (  407 => 333,  382 => 311,  233 => 164,  226 => 158,  219 => 152,  211 => 145,  204 => 139,  197 => 133,  143 => 80,  135 => 74,  133 => 73,  112 => 54,  108 => 52,  100 => 47,  94 => 44,  85 => 37,  83 => 36,  60 => 16,  53 => 13,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -425,14 +443,14 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 <html lang=\"en\">
   <head>
     <meta charset=\"UTF-8\" />
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
-    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />
     <link rel=\"shortcut icon\" type=\"image/png\" href=\"images/icon.png\" />
+    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">
 
-    <link
+
+    {# <link
       href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\"
       rel=\"stylesheet\"
-    />
+    /> #}
     <link rel=\"stylesheet\" href=\"{{ asset('assets/css/main/style.css') }}\" />
     <title>TicketHive</title>
 
@@ -456,9 +474,25 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             <a class=\"nav__link\" href=\"#section--3\">Testimonials</a>
           </li>
           <li class=\"nav__item\">
-            <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\"
-              >Log in</a
-            >
+          {% if app.session.get('username') %}
+            <div class=\"app-header-actions\">
+            <button class=\"user-profile\">
+                <span>
+                  <i class=\"fa-solid fa-basket-shopping fa-xl\"></i>
+                </span>
+              </button>
+              <button class=\"user-profile\" id=\"userprofile\">
+                <span>{{app.session.get('username')}}</span>
+                <span>
+                  <!-- <img src=\"https://assets.codepen.io/285131/almeria-avatar.jpeg\" /> -->
+                  {{app.session.get('username')|slice(0,1)}}
+                </span>
+              </button>
+            </div>
+            {% else %}
+              <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\">Log in</a>
+          {% endif %}
+            
           </li>
         </ul>
       </nav>
@@ -476,6 +510,14 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         <button class=\"btn--text btn--scroll-to\">Learn more &DownArrow;</button>
       </div>
     </header>
+
+    {% if app.session.get('username') %}
+      <div class=\"dropdown-user\">
+      <li id=\"update\">Update</li>
+      <li id=\"addevent\">Add Event</li>
+      <li id=\"logout\">Logout</li>
+    </div>
+    {% endif %}
 
     <section class=\"section section--hidden\" id=\"section--1\">
       <div class=\"section__title\">
@@ -528,38 +570,38 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
       <div class=\"team\">
         <ul class=\"auto-grid\" role=\"list\">
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/festivals.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/festivals.jpg') }}');\"> #}
               <h2 class=\"card__name\">Festivals</h2>
               <p class=\"catP\">Discover the hottest festivals in town and experience the ultimate party scene.</p>
             </a>
           </li>
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');\"> #}
               <h2 class=\"card__name\">Sport</h2>
               <p class=\"catP\">Get your adrenaline pumping with our thrilling sports events and buy your tickets now.</p>
             </a>
           </li>
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/concerts.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/concerts.jpg') }}');\"> #}
               <h2 class=\"card__name\">Concerts</h2>
               <p class=\"catP\">Immerse yourself in the music and attend the most happening concerts in the city.</p>
             </a>
           </li>
       
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/theatre.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/theatre.jpg') }}');\"> #}
               <h2 class=\"card__name\">Theatre</h2>
               <p class=\"catP\">Indulge in the world of drama and witness the finest plays and theatre performances.</p>
             </a>
           </li>
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/cinema.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/cinema.jpg') }}');\"> #}
               <h2 class=\"card__name\">Cinema</h2>
               <p class=\"catP\">Get your popcorn ready and browse our collection of movies and cinema experiences.</p>
             </a>
           </li>
           <li>
-            <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/other.jpg') }}');\">
+            {# <a href=\"{{ path('event')}}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/other.jpg') }}');\"> #}
               <h2 class=\"card__name\">Other</h2>
               <p class=\"catP\">Explore a diverse range of unique events that don't fit into the other categories.</p>
             </a>
@@ -642,7 +684,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         <div class=\"slide\"><img src=\"img/img-2.jpg\" alt=\"Photo 2\" /></div>
         <div class=\"slide\"><img src=\"img/img-3.jpg\" alt=\"Photo 3\" /></div>
         <div class=\"slide\"><img src=\"img/img-4.jpg\" alt=\"Photo 4\" /></div> -->
-        <button class=\"slider__btn slider__btn--left\"><</button>
+        <button class=\"slider__btn slider__btn--left\"> < </button>
         <button class=\"slider__btn slider__btn--right\">></button>
         <div class=\"dots\"></div>
       </div>
@@ -706,8 +748,8 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         Open your account <br />
         in just <span class=\"highlight\"> 5 minutes</span>
       </h2>
-      <form class=\"modal__form form-box login\">
-        <form action=\"#\">
+      <div class=\"modal__form form-box login\">
+        <form method=\"POST\" action=\"{{path('login_signin')}}\">
           <div class=\"input-box\">
             <span class=\"icon\"><i class=\"bx bxs-envelope\"></i></span>
             <input type=\"email\" name=\"email\" required />
@@ -732,11 +774,11 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
               <a href=\"{{ path('login_signup')}}\" class=\"register-link\">Sign up</a>
             </p>
           </div>
-      </form>
+      </div>
     </div>
     <div class=\"overlay hidden\"></div>
   </body>
 </html>
-", "main/index.html.twig", "C:\\Users\\user\\OneDrive\\Documents\\symfony work\\projetphp\\templates\\main\\index.html.twig");
+", "main/index.html.twig", "C:\\Users\\user\\OneDrive\\Bureau\\projetphp\\templates\\main\\index.html.twig");
     }
 }
