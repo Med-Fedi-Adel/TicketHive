@@ -1,34 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('assets/css/payment/payment.css')}}"/>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block header %}
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('assets/css/payment/payment.css') }}">
-    
-</head>
+{% endblock %}
 
+{% block body %}
 
-<body>
-
-<div class="big-container">
-
-
-    <div class="container0">
-        <div>
-            <h3>Event Description </h3>
-
-        </div> 
-
-        <div>
-            <h3>Location</h3>
-        
-        </div>
-    </div>
-    
+    <div class="big-container">
     
     <div class="container">
-        <h3>Checkout Form </h3>
         <form action="">
             <div class="row">
                 <div class="col">
@@ -46,16 +35,13 @@
                         <input type="text" placeholder="your country">
                     </div>
 
-                    <div class="flex">
-                        <div class="inputBox">
-                            <span>Tickets :</span>
-                            <input type="number" class="quantity" id="quantity" min="0" value="1" >
-                        </div>
+                    {% block  %}
                         <div class="inputBox">
                             <span>Total :</span>
-                            <input type="number" placeholder="..."> 
+                            <input type="number" placeholder="..." value="{{ total }}"> 
                         </div>
-                    </div>
+                    {% endblock %}
+
                 </div>
 
                 <div class="col">
@@ -66,8 +52,8 @@
                         <span>cards accepted :</span>
                         <!-- <img src="card_img.png" alt=""> -->
                         <div class="credit-cards" style="text-align: left ; width: 100%">
-                            <img height="40" src="{{ asset('assets/images/payment/cards.png') }}"/>
-                            <img height="40" src="{{ asset('assets/images/payment/E-Dinar (1).png') }}"/>
+                            <img height="40" src="cards.png"/>
+                            <img height="40" src="E-Dinar (1).png"/>
                         </div>
                     </div>
                     <div class="inputBox">
@@ -99,7 +85,6 @@
             <input type="submit" value="Buy Now" class="submit">
         </form>
     </div>
-</div>        
-    
-</body>
-</html>
+</div> 
+
+{% endblock %}
