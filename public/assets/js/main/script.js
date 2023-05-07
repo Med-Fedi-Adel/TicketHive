@@ -52,12 +52,12 @@ btnScrollTo.addEventListener("click", function (e) {
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(e.target);
+  
 
   // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
-    console.log(id);
+
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
@@ -150,7 +150,6 @@ allSections.forEach(function (section) {
 // Slider
 const slider = function () {
   const slides = document.querySelectorAll(".slide");
-  console.log(slides);
   const btnLeft = document.querySelector(".slider__btn--left");
   const btnRight = document.querySelector(".slider__btn--right");
   const dotContainer = document.querySelector(".dots");
@@ -214,7 +213,6 @@ const slider = function () {
   btnLeft.addEventListener("click", prevSlide);
 
   document.addEventListener("keydown", function (e) {
-    console.log(e);
     if (e.key === "ArrowLeft") prevSlide();
     if (e.key === "ArrowRight") nextSlide();
   });
@@ -259,3 +257,128 @@ function animateLetters() {
 }
 
 animateLetters();
+
+
+//dropdown for user to update , addevent and logout
+
+const button_profile = document.getElementById('userprofile')
+const updateli = document.querySelector('#update')
+const addeventli = document.querySelector('#addevent')
+const logoutli = document.querySelector('#logout')
+
+
+button_profile.addEventListener('click',()=>{
+  document.querySelector('.dropdown-user').style.opacity = 1-document.querySelector('.dropdown-user').style.opacity
+})
+
+
+logoutli.addEventListener('click',()=>{
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:8000/delete', true);
+    //xhr.open("POST","{{path('delete_session')}}",true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = ()=>{
+      location.reload();
+    }
+    xhr.send();
+    //console.log(sessionStorage);
+    //sessionStorage.removeItem('username');
+    //location.reload();
+})
+
+//go to addevent page
+
+addeventli.addEventListener('click',()=>{
+  window.location.href = "http://localhost:8000/event";
+})
+
+
+
+
+/***CART FUNCTIONALITY START***/
+// CART WINDOW JS
+// Find the cart icon link and the cart modal container
+const openCartIcon = document.getElementById('open-cart-icon');
+const cartModalContainer = document.querySelector('.modal-container');
+// Add an event listener to the cart icon link
+openCartIcon.addEventListener('click', showCartModal);
+function showCartModal() {
+  // Show the cart modal container
+  cartModalContainer.classList.remove('hidden');
+}
+// Update the price when the quantity is changed
+const cartQuantities = document.querySelectorAll('.cart-quantity');
+const cartPrices = document.querySelectorAll('.cart-price');
+const totalPriceEl = document.getElementById('total-price');
+cartQuantities.forEach((cartQuantity, index) => {
+  cartQuantity.addEventListener('input', function () {
+    // Get initial item price and item quantity
+    const initialPrice = parseFloat(cartQuantity.dataset.initialPrice);
+    const quantity = parseInt(cartQuantity.value);
+    // Update the item price based on new quantity
+    const newPrice = initialPrice * quantity;
+    cartPrices[index].innerText = newPrice;
+    // Update the total price
+    let total = 0;
+    cartPrices.forEach(priceEl => {
+      total += parseFloat(priceEl.innerText);
+    });
+    totalPriceEl.innerText = total;
+  });
+});
+
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', hideCartModal);
+
+function hideCartModal() {
+  cartModalContainer.classList.add('hidden');
+}
+
+
+const checkoutBtn = document.querySelector('.btn');
+
+checkoutBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const items = [];
+
+  const cartItems = document.querySelectorAll('.cart-box');
+
+  cartItems.forEach((cartItem) => {
+    const name = cartItem.querySelector('.cart-product-title').textContent;
+    const quantity = cartItem.querySelector('.cart-quantity').value;
+    const price = cartItem.querySelector('.cart-price').textContent;
+
+    const item = {
+      name: name,
+      quantity: quantity,
+      price: price
+    };
+
+    items.push(item);
+  });
+
+  const total = document.querySelector('#total-price').textContent;
+
+  const form = document.createElement('form');
+  form.setAttribute('method', 'POST');
+  form.setAttribute('action', "{{ path('cart_payment') }}");
+
+  const itemsInput = document.createElement('input');
+  itemsInput.setAttribute('type', 'hidden');
+  itemsInput.setAttribute('name', 'items');
+  itemsInput.setAttribute('value', JSON.stringify(items));
+  form.appendChild(itemsInput);
+
+  const totalInput = document.createElement('input');
+  totalInput.setAttribute('type', 'hidden');
+  totalInput.setAttribute('name', 'total');
+  totalInput.setAttribute('value', total);
+  form.appendChild(totalInput);
+
+  document.body.appendChild(form);
+  form.submit();
+});
+
+/***CART FUNCTIONALITY END***/
+

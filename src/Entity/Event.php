@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\EventRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +29,8 @@ class Event
     #[ORM\Column(type: Types::BIGINT)]
     private ?string $nbplaces = null;
 
+
+
     #[ORM\Column]
     private ?float $price = null;
 
@@ -40,6 +43,15 @@ class Event
     #[ORM\ManyToOne(inversedBy: 'events')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Client $clientid = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $EventType = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $longitude = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $latitude = null;
 
     // #[ORM\OneToMany(mappedBy: 'eventid', targetEntity: Ticket::class)]
     // private Collection $tickets;
@@ -179,4 +191,40 @@ class Event
 
     //     return $this;
     // }
+
+    public function getEventType(): ?string
+    {
+        return $this->EventType;
+    }
+
+    public function setEventType(?string $EventType): self
+    {
+        $this->EventType = $EventType;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(?float $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(?float $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
 }
