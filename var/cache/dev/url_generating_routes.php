@@ -16,13 +16,12 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'contact' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
-<<<<<<< HEAD
-    'app_event' => [[], ['_controller' => 'App\\Controller\\EventController::addEvent'], [], [['text', '/event']], [], [], []],
-=======
+    'cart_index' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/main']], [], [], []],
+    'cart_add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/main/add']], [], [], []],
+    'cart_remove' => [['id'], ['_controller' => 'App\\Controller\\CartController::remove'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/main/remove']], [], [], []],
+    'cart_payment' => [[], ['_controller' => 'App\\Controller\\CartController::payment'], [], [['text', '/payment']], [], [], []],
     'event_description' => [['id'], ['_controller' => 'App\\Controller\\DescriptionController::showEventAction'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/event']], [], [], []],
-    'event' => [[], ['_controller' => 'App\\Controller\\EventController::index'], [], [['text', '/event']], [], [], []],
->>>>>>> f7c4b9e8387af1fad763c96f6219ee7d25a45a68
+    'app_event' => [[], ['_controller' => 'App\\Controller\\EventController::addEvent'], [], [['text', '/event']], [], [], []],
     'feedback' => [[], ['_controller' => 'App\\Controller\\FeedbackController::index'], [], [['text', '/feedback']], [], [], []],
     'login_signup' => [[], ['_controller' => 'App\\Controller\\LoginSignupController::index'], [], [['text', '/loginsignup']], [], [], []],
     'login_signin' => [[], ['_controller' => 'App\\Controller\\LoginSignupController::signin'], [], [['text', '/loginsigin']], [], [], []],
@@ -30,8 +29,7 @@ return [
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], [], []],
     'main.create_event' => [[], ['_controller' => 'App\\Controller\\MainController::createEventPage'], [], [['text', '/main/createevent']], [], [], []],
     'pdf_gen' => [[], ['_controller' => 'App\\Controller\\MainController::pdf_gen'], [], [['text', '/generate']], [], [], []],
-    'payment' => [[], ['_controller' => 'App\\Controller\\PaymentController::index'], [], [['text', '/payment']], [], [], []],
     'app_pdf' => [[], ['_controller' => 'App\\Controller\\PdfController::index'], [], [['text', '/pdf']], [], [], []],
     'generated_pdf' => [[], ['_controller' => 'App\\Controller\\PdfController::generatePdf'], [], [['text', '/generated']], [], [], []],
-    'ticket' => [[], ['_controller' => 'App\\Controller\\TicketController::index'], [], [['text', '/ticket']], [], [], []],
+    'ticket' => [['id'], ['_controller' => 'App\\Controller\\TicketController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ticket']], [], [], []],
 ];

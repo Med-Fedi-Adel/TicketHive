@@ -169,7 +169,7 @@ body {
 }
 
 .info span {
-  color: white;
+  color: black;
   margin: 2%;
 }
 
@@ -193,4 +193,16 @@ body {
 
 .bouton:hover {
   background-color: #89c4a3;
+}
+
+.latitude {
+  height: 0cm;
+  display: none;
+  visibility: hidden;
+}
+
+.longitude {
+  height: 0cm;
+  display: none;
+  visibility: hidden;
 }
