@@ -1,44 +1,26 @@
-<?php 
+<?php
 
-namespace App\Service;
+namespace App\Service ;
 
-use Dompdf\Dompdf;
-use Dompdf\Options;
+class PdfService{
+    private $domPdf ;
 
-class PdfService
-{
-  private $domPdf;
+    public function __construct(){
+        $this->domPdf = new DomPdf();
 
+        $pdfOption = new Options();
 
-  public function __construct(){
-    $this->domPdf = new Dompdf();
+        $pdfOption->set('defaultFont','Garamond');
 
-    $pdfOption = new Options();
+        $this->domPdf-> setOptions($pdfOption);
+    }
 
-    $pdfOption->set('defaultFont','Garamond');
+    public function showpdfFile($html)
+    {
+        $this->domPdf->load($html);
+        $this->domPdf->render();
+        $this->domPdf->stream("Details.pdf",['Attachement'=>false]); 
+    }
 
-
-    $this->domPdf->setOptions($pdfOption);
-  }
-
-
-  public function showpdfFile($html)
-  {
-
-
-    $this->domPdf->loadHtml($html);
-    $this->domPdf->render();
-
-    $this->domPdf->stream("Details.pdf",[
-      'Attachement'=>false
-    ]);
-
-  }
-
-  public function generateBinaryPdf($html){
-    $this->domPdf->loadHtml($html);
-    $this->domPdf->render();
-
-    $this->domPdf->output();
-  }
+    
 }

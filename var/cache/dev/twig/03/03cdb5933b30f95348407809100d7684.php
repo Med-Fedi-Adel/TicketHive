@@ -107,16 +107,40 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
         <!-- Login container -->
 
         <div class=\"form-box login\">
-          <form action=\"#\">
+          <form method=\"POST\" action=\"";
+        // line 82
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login_signin");
+        echo "\">
             <h2>Sign In</h2>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-envelope\"></i></span>
-              <input type=\"email\" name=\"email\" required />
+              <input type=\"email\" 
+              
+              ";
+        // line 88
+        if ((array_key_exists("emailnon", $context) &&  !twig_test_empty((isset($context["emailnon"]) || array_key_exists("emailnon", $context) ? $context["emailnon"] : (function () { throw new RuntimeError('Variable "emailnon" does not exist.', 88, $this->source); })())))) {
+            // line 89
+            echo "                style=\"border:1px solid red;\"
+              ";
+        }
+        // line 91
+        echo "
+              name=\"email\" required />
               <label>Email</label>
             </div>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-lock-alt\"></i></span>
-              <input type=\"password\" name=\"password\" required />
+              <input type=\"password\"
+              name=\"password\" 
+              ";
+        // line 99
+        if ((array_key_exists("passwordnon", $context) &&  !twig_test_empty((isset($context["passwordnon"]) || array_key_exists("passwordnon", $context) ? $context["passwordnon"] : (function () { throw new RuntimeError('Variable "passwordnon" does not exist.', 99, $this->source); })())))) {
+            // line 100
+            echo "                style=\"border:1px solid red;\"
+              ";
+        }
+        // line 102
+        echo "              required />
               <label>Password</label>
             </div>
             <div class=\"remember-forgot\">
@@ -140,7 +164,10 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
         <!-- Register container -->
 
         <div class=\"form-box register\">
-          <form action=\"#\">
+          <form method=\"POST\" action=\"";
+        // line 126
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login_signup");
+        echo "\">
             <h2>Sign Up</h2>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-user\"></i></span>
@@ -178,8 +205,7 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
       </div>
     </div>
   </body>
-</html>
-";
+</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -252,7 +278,7 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
 
     public function getDebugInfo()
     {
-        return array (  225 => 37,  208 => 23,  202 => 19,  192 => 18,  88 => 61,  75 => 51,  68 => 46,  66 => 18,  61 => 16,  44 => 1,);
+        return array (  251 => 37,  234 => 23,  228 => 19,  218 => 18,  169 => 126,  143 => 102,  139 => 100,  137 => 99,  127 => 91,  123 => 89,  121 => 88,  112 => 82,  88 => 61,  75 => 51,  68 => 46,  66 => 18,  61 => 16,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -338,16 +364,27 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
         <!-- Login container -->
 
         <div class=\"form-box login\">
-          <form action=\"#\">
+          <form method=\"POST\" action=\"{{path('login_signin')}}\">
             <h2>Sign In</h2>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-envelope\"></i></span>
-              <input type=\"email\" name=\"email\" required />
+              <input type=\"email\" 
+              
+              {% if emailnon is defined and emailnon is not empty %}
+                style=\"border:1px solid red;\"
+              {% endif %}
+
+              name=\"email\" required />
               <label>Email</label>
             </div>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-lock-alt\"></i></span>
-              <input type=\"password\" name=\"password\" required />
+              <input type=\"password\"
+              name=\"password\" 
+              {% if passwordnon is defined and passwordnon is not empty%}
+                style=\"border:1px solid red;\"
+              {% endif %}
+              required />
               <label>Password</label>
             </div>
             <div class=\"remember-forgot\">
@@ -371,7 +408,7 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
         <!-- Register container -->
 
         <div class=\"form-box register\">
-          <form action=\"#\">
+          <form method=\"POST\" action=\"{{path('login_signup')}}\">
             <h2>Sign Up</h2>
             <div class=\"input-box\">
               <span class=\"icon\"><i class=\"bx bxs-user\"></i></span>
@@ -409,7 +446,6 @@ class __TwigTemplate_30b71f8678e2d4c660d3e639196fb897 extends Template
       </div>
     </div>
   </body>
-</html>
-", "login_signup/index.html.twig", "C:\\Users\\user\\OneDrive\\Documents\\symfony work\\projetphp\\templates\\login_signup\\index.html.twig");
+</html>", "login_signup/index.html.twig", "C:\\Users\\user\\OneDrive\\Bureau\\projetphp\\templates\\login_signup\\index.html.twig");
     }
 }
