@@ -1,4 +1,3 @@
-
 {% extends 'base.html.twig' %}
 
 
@@ -23,13 +22,15 @@
 {% block body %}
     <div class="ticket">
         <div class="left">
-            <div class="image">
+            <div class="image"
+                style="background-image:url('{{ asset('uploads/' ~ event.image) }}')"
+            >
                 <p class="admit-one">
                     <span>ADMIT ONE</span>
                     <span>ADMIT ONE</span>
                     <span>ADMIT ONE</span>
                 </p>
-                <img src="{{ asset('uploads/events/' ~ event.image) }}" width="275" height="320">
+                {# <img src="{{ asset('uploads/' ~ event.image) }}" width="275" height="320"> #}
             </div>
             <div class="ticket-info">
                 <p class="date">
@@ -46,7 +47,7 @@
                     <p>DOORS <span>@</span> {{ event.date|date_modify('-1 hour')|date('g:i A') }}</p>
                 </div>
                 <p class="location">
-                    <span class="separator"><i class="far fa-smile"></i></span><span>{{ event.location }}</span>
+                    {# <span class="separator"><i class="far fa-smile"></i></span><span>{{ event.location }}</span> #}
                 </p>
             </div>
         </div>
@@ -61,7 +62,7 @@
                     <p>{{ event.date|date('g:i A') }} <span>TO</span> {{ event.date|date_modify('+3 hours')|date('g:i A') }}</p>
                 </div>
                 <div class="barcode">
-                    <img src="{{ asset('uploads/events/' ~ event.gif) }}" alt="QR code">
+                    <img src="{{ asset('uploads/events/' ~ event.image) }}" alt="QR code">
                 </div>
                 <p class="ticket-number">
                     #{{ event.id }}
@@ -71,7 +72,3 @@
     </div>
 
 {% endblock %}
-
-
-
-
