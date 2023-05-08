@@ -4,13 +4,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/payment/payment.css')}}"/>
 {% endblock %}
 
-{% block javascripts %}
-{% endblock %}
-
-{% block header %}
-<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}
+    Checkout
 {% endblock %}
 
 {% block body %}
@@ -35,12 +30,10 @@
                         <input type="text" placeholder="your country">
                     </div>
 
-                    {% block  %}
-                        <div class="inputBox">
-                            <span>Total :</span>
-                            <input type="number" placeholder="..." value="{{ total }}"> 
-                        </div>
-                    {% endblock %}
+                    <div class="inputBox">
+                        <span>Total :</span>
+                        <input type="text" placeholder="{{ total }}" value="{{ total }}"> 
+                    </div>
 
                 </div>
 

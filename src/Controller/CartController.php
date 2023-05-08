@@ -167,9 +167,28 @@ class CartController extends AbstractController
 //        dd($session->get('cart'));
 //        dd($session->get('total'));
 
-        return $this->render('payment/index.html.twig', [
-            'items' => $session->get('cart'),
-            'total' =>$session->get('total'),
+        $items = [];
+        $total = 0;
+
+        // if form is submitted, assume quantity input is valid and redirect to payment page
+        foreach ($cartWithData as $evt) {
+            $event = $eventRepository->find($evt['event']->getId());
+            $quantity = $request->request->get('quantity_'.$event->getId());
+            $items[] = [
+                'event' => $event,
+                'quantity' => $quantity
+            ];
+            $totalItem = $event->getPrice() * $quantity;
+            $total += $totalItem;
+        }
+
+        // for debugging
+        //dd($items);
+        // dd($total);
+        return $this->redirectToRoute('checkout',
+        [
+            'items' => $items,
+            'total' => $total
         ]);
     }
 

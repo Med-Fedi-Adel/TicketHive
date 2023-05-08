@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block stylesheets %}
     <link rel="stylesheet" href="{{asset('assets/css/Description/Description.css')}}"/>
     <link
@@ -26,7 +24,9 @@
     />
 {% endblock %}
 
-
+{% block title %}
+  {{ event.name }}
+{% endblock %}
 
 {% block javascripts %}
  <script
@@ -36,16 +36,6 @@
    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
    <script src="{{asset('assets/js/Description/Description.js')}}"></script>
 {% endblock %}
-
-
-
-{% block header %}
- <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{% endblock %}
-
-
 
 {% block body %}
     <section class="section">
@@ -124,7 +114,7 @@
                 <button class="btn btn-secondary" disabled>Sold Out</button>
             </div>
             {% endif % }
-
+            
         </div>
         <br/>
        </section>
