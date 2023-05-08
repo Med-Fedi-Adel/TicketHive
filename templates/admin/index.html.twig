@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/admin.css') }}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {#JS+ Chart JS#}
+    {% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous">
+    </script>
+    {% endblock %}
+    <script defer src="{{ asset('assets/js/admin/admin.js') }}"></script>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="nav">
+        <ul class="nav__links">
+        <a class="navbar-brand" href="">Admin Dashboard</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Analytics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Charts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <header class="header">
+    <div class="header__title">
+            <br>
+            <h1 class="display-4 d-none d-sm-block" id="admin">
+                Welcome Admin!👋🏻
+            </h1>
+            <p class="lead d-none d-sm-block">Enjoy your success with accurate numbers, statistic and charts!</p>
+
+    </div>
+        <!--/row-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="/assets/images/admin/users.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <br>
+                            <h4 class="card-title"><b>Users</b></h4>
+                            <p class="card-text">nb</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="/assets/images/admin/events.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <br>
+                            <h4 class="card-title"><b>Events</b></h4>
+                            <p class="card-text">nb</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="/assets/images/admin/tickets.jpg" alt="Card image cap">
+                        <div class="card-block">
+                            <br>
+                            <h4 class="card-title"><b>Tickets</b></h4>
+                            <p class="card-text">nb</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-img-top img-fluid" src="/assets/images/admin/feedbacks.jpg" alt="Card image">
+                        <div class="card-block">
+                            <br>
+                            <h4 class="card-title"><b>Testimonials</b></h4>
+                            <p class="card-text">nb</p>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/row-->
+
+</header>
+    <br>
+
+<section>
+    <div class="header__title">
+        <br>
+        <h1 class="display-4 d-none d-sm-block" id="admin">
+            List of users  ️💁🏻‍♂️
+        </h1>
+        <p class="lead d-none d-sm-block">Your fidele clients need your guidance and administration!</p>
+
+    </div>
+    <div class="container">
+                <div class=" table col-lg-9 col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>#</th>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>id</td>
+                                <td>username</td>
+                                <td>email</td>
+                                <td>pswrd</td>
+                                <td><button class="btn">Modifier</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+    <br> <br>
+</section>
+    <br>
+
+    <section>
+        <div class="Chartcontainer">
+            <br>
+            <h1 class="display-4 d-none d-sm-block" id="admin">Chart & Stats 📊</h1>
+            <canvas id="categories" width="400" height="100"></canvas>
+
+            <canvas id="feedbacks" width="400" height="100"></canvas>
+        </div>
+
+
+
+    </section>
+    <br>
+            {#footer#}
+            <footer class="footer">
+                <ul class="footer__nav">
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Analytics</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Table</a>
+                    </li>
+                    <li class="footer__item">
+                        <a class="footer__link" href="#">Charts</a>
+                    </li>
+                </ul>
+            </footer>
+
+
+
+</body>
+</html>
