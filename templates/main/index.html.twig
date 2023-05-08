@@ -32,30 +32,41 @@
           <li class="nav__item">
             <a class="nav__link" href="#section--3">Testimonials</a>
           </li>
-          <li class="nav__item">
-          {% if app.session.get('username') %}
+          {# check if username=admin unique then show the admin button#}
+          {% if app.session.get('username') == 'admin'%}
+            <li class="nav__item">
+              <a class="nav__link" target="_blank" href="{{ path('admin_index') }}" style="color:#00ffdd;">Admin Dashboard</a>
+            </li>
             <div class="app-header-actions">
-            <button class="user-profile">
-                <span>
-                  <i class="fa-solid fa-basket-shopping fa-xl" id="open-cart-icon"></i>
-                </span>
-              </button>
               <button class="user-profile" id="userprofile">
-                <span>{{app.session.get('username')}}</span>
                 <span>
-                  <!-- <img src="https://assets.codepen.io/285131/almeria-avatar.jpeg" /> -->
-                  {{app.session.get('username')|slice(0,1)}}
-                </span>
+                    {{ app.session.get('username')|slice(0,1) }}
+                  </span>
               </button>
             </div>
-            {% else %}
-              <a class="nav__link nav__link--btn btn--show-modal" href="#">Log in</a>
+
+          {% elseif app.session.get('username') %}
+            <div class="app-header-actions">
+              <button class="user-profile">
+             <span>
+             <i class="fa-solid fa-basket-shopping fa-xl" id="open-cart-icon"></i>
+              </span>
+              </button>
+              <button class="user-profile" id="userprofile">
+                <span>{{ app.session.get('username') }}</span>
+                <span>
+                    {{ app.session.get('username')|slice(0,1) }}
+                  </span>
+              </button>
+            </div>
+          {% else %}
+            <a class="nav__link nav__link--btn btn--show-modal" href="#">Log in</a>
           {% endif %}
-            
           </li>
 
         </ul>
       </nav>
+
 
       <div class="header__title">
         <h1>
@@ -314,56 +325,56 @@
     <div class="overlay hidden"></div>
 
 
-      <!-- CART MODAL WINDOWS -->
+    <!-- CART MODAL WINDOWS -->
     <div class=" modal modal-container hidden">
       <button class="btn--close-modal close-button" id="close-btn">&times;</button>
       <h2 class="modal__header">
         Shopping Cart
       </h2>
       <div class="cart-items-container">
-        {% if items %}
-          <form class="modal__form form-box login" action="{{ path('cart_payment') }}" method="post">
-            {% for item in items %}
-              <div class="cart-box">
-                {% if item.event.image %}
-                  <img src="{{ item.event.image }}" alt="{{ item.event.name }}" class="cart-img">
-                {% else %}
-                  <img src="/assets/images/main/catalogue/concerts.jpg" alt="{{ item.event.name }}" class="cart-img">
-                {% endif %}
-                <div class="detail-box">
-                  <div class="cart-product-title">{{ item.event.name }} </div>
-                    {# stocking here the initial price of the event and the quantity in stock#}
-                  <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
+        {% if items is defined and items|length != 0 %}
+        <form class="modal__form form-box login" action="{{ path('cart_payment') }}" method="post">
+          {% for item in items %}
+            <div class="cart-box">
+              {% if item.event.image %}
+                <img src="{{ item.event.image }}" alt="{{ item.event.name }}" class="cart-img">
+              {% else %}
+                <img src="/assets/images/main/catalogue/concerts.jpg" alt="{{ item.event.name }}" class="cart-img">
+              {% endif %}
+              <div class="detail-box">
+                <div class="cart-product-title">{{ item.event.name }} </div>
+                {# stocking here the initial price of the event and the quantity in stock#}
+                <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
 
 
-                  <div class="cart-price">{{ item.event.price * item.quantity }}</div>
-                </div>
-
-                <!-- Remove Cart -->
-                <a href="{{ path('cart_remove', {'id': item.event.id}) }}" class="cart-remove" data-method="delete"><i class='fas fa-trash-alt'></i></a>
+                <div class="cart-price">{{ item.event.price * item.quantity }}</div>
               </div>
 
-            {% endfor %}
-            <div class="payer">
-              <hr>
-              <div>
-                <div class="remember-forgot">
-                  <div class=”total-title”>Total : </div>
-                  <div class=”total-price” id="total-price">{{ total }}</div>
-                </div>
-                <button class="btn">Checkout</button>
-              </div>
+              <!-- Remove Cart -->
+              <a href="{{ path('cart_remove', {'id': item.event.id}) }}" class="cart-remove" data-method="delete"><i class='fas fa-trash-alt'></i></a>
             </div>
-            {# saving the input values in the form here as hidden#}
-            <input type="hidden" name="items" value="{{ items|json_encode() }}">
-            <input type="hidden" name="total" value="{{ total }}">
 
-        {% else %}
-          <p>Cart is empty..</p>
-          <br>
-          <button class="btn"><a href="#section--2" style="text-decoration: none"> Go buy your tickets</a></button>
-        {% endif %}
-          </form>
+          {% endfor %}
+          <div class="payer">
+            <hr>
+            <div>
+              <div class="remember-forgot">
+                <div class=”total-title”>Total : </div>
+                <div class=”total-price” id="total-price">{{ total }}</div>
+              </div>
+              <button class="btn">Checkout</button>
+            </div>
+          </div>
+          {# saving the input values in the form here as hidden#}
+          <input type="hidden" name="items" value="{{ items|json_encode() }}">
+          <input type="hidden" name="total" value="{{ total }}">
+
+          {% else %}
+            <p>Cart is empty..</p>
+            <br>
+            <button class="btn"><a href="#section--2" style="text-decoration: none"> Go buy your tickets</a></button>
+          {% endif %}
+        </form>
       </div>
     </div>
     <div class="overlay hidden"></div>
