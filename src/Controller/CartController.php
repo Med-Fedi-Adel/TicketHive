@@ -107,65 +107,28 @@ class CartController extends AbstractController
 
         $qb->getQuery()->execute();
 
-        return $this->render('main/index.html.twig', [
+        return $this->redirectToRoute("cart_index", [
             'items' => $cart,
             'total' => $total
         ]);
     }
-//
-//    /**
-//     * @Route("/payment", name="cart_payment")
-//     */
-//    public function payment(Request $request, SessionInterface $session, EventRepository $eventRepository, ManagerRegistry $doctrine)
-//    {
-//        // Rebuild cartWithData and calculate total price
-//        $cartWithData = [];
-//        $repository = $doctrine->getRepository(Event::class);
-//        $events = $repository->findAll();
-//
-//        foreach ($events as $event) {
-//            $cartWithData[] = [
-//                'event' => $eventRepository->find($event->getId()),
-//                'quantity' => $eventRepository->find($event->getId())->getNbplaces()
-//            ];
-//        }
-//
-//        $items = [];
-//        $total = 0;
-//
-//        // if form is submitted, assume quantity input is valid and redirect to payment page
-//            foreach ($cartWithData as $id => $quantity) {
-//                $event = $eventRepository->find($id);
-//                $items[] = [
-//                    'event' => $event,
-//                    'quantity' => $quantity
-//                ];
-////                $totalItem = $event->getPrice() * $quantity;
-////                $total += $totalItem;
-//            }
-//            return $this->redirectToRoute('cart_payment', [
-//                'items' => $items,
-//                'total' => $total,
-//            ]);
-//
-//    }
 
     /**
      * @Route("/payment", name="cart_payment")
      */
-    public function payment(Request $request, SessionInterface $session)
+    public function payment(Request $request, SessionInterface $session, EventRepository $eventRepository, ManagerRegistry $doctrine)
     {
-        // Retrieve items and total price from form inputs
-        $items = json_decode($request->request->get('items'), true);
-        $total = $request->request->get('total');
-        // Save items and total price to session
-        $session->set('cart', $items);
-        $session->set('total', $total);
-        $session->save();
+        // Rebuild cartWithData and calculate total price
+        $cartWithData = [];
+        $repository = $doctrine->getRepository(Event::class);
+        $events = $repository->findAll();
 
-        //for debugging
-//        dd($session->get('cart'));
-//        dd($session->get('total'));
+        foreach ($events as $event) {
+            $cartWithData[] = [
+                'event' => $eventRepository->find($event->getId()),
+                'quantity' => $eventRepository->find($event->getId())->getNbplaces()
+            ];
+        }
 
         $items = [];
         $total = 0;
@@ -185,11 +148,12 @@ class CartController extends AbstractController
         // for debugging
         //dd($items);
         // dd($total);
-        return $this->redirectToRoute('checkout',
-        [
+        return $this->redirectToRoute('cart_payment', [
             'items' => $items,
-            'total' => $total
+            'total' => $total,
         ]);
+
     }
+
 
 }

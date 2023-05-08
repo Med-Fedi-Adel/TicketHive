@@ -40,5 +40,5 @@ class PdfService
     $this->domPdf->render();
 
     $this->domPdf->output();
-  }
+  }    
 }
