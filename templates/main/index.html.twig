@@ -322,7 +322,7 @@
       </h2>
       <div class="cart-items-container">
         {% if items %}
-          <form class="modal__form form-box login" action="{{ path('cart_payment') }}" method="post">
+          <form class="modal__form form-box login" action="{{ path('checkout') }}" method="post">
             {% for item in items %}
               <div class="cart-box">
                 {% if item.event.image %}
@@ -351,9 +351,7 @@
                   <div class=”total-title”>Total : </div>
                   <div class=”total-price” id="total-price">{{ total }}</div>
                 </div>
-                <a href="{{ path('checkout', {total: total}) }}" >
-                  <button class="btn">Checkout</button>
-                </a>
+                <button class="btn">Checkout</button>
               </div>
             </div>
             {# saving the input values in the form here as hidden#}

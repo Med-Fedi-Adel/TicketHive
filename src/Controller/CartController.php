@@ -148,7 +148,7 @@ class CartController extends AbstractController
         // for debugging
         //dd($items);
         // dd($total);
-        return $this->redirectToRoute('cart_payment', [
+        return $this->redirectToRoute('checkout', [
             'items' => $items,
             'total' => $total,
         ]);
