@@ -216,3 +216,25 @@ var overlayMaps = {
 //     document.querySelector("#longitude").value = latlng.lng;
 //   })
 //   .addTo(map);
+
+
+
+
+
+
+
+
+
+
+/***ADD TO CART***/
+let addToCartBtn = document.querySelector(".add-to-cart");
+//open cart model from cart controller method
+addToCartBtn.addEventListener("click", function () {
+    let eventId = addToCartBtn.getAttribute("event-id");
+     //<a href="/cart/add/${id}" class="btn add-to-cart" event-id="${event._id}">Add to cart</a> IN DESCRIPTION TWIG
+    //change href of add to cart button
+    addToCartBtn.setAttribute("href", `/cart/add/${eventId}`);
+
+}
+);
+
