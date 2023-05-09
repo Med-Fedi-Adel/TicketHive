@@ -64,7 +64,5 @@ class AddEventController extends AbstractController
         return $this->redirectToRoute('main');
     }
 
-    
-
 
 }

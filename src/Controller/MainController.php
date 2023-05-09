@@ -26,7 +26,7 @@ class MainController extends AbstractController
         //dump($today1) ; 
       // $eventT = $reposity -> findAll();
         $eventT = $reposity -> findByDate ($today);
-       // dd($eventT);
+        // dd($eventT);
         $threeDaysAhead = (new DateTime())->modify('+3 days');
         $eventW = $reposity -> findByDateRange ($threeDaysAhead,$today);
         $date = (new DateTime())->modify('+2 weeks');
