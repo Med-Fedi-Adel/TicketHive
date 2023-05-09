@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/png" href="images/icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
@@ -10,6 +9,10 @@
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
     /> #}
+
+    <!-- favicon -->
+    <link rel="icon" href="/assets/images/faviconM.ico">
+
     <link rel="stylesheet" href="{{ asset('assets/css/main/style.css') }}" />
     <title>TicketHive</title>
 
@@ -20,8 +23,13 @@
     <header class="header">
       <!-- Nav Bar -->
       <nav class="nav">
+<<<<<<< HEAD
         <img src="public/assets/images/favicon.ico" alt="" class="nav__logo" id="logo" />
         <a class="navbar-brand" href="{{path ('main')}}">TicketHive</a>
+=======
+        <img src="/assets/images/picc.png" alt="" class="nav__logo" id="logo" />
+        <a class="navbar-brand" href="">TicketHive</a>
+>>>>>>> 245639c14b6b55164c7b00ef7681daced5e8ad12
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#section--1">Events</a>
@@ -35,7 +43,7 @@
           {# check if username=admin unique then show the admin button#}
           {% if app.session.get('username') == 'admin'%}
             <li class="nav__item">
-              <a class="nav__link" target="_blank" href="{{ path('admin_index') }}" style="color:#00ffdd;">Admin Dashboard</a>
+              <a class="nav__link" target="_blank" href="{{ path('admin') }}" style="color:#00ffdd;">Admin Dashboard</a>
             </li>
             <div class="app-header-actions">
               <button class="user-profile" id="userprofile">
@@ -341,17 +349,13 @@
               {% endif %}
               <div class="detail-box">
                 <div class="cart-product-title">{{ item.event.name }} </div>
-                {# stocking here the initial price of the event and the quantity in stock#}
-                <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
-
-
+                <input type="number" name="quantity" value="{{ item.quantity }}" min="1"  max="{{ item.event.nbPlaces }}" class="cart-quantity">
                 <div class="cart-price">{{ item.event.price * item.quantity }}</div>
               </div>
 
               <!-- Remove Cart -->
               <a href="{{ path('cart_remove', {'id': item.event.id}) }}" class="cart-remove" data-method="delete"><i class='fas fa-trash-alt'></i></a>
             </div>
-
           {% endfor %}
           <div class="payer">
             <hr>
@@ -363,10 +367,6 @@
               <button class="btn">Checkout</button>
             </div>
           </div>
-          {# saving the input values in the form here as hidden#}
-          <input type="hidden" name="items" value="{{ items|json_encode() }}">
-          <input type="hidden" name="total" value="{{ total }}">
-
           {% else %}
             <p>Cart is empty..</p>
             <br>
@@ -394,7 +394,7 @@
           <a class="footer__link" target="_blank" href="contact/index.html.twig">Contact Us</a>
         </li>
       </ul>
-      <img src="#" alt="Logo" class="footer__logo" />
+      <img src="/assets/images/faviconP.png" alt="logo" class="nav__logo" id="logo" />
     </footer>
 
   </body>

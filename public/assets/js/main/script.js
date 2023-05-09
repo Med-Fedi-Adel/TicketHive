@@ -306,6 +306,8 @@ function showCartModal() {
   // Show the cart modal container
   cartModalContainer.classList.remove('hidden');
 }
+
+
 // Update the price when the quantity is changed
 const cartQuantities = document.querySelectorAll('.cart-quantity');
 const cartPrices = document.querySelectorAll('.cart-price');
@@ -380,5 +382,54 @@ checkoutBtn.addEventListener('click', (event) => {
   form.submit();
 });
 
+<<<<<<< HEAD
+=======
+/*stoppinng the user from entering invalid quantity not in range of min and max START*/
+const quantityInputs = document.querySelectorAll('.cart-quantity');
+const checkoutButton = document.querySelector('#checkout-btn');
+
+const validateQuantity = () => {
+  const invalidQuantities = [];
+
+  // Check each quantity input field
+  quantityInputs.forEach(input => {
+    const quantity = parseInt(input.value);
+    const min = parseInt(input.min);
+    const max = parseInt(input.max);
+
+    // If quantity is outside of min and max range, add it to the list of invalid quantities
+    if (quantity < min || quantity > max) {
+      invalidQuantities.push(input);
+    }
+  });
+
+  // If there are any invalid quantities, display an error message and prevent form submission
+  if (invalidQuantities.length > 0) {
+    // Display error message
+    alert('Invalid quantity entered for one or more events!');
+
+    // Set focus on the first invalid quantity input field
+    invalidQuantities[0].focus();
+
+    // Prevent form submission
+    return false;
+  }
+
+  // If all quantities are valid, allow form submission
+  return true;
+};
+
+checkoutButton.addEventListener('click', event => {
+  const isValid = validateQuantity();
+
+  // Prevent form submission if quantity validation fails
+  if (!isValid) {
+    event.preventDefault();
+  }
+});
+/*stoppinng the user from entering invalid quantity not in range of min and max END*/
+
+
+>>>>>>> 245639c14b6b55164c7b00ef7681daced5e8ad12
 /***CART FUNCTIONALITY END***/
 
