@@ -15,8 +15,6 @@ class TicketController extends AbstractController
     
     public function index(ManagerRegistry $doctrine,Request $request,$id): Response
     {
-
-        dd($request);
         $entityManager = $doctrine->getManager();
         $repo = $entityManager->getRepository(Event::class);
         $event = $repo->findOneBy(['id'=>$id]);
