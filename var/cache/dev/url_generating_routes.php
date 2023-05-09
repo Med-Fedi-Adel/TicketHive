@@ -38,6 +38,7 @@ return [
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], [], []],
     'main.create_event' => [[], ['_controller' => 'App\\Controller\\MainController::createEventPage'], [], [['text', '/main/createevent']], [], [], []],
     'pdf_gen' => [[], ['_controller' => 'App\\Controller\\MainController::pdf_gen'], [], [['text', '/generate']], [], [], []],
+    'checkout' => [[], ['_controller' => 'App\\Controller\\PaymentController::checkout'], [], [['text', '/payment']], [], [], []],
     'app_pdf' => [[], ['_controller' => 'App\\Controller\\PdfController::index'], [], [['text', '/pdf']], [], [], []],
     'generated_pdf' => [[], ['_controller' => 'App\\Controller\\PdfController::generatePdf'], [], [['text', '/generated']], [], [], []],
     'ticket' => [['id'], ['_controller' => 'App\\Controller\\TicketController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ticket']], [], [], []],

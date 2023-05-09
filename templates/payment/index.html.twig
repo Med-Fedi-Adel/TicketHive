@@ -1,4 +1,7 @@
 {% extends 'base.html.twig' %}
+{% block title %}
+Payment Checkout
+{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{asset('assets/css/payment/payment.css')}}"/>
@@ -35,12 +38,12 @@
                         <input type="text" placeholder="your country">
                     </div>
 
-                    {% block  %}
+                    {# {% block  %} #}
                         <div class="inputBox">
                             <span>Total :</span>
                             <input type="number" placeholder="..." value="{{ total }}"> 
                         </div>
-                    {% endblock %}
+                    {# {% endblock %} #}
 
                 </div>
 

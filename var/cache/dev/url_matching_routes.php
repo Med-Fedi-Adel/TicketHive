@@ -29,6 +29,7 @@ return [
         '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/main/createevent' => [[['_route' => 'main.create_event', '_controller' => 'App\\Controller\\MainController::createEventPage'], null, null, null, false, false, null]],
         '/generate' => [[['_route' => 'pdf_gen', '_controller' => 'App\\Controller\\MainController::pdf_gen'], null, null, null, false, false, null]],
+        '/payment' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\PaymentController::checkout'], null, null, null, false, false, null]],
         '/pdf' => [[['_route' => 'app_pdf', '_controller' => 'App\\Controller\\PdfController::index'], null, null, null, false, false, null]],
         '/generated' => [[['_route' => 'generated_pdf', '_controller' => 'App\\Controller\\PdfController::generatePdf'], null, null, null, false, false, null]],
     ],

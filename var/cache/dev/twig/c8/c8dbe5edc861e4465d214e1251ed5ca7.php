@@ -24,6 +24,8 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
         $this->source = $this->getSourceContext();
 
+        $this->parent = false;
+
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
@@ -31,12 +33,6 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
             'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
-    }
-
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -48,8 +44,33 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "base.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 2
+        echo "
+<title>
+";
+        // line 4
+        $this->displayBlock('title', $context, $blocks);
+        // line 5
+        echo "</title>
+";
+        // line 6
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 12
+        echo "
+";
+        // line 13
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 15
+        echo "
+";
+        // line 16
+        $this->displayBlock('header', $context, $blocks);
+        // line 21
+        echo "
+
+";
+        // line 23
+        $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -260,23 +281,18 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  242 => 69,  236 => 66,  228 => 63,  215 => 52,  209 => 48,  203 => 47,  197 => 44,  193 => 43,  187 => 40,  183 => 39,  179 => 38,  174 => 35,  164 => 27,  159 => 24,  149 => 23,  136 => 17,  126 => 16,  108 => 13,  95 => 9,  91 => 7,  81 => 6,  62 => 4,  39 => 1,);
+        return array (  263 => 69,  257 => 66,  249 => 63,  236 => 52,  230 => 48,  224 => 47,  218 => 44,  214 => 43,  208 => 40,  204 => 39,  200 => 38,  195 => 35,  185 => 27,  180 => 24,  170 => 23,  157 => 17,  147 => 16,  129 => 13,  116 => 9,  112 => 7,  102 => 6,  83 => 4,  73 => 23,  69 => 21,  67 => 16,  64 => 15,  62 => 13,  59 => 12,  57 => 6,  54 => 5,  52 => 4,  48 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{# {% extends 'base.html.twig' %} #}
 
-
+<title>
 {% block title %}{{ event.name }}{% endblock %}
-
+</title>
 {% block stylesheets %}
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />
     <link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\" rel=\"stylesheet\" />

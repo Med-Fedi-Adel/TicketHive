@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class PaymentController extends AbstractController
 {   
@@ -14,7 +15,7 @@ class PaymentController extends AbstractController
     {
         $total = $request->get('total');
 
-        return $this->render('payment/checkout.html.twig', [
+        return $this->render('payment/index.html.twig', [
             'total' => $total
         ]);
     }
