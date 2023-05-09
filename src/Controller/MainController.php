@@ -10,9 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     #[Route('/main', name: 'main')]
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
-        return $this->render('main/index.html.twig');
+        $reposity = $doctrine -> getRepository(Event::class);
+        $today = new DateTime();
+        $eventT = $reposity -> findByDate ($today);
+        $threeDaysAhead = (new DateTime())->modify('+3 days');
+        $eventW = $reposity -> findByDateRange ($threeDaysAhead,$today);
+        $date = (new DateTime())->modify('+2 weeks');
+        $eventU = $reposity -> findByDateUpcoming ($date);
+        return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventW]);
     }
 
     #[Route('/main/createevent', name: 'main.create_event')]
