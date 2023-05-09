@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/png" href="images/icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
@@ -10,6 +9,10 @@
       href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
       rel="stylesheet"
     /> #}
+
+    <!-- favicon -->
+    <link rel="icon" href="/assets/images/faviconM.ico">
+
     <link rel="stylesheet" href="{{ asset('assets/css/main/style.css') }}" />
     <title>TicketHive</title>
 
@@ -20,7 +23,7 @@
     <header class="header">
       <!-- Nav Bar -->
       <nav class="nav">
-        <img src="public/assets/images/favicon.ico" alt="" class="nav__logo" id="logo" />
+        <img src="/assets/images/picc.png" alt="" class="nav__logo" id="logo" />
         <a class="navbar-brand" href="">TicketHive</a>
         <ul class="nav__links">
           <li class="nav__item">
@@ -35,7 +38,7 @@
           {# check if username=admin unique then show the admin button#}
           {% if app.session.get('username') == 'admin'%}
             <li class="nav__item">
-              <a class="nav__link" target="_blank" href="{{ path('admin_index') }}" style="color:#00ffdd;">Admin Dashboard</a>
+              <a class="nav__link" target="_blank" href="{{ path('admin') }}" style="color:#00ffdd;">Admin Dashboard</a>
             </li>
             <div class="app-header-actions">
               <button class="user-profile" id="userprofile">
@@ -396,7 +399,7 @@
           <a class="footer__link" target="_blank" href="contact/index.html.twig">Contact Us</a>
         </li>
       </ul>
-      <img src="#" alt="Logo" class="footer__logo" />
+      <img src="/assets/images/faviconP.png" alt="logo" class="nav__logo" id="logo" />
     </footer>
 
   </body>
