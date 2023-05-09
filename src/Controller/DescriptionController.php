@@ -10,14 +10,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DescriptionController extends AbstractController
 {
-    #[Route('/event/{id}', name: 'event_description')]
+    #[Route('/eventDescription/{id}', name: 'event_description')]
 
     public function showEventAction(ManagerRegistry $doctrine,$id): Response
     {
         $repo = $doctrine->getRepository(Event::class);
         // événement à partir de l'ID
-        $event = $repo->findOneBy(['id'=>$id]);
-        
+        $event = $repo->  findOneBy(['id'=>$id]);
+        if (!$event){
+            $this->addFlash('error',"Sorry! We can't find this event");
+            return $this->redirectToRoute('event');
+        }
         // Récupérer le nombre de billets disponibles
         $ticketsRemaining = $event->getNbplaces();
 
@@ -29,4 +32,3 @@ class DescriptionController extends AbstractController
         ]);
     }
 }
-
