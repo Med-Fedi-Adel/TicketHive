@@ -24,10 +24,19 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'title' => [$this, 'block_title'],
+            'stylesheets' => [$this, 'block_stylesheets'],
+            'javascripts' => [$this, 'block_javascripts'],
+            'header' => [$this, 'block_header'],
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,41 +48,116 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "payment/index.html.twig"));
 
-        // line 1
-        echo "<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
+        $this->parent = $this->loadTemplate("base.html.twig", "payment/index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    // line 2
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        // line 3
+        echo "Payment Checkout
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 6
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 7
+        echo "    <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/payment/payment.css"), "html", null, true);
+        echo "\"/>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 10
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 13
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 14
+        echo "<meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/payment/payment.css"), "html", null, true);
-        echo "\">
-    
-</head>
-
-
-<body>
-
-<div class=\"big-container\">
-
-
-    <div class=\"container0\">
-        <div>
-            <h3>Event Description </h3>
-
-        </div> 
-
-        <div>
-            <h3>Location</h3>
+";
         
-        </div>
-    </div>
-    
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 19
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 20
+        echo "
+    <div class=\"big-container\">
     
     <div class=\"container\">
-        <h3>Checkout Form </h3>
         <form action=\"\">
             <div class=\"row\">
                 <div class=\"col\">
@@ -91,16 +175,18 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
                         <input type=\"text\" placeholder=\"your country\">
                     </div>
 
-                    <div class=\"flex\">
-                        <div class=\"inputBox\">
-                            <span>Tickets :</span>
-                            <input type=\"number\" class=\"quantity\" id=\"quantity\" min=\"0\" value=\"1\" >
-                        </div>
-                        <div class=\"inputBox\">
+                    ";
+        // line 42
+        echo "                        <div class=\"inputBox\">
                             <span>Total :</span>
-                            <input type=\"number\" placeholder=\"...\"> 
+                            <input type=\"number\" placeholder=\"...\" value=\"";
+        // line 44
+        echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 44, $this->source); })()), "html", null, true);
+        echo "\"> 
                         </div>
-                    </div>
+                    ";
+        // line 47
+        echo "
                 </div>
 
                 <div class=\"col\">
@@ -111,14 +197,8 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
                         <span>cards accepted :</span>
                         <!-- <img src=\"card_img.png\" alt=\"\"> -->
                         <div class=\"credit-cards\" style=\"text-align: left ; width: 100%\">
-                            <img height=\"40\" src=\"";
-        // line 69
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/payment/cards.png"), "html", null, true);
-        echo "\"/>
-                            <img height=\"40\" src=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/payment/E-Dinar (1).png"), "html", null, true);
-        echo "\"/>
+                            <img height=\"40\" src=\"cards.png\"/>
+                            <img height=\"40\" src=\"E-Dinar (1).png\"/>
                         </div>
                     </div>
                     <div class=\"inputBox\">
@@ -150,15 +230,14 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
             <input type=\"submit\" value=\"Buy Now\" class=\"submit\">
         </form>
     </div>
-</div>        
-    
-</body>
-</html>";
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+</div> 
 
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
     }
 
@@ -174,42 +253,34 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
 
     public function getDebugInfo()
     {
-        return array (  120 => 70,  116 => 69,  51 => 7,  43 => 1,);
+        return array (  189 => 47,  184 => 44,  180 => 42,  157 => 20,  147 => 19,  134 => 14,  124 => 13,  106 => 10,  93 => 7,  83 => 6,  72 => 3,  62 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
+        return new Source("{% extends 'base.html.twig' %}
+{% block title %}
+Payment Checkout
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel=\"stylesheet\" href=\"{{asset('assets/css/payment/payment.css')}}\"/>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block header %}
+<meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/payment/payment.css') }}\">
-    
-</head>
+{% endblock %}
 
+{% block body %}
 
-<body>
-
-<div class=\"big-container\">
-
-
-    <div class=\"container0\">
-        <div>
-            <h3>Event Description </h3>
-
-        </div> 
-
-        <div>
-            <h3>Location</h3>
-        
-        </div>
-    </div>
-    
+    <div class=\"big-container\">
     
     <div class=\"container\">
-        <h3>Checkout Form </h3>
         <form action=\"\">
             <div class=\"row\">
                 <div class=\"col\">
@@ -227,16 +298,13 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
                         <input type=\"text\" placeholder=\"your country\">
                     </div>
 
-                    <div class=\"flex\">
-                        <div class=\"inputBox\">
-                            <span>Tickets :</span>
-                            <input type=\"number\" class=\"quantity\" id=\"quantity\" min=\"0\" value=\"1\" >
-                        </div>
+                    {# {% block  %} #}
                         <div class=\"inputBox\">
                             <span>Total :</span>
-                            <input type=\"number\" placeholder=\"...\"> 
+                            <input type=\"number\" placeholder=\"...\" value=\"{{ total }}\"> 
                         </div>
-                    </div>
+                    {# {% endblock %} #}
+
                 </div>
 
                 <div class=\"col\">
@@ -247,8 +315,8 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
                         <span>cards accepted :</span>
                         <!-- <img src=\"card_img.png\" alt=\"\"> -->
                         <div class=\"credit-cards\" style=\"text-align: left ; width: 100%\">
-                            <img height=\"40\" src=\"{{ asset('assets/images/payment/cards.png') }}\"/>
-                            <img height=\"40\" src=\"{{ asset('assets/images/payment/E-Dinar (1).png') }}\"/>
+                            <img height=\"40\" src=\"cards.png\"/>
+                            <img height=\"40\" src=\"E-Dinar (1).png\"/>
                         </div>
                     </div>
                     <div class=\"inputBox\">
@@ -280,9 +348,8 @@ class __TwigTemplate_e6030323cc46753d44d109f937d31cbe extends Template
             <input type=\"submit\" value=\"Buy Now\" class=\"submit\">
         </form>
     </div>
-</div>        
-    
-</body>
-</html>", "payment/index.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\payment\\index.html.twig");
+</div> 
+
+{% endblock %}", "payment/index.html.twig", "C:\\Users\\ghrib\\OneDrive\\Desktop\\4thpull\\TicketHive\\templates\\payment\\index.html.twig");
     }
 }
