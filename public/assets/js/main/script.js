@@ -289,7 +289,7 @@ logoutli.addEventListener('click',()=>{
 //go to addevent page
 
 addeventli.addEventListener('click',()=>{
-  window.location.href = "http://localhost:8000/event";
+  window.location.href = "http://localhost:8000/addEvent";
 })
 
 
@@ -382,6 +382,8 @@ checkoutBtn.addEventListener('click', (event) => {
   form.submit();
 });
 
+<<<<<<< HEAD
+=======
 /*stoppinng the user from entering invalid quantity not in range of min and max START*/
 const quantityInputs = document.querySelectorAll('.cart-quantity');
 const checkoutButton = document.querySelector('#checkout-btn');
@@ -428,5 +430,6 @@ checkoutButton.addEventListener('click', event => {
 /*stoppinng the user from entering invalid quantity not in range of min and max END*/
 
 
+>>>>>>> 245639c14b6b55164c7b00ef7681daced5e8ad12
 /***CART FUNCTIONALITY END***/
 

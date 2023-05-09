@@ -45,7 +45,7 @@ class Event
     private ?Client $clientid = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    private ?string $EventType = null;
+    private ?string $event_type = null;
 
     #[ORM\Column(nullable: true)]
     private ?float $longitude = null;
