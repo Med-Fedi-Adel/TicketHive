@@ -15,7 +15,9 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/addEvent' => [[['_route' => 'app_event', '_controller' => 'App\\Controller\\AddEventController::addEvent'], null, null, null, false, false, null]],
-        '/admin' => [[['_route' => 'admin_index', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
+        '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
+        '/cart' => [[['_route' => 'cart_index', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
+        '/cart_payment' => [[['_route' => 'cart_payment', '_controller' => 'App\\Controller\\CartController::payment'], null, null, null, false, false, null]],
         '/event' => [[['_route' => 'event', '_controller' => 'App\\Controller\\EventController::index'], null, null, null, false, false, null]],
         '/main/Today' => [[['_route' => 'event.filter.today', '_controller' => 'App\\Controller\\EventController::filterToday'], null, null, null, false, false, null]],
         '/main/Weekend' => [[['_route' => 'event.filter.weekend', '_controller' => 'App\\Controller\\EventController::filterWeekend'], null, null, null, false, false, null]],
@@ -47,15 +49,20 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/admin/user/([^/]++)(*:189)'
+                .'|/cart/(?'
+                    .'|add/([^/]++)(*:218)'
+                    .'|remove/([^/]++)(*:241)'
+                .')'
                 .'|/event(?'
-                    .'|Description/([^/]++)(*:198)'
+                    .'|Description/([^/]++)(*:279)'
                     .'|/(?'
-                        .'|([^/]++)(*:218)'
-                        .'|filter/([^/]++)(*:241)'
-                        .'|Search/Keywords(?:/([^/]++))?(*:278)'
+                        .'|([^/]++)(*:299)'
+                        .'|filter/([^/]++)(*:322)'
+                        .'|Search/Keywords(?:/([^/]++))?(*:359)'
                     .')'
                 .')'
-                .'|/ticket/([^/]++)(*:304)'
+                .'|/ticket/([^/]++)(*:385)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -66,11 +73,14 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        198 => [[['_route' => 'event_description', '_controller' => 'App\\Controller\\DescriptionController::showEventAction'], ['id'], null, null, false, true, null]],
-        218 => [[['_route' => 'event.filterType', '_controller' => 'App\\Controller\\EventController::filterByType'], ['eventType'], null, null, false, true, null]],
-        241 => [[['_route' => 'event.filter', '_controller' => 'App\\Controller\\EventController::filterBy'], ['type'], null, null, false, true, null]],
-        278 => [[['_route' => 'event.search', 'keywords' => null, '_controller' => 'App\\Controller\\EventController::search'], ['keywords'], null, null, false, true, null]],
-        304 => [
+        189 => [[['_route' => 'delete_user', '_controller' => 'App\\Controller\\AdminController::deleteUser'], ['id'], null, null, false, true, null]],
+        218 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        241 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::remove'], ['id'], null, null, false, true, null]],
+        279 => [[['_route' => 'event_description', '_controller' => 'App\\Controller\\DescriptionController::showEventAction'], ['id'], null, null, false, true, null]],
+        299 => [[['_route' => 'event.filterType', '_controller' => 'App\\Controller\\EventController::filterByType'], ['eventType'], null, null, false, true, null]],
+        322 => [[['_route' => 'event.filter', '_controller' => 'App\\Controller\\EventController::filterBy'], ['type'], null, null, false, true, null]],
+        359 => [[['_route' => 'event.search', 'keywords' => null, '_controller' => 'App\\Controller\\EventController::search'], ['keywords'], null, null, false, true, null]],
+        385 => [
             [['_route' => 'ticket', '_controller' => 'App\\Controller\\TicketController::index'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
