@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Event;
 use DateTime;
+use DateTimeImmutable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -42,16 +43,19 @@ class EventRepository extends ServiceEntityRepository
     /**
     * @return Event[] Returns an array of Event objects
     */
-    public function findByDate (DateTime $date) : array 
+    public function findByDate($dateString)
     {
-        return $this->createQueryBuilder('e')
-        ->andWhere('e.date = :dateJ')
-        ->setParameter('dateJ',$date)
-        ->orderBy('e.nbplaces','Asc')
-        ->setMaxResults(4)
-        ->setMaxResults(6)
-        ->getQuery()
-        ->getResult();
+        $qb = $this->createQueryBuilder('e');
+        
+        $qb->select('e')
+           ->where($qb->expr()->eq('DATE_FORMAT(e.date, "%Y-%m-%d")', ':date'))
+           ->setParameter('date', $dateString);
+        
+        // Add any additional conditions or sorting to your query as needed
+        
+        $query = $qb->getQuery();
+        
+        return $query->getResult();
     }
     public function findByDateRange (DateTime $threeDaysAhead , Datetime $today) : array
     {
@@ -59,6 +63,7 @@ class EventRepository extends ServiceEntityRepository
             ->andWhere('e.date BETWEEN :start AND :end')
             ->setParameter('start', $today)
             ->setParameter('end', $threeDaysAhead)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult();
     }
@@ -67,6 +72,7 @@ class EventRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('e')
             ->andWhere('e.date >= :start')
             ->setParameter('start', $weeks)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult();
     }

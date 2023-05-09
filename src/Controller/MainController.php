@@ -6,6 +6,11 @@ use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ManagerRegistry;
+use DateTime;
+use App\Repository\EventRepository;
+use App\Entity\Event;
+use DateTimeImmutable;
 
 class MainController extends AbstractController
 {
@@ -14,12 +19,19 @@ class MainController extends AbstractController
     {
         $reposity = $doctrine -> getRepository(Event::class);
         $today = new DateTime();
-        $eventT = $reposity -> findByDate ($today);
+        $today1 = $today->format('Y-m-d') ; 
+        $today1 = DateTimeImmutable::createFromFormat('Y-m-d',$today1);
+
+
+        //dump($today1) ; 
+       // $eventT = $reposity -> findAll();
+        $eventT = $reposity -> findByDate ($today1);
+        dd($eventT);
         $threeDaysAhead = (new DateTime())->modify('+3 days');
         $eventW = $reposity -> findByDateRange ($threeDaysAhead,$today);
         $date = (new DateTime())->modify('+2 weeks');
         $eventU = $reposity -> findByDateUpcoming ($date);
-        return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventW]);
+        return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventU]);
     }
 
     #[Route('/main/createevent', name: 'main.create_event')]

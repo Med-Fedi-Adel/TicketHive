@@ -112,26 +112,19 @@
           </button>
         </div>
         <div class="slider1">
-        {% for item in items %}
-   
-          <img src= id="slide1">
-          <img src="https://thefox.com.au/wp-content/uploads/2020/01/144A1391-1024x683.jpg" id="slide2">
-          <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?cs=srgb&dl=pexels-wendy-wei-1190298.jpg&fm=jpg" id="slide3">
-          <img src="https://media.istockphoto.com/id/1279483477/photo/we-are-going-to-party-as-if-theres-no-tomorrow.jpg?s=612x612&w=0&k=20&c=wPmd1hxQEDxhG2P-OwDW3EJ0WoyuW-lEBsPa8O09bwU=" id="slide4">
-          <div class="slider1-nav">
-            <a href="#slide1"></a>
-            <a href="#slide2"></a>  
-            <a href="#slide3"></a>
-            <a href="#slide4"></a>
+        {% if eventT is defined %}
+        {% for event in eventT %}
+          <img src={{event.image}} id="slide"+{{loop.index}}>
+            <a href="#slide"+{{loop.index}}></a>
           </div>
           <div class="text">
             <p>
-              Welcome to the party<br>
-              <span class="small">Sousse 12/09/2023</span>
+              {{event.name}}<br>
+              <span class="small">{{event.date}}</span>
             </p>
-            
           </div>
            {% endfor %}
+           {% endif %}
         </div>
                
 
