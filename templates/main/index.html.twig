@@ -23,13 +23,8 @@
     <header class="header">
       <!-- Nav Bar -->
       <nav class="nav">
-<<<<<<< HEAD
         <img src="public/assets/images/favicon.ico" alt="" class="nav__logo" id="logo" />
         <a class="navbar-brand" href="{{path ('main')}}">TicketHive</a>
-=======
-        <img src="/assets/images/picc.png" alt="" class="nav__logo" id="logo" />
-        <a class="navbar-brand" href="">TicketHive</a>
->>>>>>> 245639c14b6b55164c7b00ef7681daced5e8ad12
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#section--1">Events</a>
@@ -119,21 +114,63 @@
             <span>03</span>Coming Soon
           </button>
         </div>
-        <div class="slider1">
-        {% if eventT is defined %}
-        {% for event in eventT %}
-          <img src={{event.image}} id="slide"+{{loop.index}}>
-            <a href="#slide"+{{loop.index}}></a>
-          </div>
-          <div class="text">
-            <p>
-              {{event.name}}<br>
-              <span class="small"></span>
-            </p>
-          </div>
-           {% endfor %}
-           {% endif %}
-        </div>
+         <div class="slider1">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div> 
+         <div class="slider2">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div>
+         <div class="slider3">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div>
                
 
       </div>

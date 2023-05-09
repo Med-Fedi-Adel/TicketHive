@@ -44,32 +44,31 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
-        // line 2
-        echo "
-<title>
+        // line 1
+        echo "<title>
 ";
-        // line 4
+        // line 2
         $this->displayBlock('title', $context, $blocks);
-        // line 5
+        // line 3
         echo "</title>
 ";
-        // line 6
+        // line 4
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 10
         echo "
 ";
-        // line 13
+        // line 11
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 13
         echo "
 ";
-        // line 16
+        // line 14
         $this->displayBlock('header', $context, $blocks);
-        // line 21
+        // line 19
         echo "
 
 ";
-        // line 23
+        // line 21
         $this->displayBlock('body', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -79,7 +78,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 4
+    // line 2
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -89,7 +88,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 4, $this->source); })()), "name", [], "any", false, false, false, 4), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 2, $this->source); })()), "name", [], "any", false, false, false, 2), "html", null, true);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -98,7 +97,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 6
+    // line 4
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,11 +107,11 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 7
+        // line 5
         echo "    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />
     <link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\" rel=\"stylesheet\" />
     <link rel=\"stylesheet\" href=\"";
-        // line 9
+        // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/ticket/ticket.css"), "html", null, true);
         echo "\"/>
 
@@ -125,7 +124,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 13
+    // line 11
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -143,7 +142,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 16
+    // line 14
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -153,7 +152,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 17
+        // line 15
         echo "<meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
@@ -166,7 +165,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 23
+    // line 21
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,13 +175,13 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 24
+        // line 22
         echo "    <div class=\"ticket\">
         <div class=\"left\">
             <div class=\"image\"
                 style=\"background-image:url('";
-        // line 27
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 27, $this->source); })()), "image", [], "any", false, false, false, 27))), "html", null, true);
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 25, $this->source); })()), "image", [], "any", false, false, false, 25))), "html", null, true);
         echo "')\"
             >
                 <p class=\"admit-one\">
@@ -191,48 +190,48 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
                     <span>ADMIT ONE</span>
                 </p>
                 ";
-        // line 35
+        // line 33
         echo "            </div>
             <div class=\"ticket-info\">
                 <p class=\"date\">
                     <span>";
-        // line 38
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 38, $this->source); })()), "date", [], "any", false, false, false, 38), "l")), "html", null, true);
+        // line 36
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 36, $this->source); })()), "date", [], "any", false, false, false, 36), "l")), "html", null, true);
         echo "</span>
                     <span class=\"june-29\">";
-        // line 39
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 39, $this->source); })()), "date", [], "any", false, false, false, 39), "F jS"), "html", null, true);
+        // line 37
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 37, $this->source); })()), "date", [], "any", false, false, false, 37), "F jS"), "html", null, true);
         echo "</span>
                     <span>";
-        // line 40
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 40, $this->source); })()), "date", [], "any", false, false, false, 40), "Y"), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 38, $this->source); })()), "date", [], "any", false, false, false, 38), "Y"), "html", null, true);
         echo "</span>
                 </p>
                 <div class=\"show-name\">
                     <h1>";
-        // line 43
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 43, $this->source); })()), "name", [], "any", false, false, false, 43), "html", null, true);
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 41, $this->source); })()), "name", [], "any", false, false, false, 41), "html", null, true);
         echo "</h1>
                     <h2>";
-        // line 44
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 44, $this->source); })()), "clientid", [], "any", false, false, false, 44), "username", [], "any", false, false, false, 44), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 42, $this->source); })()), "clientid", [], "any", false, false, false, 42), "username", [], "any", false, false, false, 42), "html", null, true);
         echo "</h2>
                 </div>
                 <div class=\"time\">
                     <p>";
-        // line 47
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 47, $this->source); })()), "date", [], "any", false, false, false, 47), "g:i A"), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 45, $this->source); })()), "date", [], "any", false, false, false, 45), "g:i A"), "html", null, true);
         echo " <span>TO</span> ";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 47, $this->source); })()), "date", [], "any", false, false, false, 47), "+3 hours"), "g:i A"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 45, $this->source); })()), "date", [], "any", false, false, false, 45), "+3 hours"), "g:i A"), "html", null, true);
         echo "</p>
                     <p>DOORS <span>@</span> ";
-        // line 48
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 48, $this->source); })()), "date", [], "any", false, false, false, 48), "-1 hour"), "g:i A"), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 46, $this->source); })()), "date", [], "any", false, false, false, 46), "-1 hour"), "g:i A"), "html", null, true);
         echo "</p>
                 </div>
                 <p class=\"location\">
                     ";
-        // line 52
+        // line 50
         echo "                </p>
             </div>
         </div>
@@ -245,22 +244,22 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
             <div class=\"right-info-container\">
                 <div class=\"time\">
                     <p>";
-        // line 63
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 63, $this->source); })()), "date", [], "any", false, false, false, 63), "g:i A"), "html", null, true);
+        // line 61
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 61, $this->source); })()), "date", [], "any", false, false, false, 61), "g:i A"), "html", null, true);
         echo " <span>TO</span> ";
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 63, $this->source); })()), "date", [], "any", false, false, false, 63), "+3 hours"), "g:i A"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_date_modify_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 61, $this->source); })()), "date", [], "any", false, false, false, 61), "+3 hours"), "g:i A"), "html", null, true);
         echo "</p>
                 </div>
                 <div class=\"barcode\">
                     <img src=\"";
-        // line 66
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 66, $this->source); })()), "image", [], "any", false, false, false, 66))), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/events/" . twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 64, $this->source); })()), "image", [], "any", false, false, false, 64))), "html", null, true);
         echo "\" alt=\"QR code\">
                 </div>
                 <p class=\"ticket-number\">
                     #";
-        // line 69
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 69, $this->source); })()), "id", [], "any", false, false, false, 69), "html", null, true);
+        // line 67
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 67, $this->source); })()), "id", [], "any", false, false, false, 67), "html", null, true);
         echo "
                 </p>
             </div>
@@ -283,14 +282,12 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     public function getDebugInfo()
     {
-        return array (  263 => 69,  257 => 66,  249 => 63,  236 => 52,  230 => 48,  224 => 47,  218 => 44,  214 => 43,  208 => 40,  204 => 39,  200 => 38,  195 => 35,  185 => 27,  180 => 24,  170 => 23,  157 => 17,  147 => 16,  129 => 13,  116 => 9,  112 => 7,  102 => 6,  83 => 4,  73 => 23,  69 => 21,  67 => 16,  64 => 15,  62 => 13,  59 => 12,  57 => 6,  54 => 5,  52 => 4,  48 => 2,);
+        return array (  262 => 67,  256 => 64,  248 => 61,  235 => 50,  229 => 46,  223 => 45,  217 => 42,  213 => 41,  207 => 38,  203 => 37,  199 => 36,  194 => 33,  184 => 25,  179 => 22,  169 => 21,  156 => 15,  146 => 14,  128 => 11,  115 => 7,  111 => 5,  101 => 4,  82 => 2,  72 => 21,  68 => 19,  66 => 14,  63 => 13,  61 => 11,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{# {% extends 'base.html.twig' %} #}
-
-<title>
+        return new Source("<title>
 {% block title %}{{ event.name }}{% endblock %}
 </title>
 {% block stylesheets %}

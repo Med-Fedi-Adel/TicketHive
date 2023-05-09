@@ -300,14 +300,14 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
             // line 104
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 104)]), "html", null, true);
             echo "\" >
-          <img src = ";
+          <img src = \"TicketHive\\public\\uploads\\";
             // line 105
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105), "html", null, true);
-            echo " onmouseover=";
+            echo "\" onmouseover=\"TicketHive\\public\\uploads\\";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "gif", [], "any", false, false, false, 105), "html", null, true);
-            echo " onmouseout=";
+            echo "\" onmouseout=\"TicketHive\\public\\uploads\\";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105), "html", null, true);
-            echo " >
+            echo "\">
           <div class=\"textOver\">";
             // line 106
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "name", [], "any", false, false, false, 106), "html", null, true);
@@ -452,7 +452,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
          {% for event in events %}
       <div class=\"image\" >
           <a href=\"{{path ('event_description',{'id' : event.id })}}\" >
-          <img src = {{event.image}} onmouseover={{event.gif}} onmouseout={{event.image}} >
+          <img src = \"TicketHive\\public\\uploads\\{{event.image}}\" onmouseover=\"TicketHive\\public\\uploads\\{{event.gif}}\" onmouseout=\"TicketHive\\public\\uploads\\{{event.image}}\">
           <div class=\"textOver\">{{event.name}}</div>
           </a>
       </div>
