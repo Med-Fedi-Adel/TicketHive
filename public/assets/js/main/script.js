@@ -306,6 +306,8 @@ function showCartModal() {
   // Show the cart modal container
   cartModalContainer.classList.remove('hidden');
 }
+
+
 // Update the price when the quantity is changed
 const cartQuantities = document.querySelectorAll('.cart-quantity');
 const cartPrices = document.querySelectorAll('.cart-price');
@@ -423,7 +425,7 @@ checkoutButton.addEventListener('click', event => {
     event.preventDefault();
   }
 });
-/*stoppinng the user from entering invalid quantity not in range of min and max START*/
+/*stoppinng the user from entering invalid quantity not in range of min and max END*/
 
 
 /***CART FUNCTIONALITY END***/
