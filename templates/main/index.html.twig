@@ -333,7 +333,7 @@
                 <div class="detail-box">
                   <div class="cart-product-title">{{ item.event.name }} </div>
                     {# stocking here the initial price of the event and the quantity in stock#}
-                  <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
+                  <input type="number" name="quantisyty_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
 
 
                   <div class="cart-price">{{ item.event.price * item.quantity }}</div>
@@ -348,15 +348,14 @@
               <hr>
               <div>
                 <div class="remember-forgot">
-                  <div class=”total-title”>Total : </div>
-                  <div class=”total-price” id="total-price">{{ total }}</div>
+                  <div class="total-title">Total : </div>
+                  <input class="total-price" type="number" name="total" id="total-price" value="{{ total }}" readonly>
                 </div>
-                <button class="btn">Checkout</button>
+                {# saving the input values in the form here as hidden#}
+                <input type="hidden" name="items" value="{{ items|json_encode() }}">
+                <button type="submit" class="btn">Checkout</button>
               </div>
             </div>
-            {# saving the input values in the form here as hidden#}
-            <input type="hidden" name="items" value="{{ items|json_encode() }}">
-            <input type="hidden" name="total" value="{{ total }}">
 
         {% else %}
           <p>Cart is empty..</p>

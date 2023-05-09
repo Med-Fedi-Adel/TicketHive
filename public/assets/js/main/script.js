@@ -323,7 +323,7 @@ cartQuantities.forEach((cartQuantity, index) => {
     cartPrices.forEach(priceEl => {
       total += parseFloat(priceEl.innerText);
     });
-    totalPriceEl.innerText = total;
+    totalPriceEl.value = total;
   });
 });
 

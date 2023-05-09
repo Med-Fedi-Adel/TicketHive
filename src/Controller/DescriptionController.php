@@ -21,7 +21,9 @@ class DescriptionController extends AbstractController
         // Récupérer le nombre de billets disponibles
         $ticketsRemaining = $event->getNbplaces();
 
-        return $this->render('description/show_event.html.twig', [
+        //dd($ticketsRemaining);
+
+        return $this->render('description/index.html.twig', [
             'event' => $event,
             'tickets_remaining' => $ticketsRemaining
         ]);

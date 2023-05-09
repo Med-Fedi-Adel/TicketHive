@@ -13,21 +13,21 @@
     <div class="big-container">
     
     <div class="container">
-        <form action="">
+        <form action="{{path('ticket', {'id':1})}}" method="GET">
             <div class="row">
                 <div class="col">
                     <h3 class="title">Personal information</h3>
                     <div class="inputBox">
                         <span>First name :</span>
-                        <input type="text" placeholder="Enter your first name">
+                        <input type="text" placeholder="Enter your first name" required>
                     </div>
                     <div class="inputBox">
                         <span>Last name :</span>
-                        <input type="text" placeholder="Enter your last name">
+                        <input type="text" placeholder="Enter your last name" required>
                     </div>
                     <div class="inputBox">
                         <span>Country :</span>
-                        <input type="text" placeholder="your country">
+                        <input type="text" placeholder="your country" required>
                     </div>
 
                     <div class="inputBox">
@@ -51,33 +51,32 @@
                     </div>
                     <div class="inputBox">
                         <span> CIN :</span>
-                        <input type="text" placeholder="CIN or passport number">
+                        <input type="text" placeholder="CIN or passport number" required>
                     </div>
                     <div class="inputBox">
                         <span>Full Name on card :</span>
-                        <input type="text" placeholder="Name on card">
+                        <input type="text" placeholder="Name on card" required>
                     </div>
                     <div class="inputBox">
                         <span>credit card number :</span>
-                        <input type="number" placeholder="Type a valid number">
+                        <input type="number" placeholder="Type a valid number" required>
                     </div>
 
                     <div class="flex">
                         <div class="inputBox">
                             <span>exp month :</span>
-                            <input type="text" placeholder="Janvier">
+                            <input type="text" placeholder="Janvier" required>
                         </div>
                         <div class="inputBox">
                             <span>exp year :</span>
-                            <input type="number" placeholder="2024">
+                            <input type="number" placeholder="2024" required>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <input type="submit" value="Buy Now" class="submit">
+            <input type="submit" value="Buy Now" class="submit" id="submit">
         </form>
     </div>
 </div> 
-
 {% endblock %}
