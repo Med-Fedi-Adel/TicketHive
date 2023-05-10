@@ -3,7 +3,7 @@ namespace App\Controller;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Event;
@@ -14,7 +14,7 @@ class CartController extends AbstractController
 /**
 * @Route("/cart", name="cart_index")
 */
-public function index(SessionInterface $session, EventRepository $eventRepository)
+public function index(Session $session, EventRepository $eventRepository)
 {
  $cart = $session->get('cart', []);
  $cartWithData = [];
@@ -34,16 +34,13 @@ public function index(SessionInterface $session, EventRepository $eventRepositor
 }
 
 /**
-* @Route("/cart/add/{id}", name="cart_add")
+* @Route("/cart/add", name="cart_add")
 */
-public function add($id, SessionInterface $session)
+public function add(Session $session,Request $request)
 {
 $cart = $session->get('cart', []);
-if (!empty($cart[$id])) {
- $cart[$id]++; // si le produit existe déjà, on incrémente la quantité
-} else {
- $cart[$id] = 1; // sinon, on ajoute le produit avec la quantité 1
-}
+$id = $request->get('id');
+$cart[$id]= ($cart[$id]?? 0 ) +1;
  $session->set('cart', $cart);
  return $this->redirectToRoute("cart_index");
 }

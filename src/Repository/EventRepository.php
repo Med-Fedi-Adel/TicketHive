@@ -52,7 +52,6 @@ class EventRepository extends ServiceEntityRepository
            ->setParameter('date', $dateString);
         
         // Add any additional conditions or sorting to your query as needed
-        
         $query = $qb->getQuery();
         
         return $query->getResult();

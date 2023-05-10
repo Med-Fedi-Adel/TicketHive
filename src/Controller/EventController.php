@@ -61,7 +61,9 @@ class EventController extends AbstractController
         $reposity = $doctrine -> getRepository(Event::class);
         $today = new DateTime();
         $eventT = $reposity -> findByDate ($today);
-        return $this->render('main/index.html.twig', ['events' => $event]);
+
+
+        return $this->render('main/index.html.twig', ['events' => $eventT]);
     }
     #[Route('/main/Weekend',name : 'event.filter.weekend')]
     public function filterWeekend (ManagerRegistry $doctrine) : Response {

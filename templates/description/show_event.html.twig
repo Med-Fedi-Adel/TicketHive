@@ -105,7 +105,7 @@
 
            {% if tickets_remaining > 0 %}
             <div class="bouton-lien">
-                <form action="{{ path('cart_add', {'id': event.id}) }}" method="post">
+                <form action="{{ path('cart_add', {'id': event.id}) }}" method="get">
                     <button type="submit" class="btn btn-primary">Add to Cart</button>
                 </form>
             </div>
