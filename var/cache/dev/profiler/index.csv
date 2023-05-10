@@ -3084,3 +3084,10 @@ e1d8be,::1,GET,http://localhost:8000/main,1683743916,,200
 b0183d,::1,GET,http://localhost:8000/main,1683744199,d61c45,500
 d61c45,::1,GET,http://localhost:8000/main,1683744199,,500
 9aac45,::1,GET,http://localhost:8000/main,1683744434,,200
+eb8ce4,::1,GET,http://localhost:8000/event,1683746305,,200
+74b662,::1,GET,http://localhost:8000/public/assets/images/favicon.ico,1683746305,dfdbfc,404
+dfdbfc,::1,GET,http://localhost:8000/public/assets/images/favicon.ico,1683746305,,404
+b10755,::1,GET,http://localhost:8000/icon.png,1683746306,427f2c,404
+427f2c,::1,GET,http://localhost:8000/icon.png,1683746306,,404
+9489dc,::1,GET,http://localhost:8000/img/icon.png,1683746306,4abbe2,404
+4abbe2,::1,GET,http://localhost:8000/img/icon.png,1683746306,,404
