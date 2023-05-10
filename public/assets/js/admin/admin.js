@@ -89,24 +89,4 @@ document.addEventListener('DOMContentLoaded', function() {
         eventsChart.resize();
     });
 });
-//
-// let feedback = document.querySelector("#feedbacks");
-// let annGraph = new Chart(feedback, {
-//     type: "line",
-//     data: {
-//         labels: {{ dates|raw }},
-// datasets: [{
-//     label: "Nombre de feedback",
-//     data: {{ feedbacks|raw }}
-// }]
-// },
-// options: {
-//     scales: {
-//         yAxes: [{
-//             ticks: {
-//                 beginAtZero: true
-//             }
-//         }]
-//     }
-// }
-// });
+
