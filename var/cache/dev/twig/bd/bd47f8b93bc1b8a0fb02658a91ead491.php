@@ -144,7 +144,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
         echo " \">Concerts</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
         // line 62
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Cineam"]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Cinema"]);
         echo " \">Cinema</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
         // line 63
@@ -300,13 +300,13 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
             // line 104
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 104)]), "html", null, true);
             echo "\" >
-          <img src = \"TicketHive\\public\\uploads\\";
+          <img src = \"";
             // line 105
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105), "html", null, true);
-            echo "\" onmouseover=\"TicketHive\\public\\uploads\\";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "gif", [], "any", false, false, false, 105), "html", null, true);
-            echo "\" onmouseout=\"TicketHive\\public\\uploads\\";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105))), "html", null, true);
+            echo "\" onmouseover=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "gif", [], "any", false, false, false, 105))), "html", null, true);
+            echo "\" onmouseout=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105))), "html", null, true);
             echo "\">
           <div class=\"textOver\">";
             // line 106
@@ -409,7 +409,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Festivals'}) }} \">Festivals</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Theatre'}) }} \">Theatre</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Concerts'}) }} \">Concerts</a></li>
-                    <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Cineam'}) }} \">Cinema</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Cinema'}) }} \">Cinema</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Others'}) }} \">Others</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event')}}\">All</a></li>
                   </ul> 
@@ -452,7 +452,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
          {% for event in events %}
       <div class=\"image\" >
           <a href=\"{{path ('event_description',{'id' : event.id })}}\" >
-          <img src = \"TicketHive\\public\\uploads\\{{event.image}}\" onmouseover=\"TicketHive\\public\\uploads\\{{event.gif}}\" onmouseout=\"TicketHive\\public\\uploads\\{{event.image}}\">
+          <img src = \"{{ asset('assets/images/uploads/' ~ event.image) }}\" onmouseover=\"{{ asset('assets/images/uploads/' ~ event.gif) }}\" onmouseout=\"{{ asset('assets/images/uploads/' ~ event.image) }}\">
           <div class=\"textOver\">{{event.name}}</div>
           </a>
       </div>

@@ -18,7 +18,11 @@ return [
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/cart' => [[['_route' => 'cart_index', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
         '/cart/checkout' => [[['_route' => 'cart_payment', '_controller' => 'App\\Controller\\CartController::payment'], null, null, null, false, false, null]],
+<<<<<<< HEAD
         '/checkout' => [[['_route' => 'checkout', '_controller' => 'App\\Controller\\CheckoutController::checkout'], null, null, null, false, false, null]],
+=======
+        '/users/search' => [[['_route' => 'search_users', '_controller' => 'App\\Controller\\CartController::searchUsers'], null, null, null, false, false, null]],
+>>>>>>> main
         '/event' => [[['_route' => 'event', '_controller' => 'App\\Controller\\EventController::index'], null, null, null, false, false, null]],
         '/main/Today' => [[['_route' => 'event.filter.today', '_controller' => 'App\\Controller\\EventController::filterToday'], null, null, null, false, false, null]],
         '/main/Weekend' => [[['_route' => 'event.filter.weekend', '_controller' => 'App\\Controller\\EventController::filterWeekend'], null, null, null, false, false, null]],
