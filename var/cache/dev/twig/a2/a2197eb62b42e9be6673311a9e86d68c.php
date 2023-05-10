@@ -494,9 +494,9 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
                 echo "            <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 139)]), "html", null, true);
                 echo "\">
-      <img src=\"TicketHive\\public\\uploads\\";
+      <img src=\"";
                 // line 140
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 140), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 140))), "html", null, true);
                 echo "\"  id=\"slide";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 140), "html", null, true);
                 echo "\">
@@ -522,7 +522,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 <div class=\"text\">
   ";
         // line 146
-        if (array_key_exists("eventT", $context)) {
+        if (array_key_exists("eventW", $context)) {
             // line 147
             echo "    ";
             $context['_parent'] = $context;
@@ -572,9 +572,9 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
                 echo "            <a href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 158)]), "html", null, true);
                 echo "\">
-      <img src=\"TicketHive\\public\\uploads\\";
+      <img src=\"";
                 // line 159
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 159), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 159))), "html", null, true);
                 echo "\" id=\"slide";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 159), "html", null, true);
                 echo "\">
@@ -600,7 +600,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 <div class=\"text\">
   ";
         // line 165
-        if (array_key_exists("eventT", $context)) {
+        if (array_key_exists("eventU", $context)) {
             // line 166
             echo "    ";
             $context['_parent'] = $context;
@@ -666,11 +666,15 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         // line 164
 =======
         // line 193
+<<<<<<< HEAD
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sports"]);
+=======
 >>>>>>> main
 =======
         // line 193
 >>>>>>> main
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sport"]);
+>>>>>>> main
         echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/sport.jpg"), "html", null, true);
         echo "');\">
@@ -1391,13 +1395,13 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             {% if eventT is defined %}
             {% for event in eventT %}
             <a href=\"{{path ('event_description',{'id' : event.id })}}\">
-      <img src=\"TicketHive\\public\\uploads\\{{event.image}}\"  id=\"slide{{loop.index}}\">
+      <img src=\"{{ asset('assets/images/uploads/' ~ event.image) }}\"  id=\"slide{{loop.index}}\">
       </a>
     {% endfor %}
   {% endif %}
 </div>
 <div class=\"text\">
-  {% if eventT is defined %}
+  {% if eventW is defined %}
     {% for event in eventT %}
       <p>
         {{event.name}}<br>
@@ -1410,13 +1414,13 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             {% if eventT is defined %}
             {% for event in eventT %}
             <a href=\"{{path ('event_description',{'id' : event.id })}}\">
-      <img src=\"TicketHive\\public\\uploads\\{{event.image}}\" id=\"slide{{loop.index}}\">
+      <img src=\"{{ asset('assets/images/uploads/' ~ event.image) }}\" id=\"slide{{loop.index}}\">
       </a>
     {% endfor %}
   {% endif %}
 </div>
 <div class=\"text\">
-  {% if eventT is defined %}
+  {% if eventU is defined %}
     {% for event in eventT %}
       <p>
         {{event.name}}<br>
@@ -1444,7 +1448,7 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
             </a>
           </li>
           <li>
-             <a href=\"{{ path ('event.filterType',{'eventType': 'Sport'}) }}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');\">
+             <a href=\"{{ path ('event.filterType',{'eventType': 'Sports'}) }}\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');\">
               <h2 class=\"card__name\">Sport</h2>
               <p class=\"catP\">Get your adrenaline pumping with our thrilling sports events and buy your tickets now.</p>
             </a>
