@@ -27,12 +27,9 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $this->parent = false;
 
         $this->blocks = [
-            'stylesheets' => [$this, 'block_stylesheets'],
-<<<<<<< HEAD
             'title' => [$this, 'block_title'],
-=======
+            'stylesheets' => [$this, 'block_stylesheets'],
             'header' => [$this, 'block_header'],
->>>>>>> main
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -48,34 +45,15 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
-        echo "<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    ";
-        // line 7
-        $this->displayBlock('stylesheets', $context, $blocks);
-<<<<<<< HEAD
-        // line 12
-        echo "    <title>";
+        echo "<title>
+";
+        // line 2
         $this->displayBlock('title', $context, $blocks);
+        // line 3
         echo "</title>
-</head>
-<body>
-    ";
-        // line 15
-        $this->displayBlock('body', $context, $blocks);
-        // line 20
-        echo "
-    ";
-        // line 21
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
-        echo "</body>
-</html>";
-=======
+";
+        // line 4
+        $this->displayBlock('stylesheets', $context, $blocks);
         // line 10
         echo "
 
@@ -91,14 +69,14 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $this->displayBlock('body', $context, $blocks);
         // line 73
         echo "
-<<<<<<< HEAD
-=======
 
->>>>>>> main
+
 ";
-        // line 78
+        // line 76
         $this->displayBlock('javascripts', $context, $blocks);
->>>>>>> main
+        // line 78
+        echo "
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -107,7 +85,26 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 7
+    // line 2
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["event"]) || array_key_exists("event", $context) ? $context["event"] : (function () { throw new RuntimeError('Variable "event" does not exist.', 2, $this->source); })()), "name", [], "any", false, false, false, 2), "html", null, true);
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 4
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -117,14 +114,15 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 8
-        echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />
-        <link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\" rel=\"stylesheet\" />
-        <link rel=\"stylesheet\" href=\"";
-        // line 10
+        // line 5
+        echo "    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />
+    <link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\" rel=\"stylesheet\" />
+    <link rel=\"stylesheet\" href=\"";
+        // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/ticket/ticket.css"), "html", null, true);
         echo "\"/>
-    ";
+
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -133,10 +131,6 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-<<<<<<< HEAD
-    // line 12
-    public function block_title($context, array $blocks = [])
-=======
     // line 13
     public function block_header($context, array $blocks = [])
     {
@@ -270,51 +264,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-    // line 78
-    public function block_javascripts($context, array $blocks = [])
->>>>>>> main
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Base";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-<<<<<<< HEAD
-    // line 15
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 16
-        echo "        <div>
-            Hello, World!
-        </div>
-    ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 21
+    // line 76
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -324,8 +274,6 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 22
-        echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -334,8 +282,6 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-=======
->>>>>>> main
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -343,21 +289,11 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  160 => 22,  150 => 21,  137 => 16,  127 => 15,  108 => 12,  96 => 10,  92 => 8,  82 => 7,  71 => 23,  69 => 21,  66 => 20,  64 => 15,  57 => 12,  55 => 7,  47 => 1,);
-=======
-        return array (  267 => 78,  250 => 66,  244 => 63,  236 => 60,  223 => 49,  217 => 45,  211 => 44,  205 => 41,  201 => 40,  195 => 37,  191 => 36,  187 => 35,  182 => 32,  172 => 24,  167 => 21,  157 => 20,  144 => 14,  134 => 13,  121 => 7,  117 => 5,  107 => 4,  88 => 2,  78 => 78,  71 => 73,  69 => 20,  65 => 18,  63 => 13,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
->>>>>>> main
+        return array (  268 => 76,  251 => 66,  245 => 63,  237 => 60,  224 => 49,  218 => 45,  212 => 44,  206 => 41,  202 => 40,  196 => 37,  192 => 36,  188 => 35,  183 => 32,  173 => 24,  168 => 21,  158 => 20,  145 => 14,  135 => 13,  122 => 7,  118 => 5,  108 => 4,  89 => 2,  78 => 78,  76 => 76,  71 => 73,  69 => 20,  65 => 18,  63 => 13,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext()
     {
-<<<<<<< HEAD
-        return new Source("<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-=======
         return new Source("<title>
 {% block title %}{{ event.name }}{% endblock %}
 </title>
@@ -372,37 +308,70 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
 {% block header %}
 <meta charset=\"UTF-8\">
->>>>>>> main
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    {% block stylesheets %}
-        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" />
-        <link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap\" rel=\"stylesheet\" />
-        <link rel=\"stylesheet\" href=\"{{asset('assets/css/ticket/ticket.css')}}\"/>
-    {% endblock %}
-    <title>{% block title %}Base{% endblock %}</title>
-</head>
-<body>
-    {% block body %}
-        <div>
-            Hello, World!
-        </div>
-    {% endblock %}
-
-<<<<<<< HEAD
-    {% block javascripts %}
-    {% endblock %}
-</body>
-</html>", "base.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\base.html.twig");
-=======
 {% endblock %}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> main
+{% block body %}
+    <div class=\"ticket\">
+        <div class=\"left\">
+            <div class=\"image\"
+                style=\"background-image:url('{{ asset('uploads/' ~ event.image) }}')\"
+            >
+                <p class=\"admit-one\">
+                    <span>ADMIT ONE</span>
+                    <span>ADMIT ONE</span>
+                    <span>ADMIT ONE</span>
+                </p>
+                {# <img src=\"{{ asset('uploads/' ~ event.image) }}\" width=\"275\" height=\"320\"> #}
+            </div>
+            <div class=\"ticket-info\">
+                <p class=\"date\">
+                    <span>{{ event.date|date('l')|upper }}</span>
+                    <span class=\"june-29\">{{ event.date|date('F jS') }}</span>
+                    <span>{{ event.date|date('Y') }}</span>
+                </p>
+                <div class=\"show-name\">
+                    <h1>{{ event.name }}</h1>
+                    <h2>{{ event.clientid.username }}</h2>
+                </div>
+                <div class=\"time\">
+                    <p>{{ event.date|date('g:i A') }} <span>TO</span> {{ event.date|date_modify('+3 hours')|date('g:i A') }}</p>
+                    <p>DOORS <span>@</span> {{ event.date|date_modify('-1 hour')|date('g:i A') }}</p>
+                </div>
+                <p class=\"location\">
+                    {# <span class=\"separator\"><i class=\"far fa-smile\"></i></span><span>{{ event.location }}</span> #}
+                </p>
+            </div>
+        </div>
+        <div class=\"right\">
+            <p class=\"admit-one\">
+                <span>ADMIT ONE</span>
+                <span>ADMIT ONE</span>
+                <span>ADMIT ONE</span>
+            </p>
+            <div class=\"right-info-container\">
+                <div class=\"time\">
+                    <p>{{ event.date|date('g:i A') }} <span>TO</span> {{ event.date|date_modify('+3 hours')|date('g:i A') }}</p>
+                </div>
+                <div class=\"barcode\">
+                    <img src=\"{{ asset('uploads/events/' ~ event.image) }}\" alt=\"QR code\">
+                </div>
+                <p class=\"ticket-number\">
+                    #{{ event.id }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
 {% block javascripts %}
-{% endblock %}", "base.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\base.html.twig");
->>>>>>> main
+{% endblock %}
+
+", "base.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\base.html.twig");
     }
 }
