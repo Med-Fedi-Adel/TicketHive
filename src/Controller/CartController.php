@@ -91,12 +91,26 @@ public function payment(Request $request, SessionInterface $session, EventReposi
 //    dd($cartWithData);
 
 
- return $this->redirectToRoute('paymentEvent', [
- 'items' => $cartWithData,
- 'total' => $total,
+    return $this->redirectToRoute('paymentEvent', [
+        'items' => json_encode($cartWithData),
+        'total' => $total,
+    ]);
 
-]);
 
 }
+
+    /**
+     * @Route("/users/search", name="search_users")
+     */
+    public function searchUsers(Request $request, UserRepository $userRepository): Response
+    {
+        $searchQuery = $request->query->get('q');
+        $users = $userRepository->findByUsername($searchQuery);
+
+        return $this->render('admin/search.html.twig', [
+            'users' => $users,
+            'searchQuery' => $searchQuery,
+        ]);
+    }
 
 }
