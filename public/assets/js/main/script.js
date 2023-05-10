@@ -258,7 +258,7 @@ function animateLetters() {
 
 animateLetters();
 
-  
+
 //dropdown for user to update , addevent and logout
 
 const button_profile = document.getElementById('userprofile')
@@ -324,7 +324,7 @@ cartQuantityInputs.forEach((input) => {
   });
 });
 
-/*<<<<<<< HEAD
+/***<<<<<<< HEAD
 
 // Calculate total cart price
 function calculateTotalPrice() {
