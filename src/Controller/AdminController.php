@@ -74,42 +74,42 @@ class AdminController extends AbstractController
         $festivals = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Festivals')
             ->getQuery()
             ->getSingleScalarResult();
         $sport = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Sport')
             ->getQuery()
             ->getSingleScalarResult();
         $concerts = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Concerts')
             ->getQuery()
             ->getSingleScalarResult();
         $theatre = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Theatre')
             ->getQuery()
             ->getSingleScalarResult();
         $cinema = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Cinema')
             ->getQuery()
             ->getSingleScalarResult();
         $other = $entityManager->createQueryBuilder()
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
-            ->where('e.EventType = :EventType')
+            ->where('e.event_type  = :EventType')
             ->setParameter('EventType', 'Other')
             ->getQuery()
             ->getSingleScalarResult();
@@ -118,7 +118,6 @@ class AdminController extends AbstractController
         $eventData = [$festivals, $sport, $concerts, $theatre, $cinema, $other];
 
 //        dd($eventData); debugged
-
 
 
         return $this->render('admin/index.html.twig', [

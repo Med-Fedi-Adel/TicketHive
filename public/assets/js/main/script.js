@@ -293,8 +293,16 @@ addeventli.addEventListener('click',()=>{
 })
 
 
-
-/***CART FUNCTIONALITY END***/
+/***CART FUNCTIONALITY START***/
+    // CART WINDOW JS
+// Find the cart icon link and the cart modal container
+const openCartIcon = document.getElementById('open-cart-icon');
+const cartModalContainer = document.querySelector('.modal-container');
+const closeButton = document.querySelector('.close-button');
+// Show the cart modal container
+openCartIcon.addEventListener('click', () => cartModalContainer.classList.remove('hidden'));
+// Hide the cart modal container
+closeButton.addEventListener('click', () => cartModalContainer.classList.add('hidden'));
 
 // Get DOM elements
 

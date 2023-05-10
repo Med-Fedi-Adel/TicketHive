@@ -91,10 +91,8 @@ public function payment(Request $request, SessionInterface $session, EventReposi
 //    dd($cartWithData);
 
 
-
-
  return $this->redirectToRoute('paymentEvent', [
- 'items' => $CartWithData,
+ 'items' => $cartWithData,
  'total' => $total,
 
 ]);
