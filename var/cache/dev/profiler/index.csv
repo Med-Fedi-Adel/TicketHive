@@ -1811,3 +1811,7 @@ cf12f6,::1,GET,http://localhost:8000/TicketHive/public/uploads/645ad09bd0fac.png
 >>>>>>> main
 =======
 >>>>>>> main
+9fbada,127.0.0.1,GET,http://127.0.0.1:8000/main,1683711323,a86623,500
+a86623,127.0.0.1,GET,http://127.0.0.1:8000/main,1683711323,,500
+89e047,127.0.0.1,GET,http://127.0.0.1:8000/main,1683711325,bfa7a8,500
+bfa7a8,127.0.0.1,GET,http://127.0.0.1:8000/main,1683711325,,500
