@@ -34,7 +34,7 @@ class AddEventController extends AbstractController
             $newfilename = uniqid().'.'.$imageFile->guessExtension();
             try{
                 $imageFile->move(
-                    $this->getParameter('kernel.project_dir').'/public/uploads',
+                    $this->getParameter('kernel.project_dir').'/public/assets/images/uploads',
                     $newfilename
                 );
                 $event->setImage($newfilename);

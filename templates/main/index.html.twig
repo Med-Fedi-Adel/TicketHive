@@ -143,7 +143,7 @@
   {% endif %}
 </div>
 <div class="text">
-  {% if eventT is defined %}
+  {% if eventW is defined %}
     {% for event in eventT %}
       <p>
         {{event.name}}<br>
@@ -162,7 +162,7 @@
   {% endif %}
 </div>
 <div class="text">
-  {% if eventT is defined %}
+  {% if eventU is defined %}
     {% for event in eventT %}
       <p>
         {{event.name}}<br>
@@ -190,7 +190,7 @@
             </a>
           </li>
           <li>
-             <a href="{{ path ('event.filterType',{'eventType': 'Sport'}) }}" target="_blank" class="cardGrid" style="background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');">
+             <a href="{{ path ('event.filterType',{'eventType': 'Sports'}) }}" target="_blank" class="cardGrid" style="background-image: url('{{ asset('assets/images/main/catalogue/sport.jpg') }}');">
               <h2 class="card__name">Sport</h2>
               <p class="catP">Get your adrenaline pumping with our thrilling sports events and buy your tickets now.</p>
             </a>
