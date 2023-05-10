@@ -1123,6 +1123,7 @@ b5d792,::1,GET,http://localhost:8000/icon.png,1683657114,,404
 b696df,::1,GET,http://localhost:8000/E-Dinar%20(1).png,1683657121,414f43,404
 414f43,::1,GET,http://localhost:8000/E-Dinar%20(1).png,1683657121,,404
 <<<<<<< HEAD
+<<<<<<< HEAD
 44e3d2,::1,GET,http://localhost:8000/admin,1683679131,32b6d9,500
 32b6d9,::1,GET,http://localhost:8000/admin,1683679131,,500
 dd0653,::1,GET,http://localhost:8000/event/Festivals,1683679133,,200
@@ -1487,6 +1488,8 @@ ae92c6,::1,GET,http://localhost:8000/cards.png,1683684683,2ffd44,404
 b66b28,::1,GET,http://localhost:8000/E-Dinar%20(1).png,1683684684,272e5d,404
 272e5d,::1,GET,http://localhost:8000/E-Dinar%20(1).png,1683684684,,404
 =======
+=======
+>>>>>>> main
 4ff1ca,::1,GET,http://localhost:8000/event/Cinema,1683669620,,302
 83dba4,::1,GET,http://localhost:8000/event,1683669621,,200
 8c0136,::1,GET,http://localhost:8000/onmouseover=,1683669621,2347c4,404
@@ -1804,4 +1807,7 @@ bf6f25,::1,GET,http://localhost:8000/public/assets/images/favicon.ico,1683674821
 bc993e,::1,GET,http://localhost:8000/public/assets/images/favicon.ico,1683674821,,404
 d9939e,::1,GET,http://localhost:8000/TicketHive/public/uploads/645ad09bd0fac.png,1683674821,cf12f6,404
 cf12f6,::1,GET,http://localhost:8000/TicketHive/public/uploads/645ad09bd0fac.png,1683674821,,404
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
