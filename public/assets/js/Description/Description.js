@@ -1,5 +1,7 @@
 "use strict";
 
+console.log('aaaa') ;
+
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 

@@ -310,7 +310,7 @@ const cartItemsContainer = document.querySelector('.cart-items-container');
 const cartQuantityInputs = document.querySelectorAll('.cart-quantity');
 const cartPriceElements = document.querySelectorAll('.cart-price');
 const totalPriceElement = document.querySelector('#total-price');
-const checkoutButton = document.querySelector('.btn');
+
 
 
 // Increase or decrease cart item quantity
@@ -324,7 +324,7 @@ cartQuantityInputs.forEach((input) => {
   });
 });
 
-<<<<<<< HEAD
+
 
 // Calculate total cart price
 function calculateTotalPrice() {
