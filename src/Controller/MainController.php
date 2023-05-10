@@ -2,36 +2,48 @@
 
 namespace App\Controller;
 
-use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\Persistence\ManagerRegistry;
-use DateTime;
+use Symfony\Component\HttpFoundation\Response;
 use App\Repository\EventRepository;
-use App\Entity\Event;
-use DateTimeImmutable;
+use Dompdf\Options;
+use DateTime;
 
 class MainController extends AbstractController
 {
     #[Route('/main', name: 'main')]
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(Session $session, EventRepository $eventRepository): Response
     {
-        $reposity = $doctrine -> getRepository(Event::class);
+        // events
         $today = new DateTime();
-        //$today1 = $today->format('Y-m-d') ; 
-        //$today1 = DateTimeImmutable::createFromFormat('Y-m-d',$today1);
-
-
-        //dump($today1) ; 
-      // $eventT = $reposity -> findAll();
-        $eventT = $reposity -> findByDate ($today);
-        // dd($eventT);
+        $eventT = $eventRepository->findByDate($today);
         $threeDaysAhead = (new DateTime())->modify('+3 days');
-        $eventW = $reposity -> findByDateRange ($threeDaysAhead,$today);
+        $eventW = $eventRepository->findByDateRange($threeDaysAhead, $today);
         $date = (new DateTime())->modify('+2 weeks');
-        $eventU = $reposity -> findByDateUpcoming ($date);
-    return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventU]);
+        $eventU = $eventRepository->findByDateUpcoming($date);
+
+        // cart
+        $cart = $session->get('cart', []);
+        $cartWithData = [];
+        $total = 0;
+        foreach ($cart as $id => $quantity) {
+            $event = $eventRepository->find($id);
+            if (!$event) {
+                continue;
+            }
+            $subtotal = $event->getPrice() * $quantity;
+            $total += $subtotal;
+            array_push($cartWithData, ['event' => $event, 'quantity' => $quantity]);
+        }
+
+        return $this->render('main/index.html.twig', [
+            'eventT' => $eventT,
+            'eventW' => $eventW,
+            'eventU' => $eventU,
+            'items' => $cartWithData,
+            'total' => $total
+        ]);
     }
 
     #[Route('/main/createevent', name: 'main.create_event')]
@@ -40,8 +52,9 @@ class MainController extends AbstractController
         return $this->render('main/create.html.twig');
     }
 
-    #[Route('/generate',name:'pdf_gen')]
-    public function pdf_gen(){
+    #[Route('/generate', name: 'pdf_gen')]
+    public function pdf_gen()
+    {
         $html = $this->renderView('pdf/invoice.html');
 
         // Configure Dompdf options

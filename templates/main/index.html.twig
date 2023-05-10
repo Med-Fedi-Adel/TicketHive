@@ -390,7 +390,7 @@
       </h2>
       <div class="cart-items-container">
         {% if items is defined and items|length != 0 %}
-        <form class="modal__form form-box login" action="{{ path('cart_payment') }}" method="post">
+        <form class="modal__form form-box login" action="{{ path('checkout') }}" method="post">
           {% for item in items %}
             <div class="cart-box">
               {% if item.event.image %}
@@ -400,7 +400,8 @@
               {% endif %}
               <div class="detail-box">
                 <div class="cart-product-title" >{{ item.event.name }} </div>
-                <input type="number" name="quantity" value="{{ item.quantity }}" min="1"  max="{{ item.event.nbPlaces }}" class="cart-quantity">
+                  {# stocking here the initial price of the event and the quantity in stock#}
+                  <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" data-initial-price="{{ item.event.price }}" max="{{ item.event.nbPlaces }}" class="cart-quantity">
                 <div class="cart-price" data-initial-price="{{ item.event.price }}">{{ item.event.price * item.quantity }}</div>
               </div>
 
@@ -412,11 +413,11 @@
             <hr>
             <div>
               <div class="remember-forgot">
-                <div class=”total-title”>Total : </div>
-                <div class=”total-price” id="total-price">{{ total }}</div>
+                <div class="total-title">Total : </div>
+                <div class="total-price" id="total-price">{{ total }}</div>
               </div>
-              <button class="btn">Checkout</button>
-            </div>
+                <button type="submit" class="btn">Checkout</button>
+              </div>
           </div>
           {% else %}
             <p>Cart is empty..</p>

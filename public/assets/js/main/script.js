@@ -52,7 +52,7 @@ btnScrollTo.addEventListener("click", function (e) {
 
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
-  
+
 
   // Matching strategy
   if (e.target.classList.contains("nav__link")) {
@@ -267,34 +267,34 @@ const addeventli = document.querySelector('#addevent')
 const logoutli = document.querySelector('#logout')
 
 
-button_profile.addEventListener('click',()=>{
-  document.querySelector('.dropdown-user').style.opacity = 1-document.querySelector('.dropdown-user').style.opacity
+button_profile.addEventListener('click', () => {
+  document.querySelector('.dropdown-user').style.opacity = 1 - document.querySelector('.dropdown-user').style.opacity
 })
 
 
-logoutli.addEventListener('click',()=>{
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:8000/delete', true);
-    //xhr.open("POST","{{path('delete_session')}}",true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onload = ()=>{
-      location.reload();
-    }
-    xhr.send();
-    //console.log(sessionStorage);
-    //sessionStorage.removeItem('username');
-    //location.reload();
+logoutli.addEventListener('click', () => {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://localhost:8000/delete', true);
+  //xhr.open("POST","{{path('delete_session')}}",true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = () => {
+    location.reload();
+  }
+  xhr.send();
+  //console.log(sessionStorage);
+  //sessionStorage.removeItem('username');
+  //location.reload();
 })
 
 //go to addevent page
 
-addeventli.addEventListener('click',()=>{
+addeventli.addEventListener('click', () => {
   window.location.href = "http://localhost:8000/addEvent";
 })
 
 
 /***CART FUNCTIONALITY START***/
-    // CART WINDOW JS
+// CART WINDOW JS
 // Find the cart icon link and the cart modal container
 const openCartIcon = document.getElementById('open-cart-icon');
 const cartModalContainer = document.querySelector('.modal-container');
@@ -323,7 +323,7 @@ cartQuantities.forEach((cartQuantity, index) => {
     cartPrices.forEach(priceEl => {
       total += parseFloat(priceEl.innerText);
     });
-    totalPriceEl.value = total;
+    totalPriceEl.innerText = total;
   });
 });
 
