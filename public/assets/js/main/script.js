@@ -324,6 +324,7 @@ cartQuantityInputs.forEach((input) => {
   });
 });
 
+
 // Calculate total cart price
 function calculateTotalPrice() {
   let totalPrice = 0;
@@ -332,6 +333,11 @@ function calculateTotalPrice() {
   });
   totalPriceElement.textContent = totalPrice;
 }
+
+/*stoppinng the user from entering invalid quantity not in range of min and max START*/
+const quantityInputs = document.querySelectorAll('.cart-quantity');
+const checkoutButton = document.querySelector('#checkout-btn');
+
 
 // Checkout button click event
 checkoutButton.addEventListener('click', () => {
@@ -356,4 +362,7 @@ checkoutButton.addEventListener('click', () => {
 // Close modal when close button or overlay is clicked
 closeButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+/***CART FUNCTIONALITY END***/
+
 
