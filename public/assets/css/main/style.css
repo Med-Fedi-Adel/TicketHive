@@ -1298,6 +1298,8 @@ h5 {
 }
 
 
+
+
 /* style pour la section du panier (total+bouton) */
 .payer {
   display: flex;
@@ -1363,14 +1365,10 @@ h5 {
   font-size: 19px;
 }
 
-.cart-items-container {
-  height: 400px;
-  overflow-y: scroll;
-}
-
 .cart-items-container p {
   font-size: 1.8em;
   margin-bottom: 8em;
 }
+
 
 /*******CART STYLING END********/

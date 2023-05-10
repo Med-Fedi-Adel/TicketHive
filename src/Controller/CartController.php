@@ -10,51 +10,43 @@ use App\Entity\Event;
 use Doctrine\Persistence\ManagerRegistry;
 class CartController extends AbstractController
 {
-    /**
-     * @Route("/cart", name="cart_index")
-     */
-    public function index(SessionInterface $session, EventRepository $eventRepository)
-    {
-        $cart = $session->get('cart', []);
-        $cartWithData = [];
-        $total = 0;
-        foreach ($cart as $id => $quantity) {
-            $event = $eventRepository->find($id);
-            if (!$event) {
-                continue;
-            }
-            $subtotal = $event->getPrice() * $quantity;
-            $total += $subtotal;
-            array_push($cartWithData, ['event' => $event, 'quantity' => $quantity]);
-        }
-//        dd($total);
-//        dd($cartWithData);
 
-        return $this->render('main/index.html.twig', [
-            'items' => $cartWithData,
-            'total' => $total
-        ]);
-    }
+/**
+* @Route("/cart", name="cart_index")
+*/
+public function index(SessionInterface $session, EventRepository $eventRepository)
+{
+ $cart = $session->get('cart', []);
+ $cartWithData = [];
+ $total = 0;
+ foreach ($cart as $id => $quantity) {
+  $event = $eventRepository->find($id);
+  $subtotal = $event->getPrice() * $quantity;
+  $total += $subtotal;
+  array_push($cartWithData, ['event' => $event, 'quantity' => $quantity]);
+}
 
 
+ return $this->render('main/index.html.twig', [
+ 'items' => $cartWithData,
+ 'total' => $total
+  ]);
+}
 
-    /**
+/**
 * @Route("/cart/add/{id}", name="cart_add")
 */
-    public function add($id, SessionInterface $session)
-    {
-//        dd($id);
-        $cart = $session->get('cart', []);
-        if (!isset($cart[$id])) {
-            $cart[$id] = 0;
-        }
-        $cart[$id]++;
-        $session->set('cart', $cart);
-//        dd($cart);
-        return $this->redirectToRoute('cart_index');
-    }
-
-
+public function add($id, SessionInterface $session)
+{
+$cart = $session->get('cart', []);
+if (!empty($cart[$id])) {
+ $cart[$id]++; // si le produit existe déjà, on incrémente la quantité
+} else {
+ $cart[$id] = 1; // sinon, on ajoute le produit avec la quantité 1
+}
+ $session->set('cart', $cart);
+ return $this->redirectToRoute("cart_index");
+}
 
 /**
 * @Route("/cart/remove/{id}", name="cart_remove")
@@ -71,30 +63,20 @@ public function remove($id, SessionInterface $session)
 
 
 /**
-* @Route("/cart/checkout", name="cart_payment")
+* @Route("/cart_payment", name="cart_payment")
 */
 public function payment(Request $request, SessionInterface $session, EventRepository $eventRepository)
 {
-    $cart = $session->get('cart', []);
-    $cartWithData = [];
-    $total = 0;
-    foreach ($cart as $id => $quantity) {
-        $event = $eventRepository->find($id);
-        if (!$event) {
-            continue;
-        }
-        $subtotal = $event->getPrice() * $quantity;
-        $total += $subtotal;
-        array_push($cartWithData, ['event' => $event, 'quantity' => $quantity]);
-    }
-//    dd($total);
-//    dd($cartWithData);
+ $items = json_decode($request->request->get('items'));
+ $total = $request->request->get('total');
+ // Process the payment and clear the cart
+ $session->set('cart', []);
 
-
- return $this->redirectToRoute('paymentEvent', [
- 'items' => $cartWithData,
+ /*dd($items);
+    dd($total); */
+ return $this->redirectToRoute('/payment', [
+ 'items' => $items,
  'total' => $total,
-
 ]);
 
 }

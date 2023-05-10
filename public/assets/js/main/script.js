@@ -293,78 +293,140 @@ addeventli.addEventListener('click',()=>{
 })
 
 
+
+
 /***CART FUNCTIONALITY START***/
-    // CART WINDOW JS
+// CART WINDOW JS
 // Find the cart icon link and the cart modal container
 const openCartIcon = document.getElementById('open-cart-icon');
 const cartModalContainer = document.querySelector('.modal-container');
-const closeButton = document.querySelector('.close-button');
-// Show the cart modal container
-openCartIcon.addEventListener('click', () => cartModalContainer.classList.remove('hidden'));
-// Hide the cart modal container
-closeButton.addEventListener('click', () => cartModalContainer.classList.add('hidden'));
-
-// Get DOM elements
-
-const cartItemsContainer = document.querySelector('.cart-items-container');
-const cartQuantityInputs = document.querySelectorAll('.cart-quantity');
-const cartPriceElements = document.querySelectorAll('.cart-price');
-const totalPriceElement = document.querySelector('#total-price');
-const checkoutButton = document.querySelector('.btn');
+// Add an event listener to the cart icon link
+openCartIcon.addEventListener('click', showCartModal);
+function showCartModal() {
+  // Show the cart modal container
+  cartModalContainer.classList.remove('hidden');
+}
 
 
-// Increase or decrease cart item quantity
-cartQuantityInputs.forEach((input) => {
-  input.addEventListener('change', () => {
-    const itemPrice = input.parentElement.querySelector('.cart-price').getAttribute('data-initial-price');
-    const newQuantity = input.value;
-    const newPrice = itemPrice * newQuantity;
-    input.parentElement.querySelector('.cart-price').textContent = newPrice;
-    calculateTotalPrice();
+// Update the price when the quantity is changed
+const cartQuantities = document.querySelectorAll('.cart-quantity');
+const cartPrices = document.querySelectorAll('.cart-price');
+const totalPriceEl = document.getElementById('total-price');
+cartQuantities.forEach((cartQuantity, index) => {
+  cartQuantity.addEventListener('input', function () {
+    // Get initial item price and item quantity
+    const initialPrice = parseFloat(cartQuantity.dataset.initialPrice);
+    const quantity = parseInt(cartQuantity.value);
+    // Update the item price based on new quantity
+    const newPrice = initialPrice * quantity;
+    cartPrices[index].innerText = newPrice;
+    // Update the total price
+    let total = 0;
+    cartPrices.forEach(priceEl => {
+      total += parseFloat(priceEl.innerText);
+    });
+    totalPriceEl.innerText = total;
   });
 });
 
-<<<<<<< HEAD
+const closeButton = document.querySelector('.close-button');
+closeButton.addEventListener('click', hideCartModal);
 
-// Calculate total cart price
-function calculateTotalPrice() {
-  let totalPrice = 0;
-  cartPriceElements.forEach((element) => {
-    totalPrice += parseInt(element.textContent);
-  });
-  totalPriceElement.textContent = totalPrice;
+function hideCartModal() {
+  cartModalContainer.classList.add('hidden');
 }
 
+
+const checkoutBtn = document.querySelector('.btn');
+
+checkoutBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const items = [];
+
+  const cartItems = document.querySelectorAll('.cart-box');
+
+  cartItems.forEach((cartItem) => {
+    const name = cartItem.querySelector('.cart-product-title').textContent;
+    const quantity = cartItem.querySelector('.cart-quantity').value;
+    const price = cartItem.querySelector('.cart-price').textContent;
+
+    const item = {
+      name: name,
+      quantity: quantity,
+      price: price
+    };
+
+    items.push(item);
+  });
+
+  const total = document.querySelector('#total-price').textContent;
+
+  const form = document.createElement('form');
+  form.setAttribute('method', 'POST');
+  form.setAttribute('action', "{{ path('cart_payment') }}");
+
+  const itemsInput = document.createElement('input');
+  itemsInput.setAttribute('type', 'hidden');
+  itemsInput.setAttribute('name', 'items');
+  itemsInput.setAttribute('value', JSON.stringify(items));
+  form.appendChild(itemsInput);
+
+  const totalInput = document.createElement('input');
+  totalInput.setAttribute('type', 'hidden');
+  totalInput.setAttribute('name', 'total');
+  totalInput.setAttribute('value', total);
+  form.appendChild(totalInput);
+
+  document.body.appendChild(form);
+  form.submit();
+});
 
 /*stoppinng the user from entering invalid quantity not in range of min and max START*/
 const quantityInputs = document.querySelectorAll('.cart-quantity');
 const checkoutButton = document.querySelector('#checkout-btn');
 
+const validateQuantity = () => {
+  const invalidQuantities = [];
 
-// Checkout button click event
-checkoutButton.addEventListener('click', () => {
-  // Check if quantity is valid
-  let isValid = true;
-  cartQuantityInputs.forEach((input) => {
-    const maxQuantity = parseInt(input.getAttribute('max'));
-    const currentQuantity = parseInt(input.value);
-    if (currentQuantity < 1 || currentQuantity > maxQuantity) {
-      isValid = false;
-      input.classList.add('error');
-    } else {
-      input.classList.remove('error');
+  // Check each quantity input field
+  quantityInputs.forEach(input => {
+    const quantity = parseInt(input.value);
+    const min = parseInt(input.min);
+    const max = parseInt(input.max);
+
+    // If quantity is outside of min and max range, add it to the list of invalid quantities
+    if (quantity < min || quantity > max) {
+      invalidQuantities.push(input);
     }
   });
-  // Submit form if quantity is valid
-  if (isValid) {
-    checkoutButton.closest('form').submit();
+
+  // If there are any invalid quantities, display an error message and prevent form submission
+  if (invalidQuantities.length > 0) {
+    // Display error message
+    alert('Invalid quantity entered for one or more events!');
+
+    // Set focus on the first invalid quantity input field
+    invalidQuantities[0].focus();
+
+    // Prevent form submission
+    return false;
+  }
+
+  // If all quantities are valid, allow form submission
+  return true;
+};
+
+checkoutButton.addEventListener('click', event => {
+  const isValid = validateQuantity();
+
+  // Prevent form submission if quantity validation fails
+  if (!isValid) {
+    event.preventDefault();
   }
 });
+/*stoppinng the user from entering invalid quantity not in range of min and max END*/
 
-// Close modal when close button or overlay is clicked
-closeButton.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
 
 /***CART FUNCTIONALITY END***/
-
 
