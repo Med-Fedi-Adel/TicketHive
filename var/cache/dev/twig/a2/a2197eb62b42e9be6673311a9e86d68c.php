@@ -320,13 +320,8 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 153)]), "html", null, true);
                 echo "\">
       <img src=\"";
-<<<<<<< HEAD
                 // line 154
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 154))), "html", null, true);
-=======
-                // line 140
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 140))), "html", null, true);
->>>>>>> main
                 echo "\"  id=\"slide";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 154), "html", null, true);
                 echo "\">
@@ -351,15 +346,9 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         echo "</div>
 <div class=\"text\">
   ";
-<<<<<<< HEAD
         // line 160
-        if (array_key_exists("eventT", $context)) {
-            // line 161
-=======
-        // line 146
         if (array_key_exists("eventW", $context)) {
-            // line 147
->>>>>>> main
+            // line 161
             echo "    ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["eventT"]) || array_key_exists("eventT", $context) ? $context["eventT"] : (function () { throw new RuntimeError('Variable "eventT" does not exist.', 161, $this->source); })()));
@@ -409,13 +398,8 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 172)]), "html", null, true);
                 echo "\">
       <img src=\"";
-<<<<<<< HEAD
                 // line 173
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 173))), "html", null, true);
-=======
-                // line 159
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 159))), "html", null, true);
->>>>>>> main
                 echo "\" id=\"slide";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 173), "html", null, true);
                 echo "\">
@@ -440,15 +424,9 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
         echo "</div>
 <div class=\"text\">
   ";
-<<<<<<< HEAD
         // line 179
-        if (array_key_exists("eventT", $context)) {
-            // line 180
-=======
-        // line 165
         if (array_key_exists("eventU", $context)) {
-            // line 166
->>>>>>> main
+            // line 180
             echo "    ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["eventT"]) || array_key_exists("eventT", $context) ? $context["eventT"] : (function () { throw new RuntimeError('Variable "eventT" does not exist.', 180, $this->source); })()));
@@ -496,24 +474,8 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
           </li>
           <li>
              <a href=\"";
-<<<<<<< HEAD
         // line 207
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // line 164
-=======
-        // line 193
-<<<<<<< HEAD
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sports"]);
-=======
->>>>>>> main
-=======
-        // line 193
->>>>>>> main
->>>>>>> main
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sport"]);
->>>>>>> main
         echo "\" target=\"_blank\" class=\"cardGrid\" style=\"background-image: url('";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/main/catalogue/sport.jpg"), "html", null, true);
         echo "');\">
@@ -1325,6 +1287,6 @@ class __TwigTemplate_984cacc611f5af6c2abdc60ca4fc5c9c extends Template
 
   </body>
 </html>
-", "main/index.html.twig", "C:\\Users\\msi\\PhpstormProjects\\ppp\\TicketHive\\templates\\main\\index.html.twig");
+", "main/index.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\main\\index.html.twig");
     }
 }

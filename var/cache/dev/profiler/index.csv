@@ -2847,3 +2847,35 @@ cdfb75,::1,GET,http://localhost:8000/event,1683719118,,200
 >>>>>>> main
 >>>>>>> main
 >>>>>>> 96e5074a08c0a758fa7634897d4db2996b58e79d
+09b521,127.0.0.1,GET,http://127.0.0.1:8000/main,1683717018,,200
+0a26d3,127.0.0.1,POST,http://127.0.0.1:8000/loginsigin,1683717052,,302
+58f3d0,127.0.0.1,GET,http://127.0.0.1:8000/main,1683717052,,200
+3ad302,127.0.0.1,GET,http://127.0.0.1:8000/event/Concerts,1683717086,,200
+9f9393,127.0.0.1,GET,http://127.0.0.1:8000/event/public/assets/images/favicon.ico,1683717087,e957fc,404
+e957fc,127.0.0.1,GET,http://127.0.0.1:8000/event/public/assets/images/favicon.ico,1683717087,,404
+81a682,127.0.0.1,GET,http://127.0.0.1:8000/assets/images/uploads/645b6b2c1a1e8.png,1683717087,fd3686,404
+fd3686,127.0.0.1,GET,http://127.0.0.1:8000/assets/images/uploads/645b6b2c1a1e8.png,1683717087,,404
+217c26,127.0.0.1,GET,http://127.0.0.1:8000/event/icon.png,1683717088,,302
+85497f,127.0.0.1,GET,http://127.0.0.1:8000/event,1683717089,,200
+8ad753,127.0.0.1,GET,http://127.0.0.1:8000/eventDescription/2,1683717089,,200
+2fc7c9,127.0.0.1,POST,http://127.0.0.1:8000/cart/add/2,1683717096,,302
+f9de9f,127.0.0.1,GET,http://127.0.0.1:8000/cart,1683717097,,200
+636051,127.0.0.1,GET,http://127.0.0.1:8000/645b6b2c1a1e8.png,1683717097,13ea68,404
+13ea68,127.0.0.1,GET,http://127.0.0.1:8000/645b6b2c1a1e8.png,1683717097,,404
+ed7d96,127.0.0.1,POST,http://127.0.0.1:8000/cart/checkout,1683717113,,302
+e1e23a,127.0.0.1,GET,http://127.0.0.1:8000/payment?items=%5B%7B%22event%22%3A%7B%7D%2C%22quantity%22%3A1%7D%5D&total=250,1683717113,,200
+37ec4e,127.0.0.1,GET,http://127.0.0.1:8000/cards.png,1683717114,0778f6,404
+0778f6,127.0.0.1,GET,http://127.0.0.1:8000/cards.png,1683717114,,404
+735f6f,127.0.0.1,GET,http://127.0.0.1:8000/E-Dinar%20(1).png,1683717114,cc0c54,404
+cc0c54,127.0.0.1,GET,http://127.0.0.1:8000/E-Dinar%20(1).png,1683717114,,404
+3b37fe,127.0.0.1,GET,http://127.0.0.1:8000/645b6b2c1a1e8.png,1683717151,faf50c,404
+faf50c,127.0.0.1,GET,http://127.0.0.1:8000/645b6b2c1a1e8.png,1683717151,,404
+1fb4d2,127.0.0.1,GET,http://127.0.0.1:8000/contact/index.html.twig,1683717160,405701,404
+405701,127.0.0.1,GET,http://127.0.0.1:8000/contact/index.html.twig,1683717160,,404
+3495a0,::1,GET,http://localhost:8000/delete,1683717212,,200
+45c972,::1,GET,http://localhost:8000/delete,1683717215,,200
+64d464,::1,GET,http://localhost:8000/loginsignup,1683717219,,200
+8eff61,::1,POST,http://localhost:8000/loginsignup,1683717236,,200
+67fc4e,::1,POST,http://localhost:8000/loginsigin,1683717252,,302
+f698b7,::1,GET,http://localhost:8000/main,1683717252,,200
+c9d34a,::1,GET,http://localhost:8000/admin,1683717257,,200

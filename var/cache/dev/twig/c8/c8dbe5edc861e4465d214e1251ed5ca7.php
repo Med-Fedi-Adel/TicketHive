@@ -70,13 +70,11 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
         // line 73
         echo "
 <<<<<<< HEAD
-";
-        // line 74
 =======
 
-";
-        // line 75
 >>>>>>> main
+";
+        // line 78
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -265,11 +263,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     }
 
-<<<<<<< HEAD
-    // line 74
-=======
-    // line 75
->>>>>>> main
+    // line 78
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -294,11 +288,7 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  263 => 74,  246 => 66,  240 => 63,  232 => 60,  219 => 49,  213 => 45,  207 => 44,  201 => 41,  197 => 40,  191 => 37,  187 => 36,  183 => 35,  178 => 32,  168 => 24,  163 => 21,  153 => 20,  140 => 14,  130 => 13,  117 => 7,  113 => 5,  103 => 4,  84 => 2,  74 => 74,  71 => 73,  69 => 20,  65 => 18,  63 => 13,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
-=======
-        return array (  264 => 75,  247 => 66,  241 => 63,  233 => 60,  220 => 49,  214 => 45,  208 => 44,  202 => 41,  198 => 40,  192 => 37,  188 => 36,  184 => 35,  179 => 32,  169 => 24,  164 => 21,  154 => 20,  141 => 14,  131 => 13,  118 => 7,  114 => 5,  104 => 4,  85 => 2,  75 => 75,  71 => 73,  69 => 20,  65 => 18,  63 => 13,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
->>>>>>> main
+        return array (  267 => 78,  250 => 66,  244 => 63,  236 => 60,  223 => 49,  217 => 45,  211 => 44,  205 => 41,  201 => 40,  195 => 37,  191 => 36,  187 => 35,  182 => 32,  172 => 24,  167 => 21,  157 => 20,  144 => 14,  134 => 13,  121 => 7,  117 => 5,  107 => 4,  88 => 2,  78 => 78,  71 => 73,  69 => 20,  65 => 18,  63 => 13,  58 => 10,  56 => 4,  53 => 3,  51 => 2,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -377,12 +367,10 @@ class __TwigTemplate_b9d5eee1d542469374b3e8782f7c07a8 extends Template
 {% endblock %}
 
 <<<<<<< HEAD
-{% block javascripts %}
-{% endblock %}", "base.html.twig", "C:\\Users\\msi\\PhpstormProjects\\ppp\\TicketHive\\templates\\base.html.twig");
 =======
 
-{% block javascripts %}
-{% endblock %}", "base.html.twig", "C:\\Users\\ghrib\\OneDrive\\Desktop\\4thpull\\TicketHive\\templates\\base.html.twig");
 >>>>>>> main
+{% block javascripts %}
+{% endblock %}", "base.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\base.html.twig");
     }
 }
