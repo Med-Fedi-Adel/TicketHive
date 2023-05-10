@@ -2150,3 +2150,4 @@ c26a5c,::1,GET,http://localhost:8000/event/TicketHive/public/uploads/,1683719117
 596338,::1,GET,http://localhost:8000/event/public/assets/images/favicon.ico,1683719118,66f398,404
 66f398,::1,GET,http://localhost:8000/event/public/assets/images/favicon.ico,1683719118,,404
 cdfb75,::1,GET,http://localhost:8000/event,1683719118,,200
+24c573,::1,GET,http://localhost:8000/main,1683720067,,200
