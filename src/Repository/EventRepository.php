@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Event;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -36,9 +38,58 @@ class EventRepository extends ServiceEntityRepository
 
         if ($flush) {
             $this->getEntityManager()->flush();
-        }
+        } 
     }
+    /**
+    * @return Event[] Returns an array of Event objects
+    */
+    public function findByDate (DateTime $today) : array 
+    {
+        $date = $today->format('Y-m-d');
+        return $this->createQueryBuilder('e')
+        ->andWhere('e.date = :dateJ')
+        ->setParameter('dateJ' , $date)
+        ->orderBy('e.nbplaces','Asc')
+        ->setMaxResults(4)
+        ->getQuery()
+        ->getResult();
+    }
+    public function findByDateRange (DateTime $threeDaysAhead , Datetime $today) : array
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.date BETWEEN :start AND :end')
+            ->setParameter('start', $today)
+            ->setParameter('end', $threeDaysAhead)
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult();
+    }
+    public function findByDateUpcoming (DateTime $weeks) : array
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.date >= :start')
+            ->setParameter('start', $weeks)
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult();
+    }
+    public function findByKeywords(String $keywords): array
+    {
+        $keyword = explode(" ",$keywords);
+        $qb = $this->createQueryBuilder('e');
 
+        $orExpr = $qb->expr()->orX();
+        foreach ($keyword as $key => $value) {
+            $orExpr->add($qb->expr()->like('e.name', ":keyword$key"));
+            $orExpr->add($qb->expr()->like('e.description', ":keyword$key"));
+            $qb->setParameter("keyword$key", '%' . $value . '%');
+        }
+
+        return $qb
+            ->where($orExpr)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Event[] Returns an array of Event objects
 //     */
@@ -53,6 +104,7 @@ class EventRepository extends ServiceEntityRepository
 //            ->getResult()
 //        ;
 //    }
+
 
 //    public function findOneBySomeField($value): ?Event
 //    {
