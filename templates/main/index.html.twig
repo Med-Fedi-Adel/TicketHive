@@ -11,7 +11,7 @@
     /> #}
 
     <!-- favicon -->
-    <link rel="icon" href="/assets/images/faviconM.ico">
+    <link rel="icon" href="{{ asset('assets/images/faviconM.ico') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/main/style.css') }}" />
     <title>TicketHive</title>
@@ -23,8 +23,11 @@
     <header class="header">
       <!-- Nav Bar -->
       <nav class="nav">
-        <img src="public/assets/images/favicon.ico" alt="" class="nav__logo" id="logo" />
+
+        <img src="{{ asset('assets/images/picc.png ') }}" alt="" class="nav__logo" id="logo" />
         <a class="navbar-brand" href="{{path ('main')}}">TicketHive</a>
+
+
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="#section--1">Events</a>
@@ -37,9 +40,6 @@
           </li>
           {# check if username=admin unique then show the admin button#}
           {% if app.session.get('username') == 'admin'%}
-            <li class="nav__item">
-              <a class="nav__link" target="_blank" href="{{ path('admin') }}" style="color:#00ffdd;">Admin Dashboard</a>
-            </li>
             <div class="app-header-actions">
               <button class="user-profile" id="userprofile">
                 <span>
@@ -47,7 +47,20 @@
                   </span>
               </button>
             </div>
-
+        </ul>
+      </nav>
+      <div class="header__title">
+        <h1>
+          Enjoy Your
+          <!-- Green highlight effect -->
+          <span class="highlight"> Success </span>
+          Via<br />
+          Consulting
+          <span class="highlight"><a  target="_blank" href="{{ path('admin') }}" style="color:#00ffdd; text-decoration: none">Admin Dashboard</a></span>
+        </h1>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+      </div>
+    </header>
           {% elseif app.session.get('username') %}
             <div class="app-header-actions">
               <button class="user-profile">
@@ -70,7 +83,7 @@
         </ul>
       </nav>
 
-
+    {% if app.session.get('username') != 'admin'%}
       <div class="header__title">
         <h1>
           Experience
@@ -84,6 +97,7 @@
         <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
       </div>
     </header>
+    {% endif %}
 
     {% if app.session.get('username') %}
       <div class="dropdown-user">
@@ -382,12 +396,12 @@
               {% if item.event.image %}
                 <img src="{{ item.event.image }}" alt="{{ item.event.name }}" class="cart-img">
               {% else %}
-                <img src="/assets/images/main/catalogue/concerts.jpg" alt="{{ item.event.name }}" class="cart-img">
+                <img src="{{ asset('/assets/images/main/catalogue/concerts.jpg') }}" alt="{{ item.event.name }}" class="cart-img">
               {% endif %}
               <div class="detail-box">
-                <div class="cart-product-title">{{ item.event.name }} </div>
+                <div class="cart-product-title" >{{ item.event.name }} </div>
                 <input type="number" name="quantity" value="{{ item.quantity }}" min="1"  max="{{ item.event.nbPlaces }}" class="cart-quantity">
-                <div class="cart-price">{{ item.event.price * item.quantity }}</div>
+                <div class="cart-price" data-initial-price="{{ item.event.price }}">{{ item.event.price * item.quantity }}</div>
               </div>
 
               <!-- Remove Cart -->
@@ -415,6 +429,7 @@
     <div class="overlay hidden"></div>
 
 
+
 {#footer#}
     <footer class="footer">
       <ul class="footer__nav">
@@ -431,7 +446,7 @@
           <a class="footer__link" target="_blank" href="contact/index.html.twig">Contact Us</a>
         </li>
       </ul>
-      <img src="/assets/images/faviconP.png" alt="logo" class="nav__logo" id="logo" />
+      <img src="{{ asset('/assets/images/faviconP.png') }}" alt="logo" class="nav__logo" id="logo" />
     </footer>
 
   </body>
