@@ -78,7 +78,7 @@
           {% else %}
             <a class="nav__link nav__link--btn btn--show-modal" href="#">Log in</a>
           {% endif %}
-          </li>
+  
 
         </ul>
       </nav>
@@ -128,62 +128,122 @@
             <span>03</span>Coming Soon
           </button>
         </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
          <div class="slider1">
             {% if eventT is defined %}
             {% for event in eventT %}
             <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+      {% if event.image  %}
+                <img src = "{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}" >
+              {% else %}
+                <img src = "{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}">
+          {% endif %}
+          <div class="text" style = "color : #231955 ;">
+          <p>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
+      </p>
+      </div> 
       </a>
     {% endfor %}
   {% endif %}
 </div>
-<div class="text">
+<div class="slider1-nav">
+{% if eventT is defined %}
+        {% for event in eventT %}
+        <a href="#slide{{loop.index}}">
+        {% endfor %}
+  {% endif %}
+  </div>
+{# <div class="text" style = "color : #231955 ;">
   {% if eventT is defined %}
     {% for event in eventT %}
       <p>
-        {{event.name}}<br>
-        <span class="small"></span>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
       </p>
     {% endfor %}
   {% endif %}
-</div> 
+</div>  #} 
+</div>
+
+<div class="operations__content operations__content--2">
          <div class="slider2">
-            {% if eventT is defined %}
-            {% for event in eventT %}
+            {% if eventW is defined %}
+            {% for event in eventW %}
             <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+            {% if event.image  %}
+                <img src = "{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}" >
+              {% else %}
+                <img src = "{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}">
+          {% endif %}
+          <div class="text" style = "color : #231955 ;">
+          <p>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
+      </p>
+      </div> 
       </a>
     {% endfor %}
   {% endif %}
 </div>
-<div class="text">
+{# <div class="text" style = "color : #231955 ;">
   {% if eventW is defined %}
-    {% for event in eventT %}
+    {% for event in eventW %}
       <p>
-        {{event.name}}<br>
-        <span class="small"></span>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
       </p>
     {% endfor %}
+  {% endif %}#}
+  <div class="slider2-nav">
+{% if eventT is defined %}
+        {% for event in eventT %}
+        <a href="#slide{{loop.index}}">
+        {% endfor %}
   {% endif %}
+  </div>
 </div>
+<div class="operations__content operations__content--3">
          <div class="slider3">
-            {% if eventT is defined %}
-            {% for event in eventT %}
+            {% if eventU is defined %}
+            {% for event in eventU %}
             <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+            {% if event.image  %}
+                <img src = "{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}" >
+              {% else %}
+                <img src = "{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}">
+          {% endif %}
+          <div class="text" style = "color : #231955 ;">
+          <p>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
+      </p>
+      </div> 
       </a>
     {% endfor %}
   {% endif %}
 </div>
-<div class="text">
+
+
+{# <div class="text" style = "color : #231955 ;">
   {% if eventU is defined %}
-    {% for event in eventT %}
+    {% for event in eventU %}
       <p>
-        {{event.name}}<br>
-        <span class="small"></span>
+        {{event.name}}
+        <span class="small">{{ event.date|date('Y-m-d') }}</span>
       </p>
     {% endfor %}
+  {% endif %}#}
+  <div class="slider3-nav">
+{% if eventT is defined %}
+        {% for event in eventT %}
+        <a href="#slide{{loop.index}}">
+        {% endfor %}
   {% endif %}
+  </div>
 </div>
                
 

@@ -82,36 +82,51 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
         // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
         echo "\">Events</a>
+            </li>
           <li class=\"nav__item\">
           ";
-        // line 28
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "session", [], "any", false, false, false, 28), "get", [0 => "username"], "method", false, false, false, 28)) {
-            // line 29
+        // line 29
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "session", [], "any", false, false, false, 29), "get", [0 => "username"], "method", false, false, false, 29)) {
+            // line 30
             echo "            <div class=\"app-header-actions\">
               <button class=\"user-profile\" id=\"userprofile\">
                 <span>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "session", [], "any", false, false, false, 31), "get", [0 => "username"], "method", false, false, false, 31), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "session", [], "any", false, false, false, 32), "get", [0 => "username"], "method", false, false, false, 32), "html", null, true);
             echo "</span>
                 <span>
                   <!-- <img src=\"https://assets.codepen.io/285131/almeria-avatar.jpeg\" /> -->
                   ";
-            // line 34
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "session", [], "any", false, false, false, 34), "get", [0 => "username"], "method", false, false, false, 34), 0, 1), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "session", [], "any", false, false, false, 35), "get", [0 => "username"], "method", false, false, false, 35), 0, 1), "html", null, true);
             echo "
                 </span>
               </button>
             </div>
             ";
         } else {
-            // line 39
-            echo "              <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\">Log in</a>
+            // line 40
+            echo "              <a class=\"btn\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login_signup");
+            echo "\">Log in</a>
           ";
         }
-        // line 41
+        // line 42
         echo "            
-          </li>
-
+          </li> 
+              ";
+        // line 44
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "session", [], "any", false, false, false, 44), "get", [0 => "username"], "method", false, false, false, 44)) {
+            // line 45
+            echo "      <div class=\"dropdown-user\">
+      <li id=\"update\">Update</li>
+      <li id=\"addevent\">Add Event</li>
+      <li id=\"logout\">Logout</li>
+    </div>
+    ";
+        }
+        // line 51
+        echo "
         </ul>
       </nav>
   </header>
@@ -127,31 +142,31 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
                   </button>
                   <ul class=\"dropdown-menu\">
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 58
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sports"]);
         echo " \">Sports</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 59
+        // line 67
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Festivals"]);
         echo " \">Festivals</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 60
+        // line 68
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Theatre"]);
         echo " \">Theatre</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 61
+        // line 69
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Concerts"]);
         echo " \">Concerts</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 62
+        // line 70
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Cinema"]);
         echo " \">Cinema</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 63
+        // line 71
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Others"]);
         echo " \">Others</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 64
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event");
         echo "\">All</a></li>
                   </ul> 
@@ -166,23 +181,23 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
                   </button>
                   <ul class=\"dropdown-menu\">
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 76
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filter", ["type" => "PriceAsc"]);
         echo " \">Price Ascending</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 77
+        // line 85
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filter", ["type" => "PriceDesc"]);
         echo " \">Price Descending</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 78
+        // line 86
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filter", ["type" => "DateAsc"]);
         echo " \">Date Ascending</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 79
+        // line 87
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filter", ["type" => "DateDesc"]);
         echo " \">Date Descending</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 80
+        // line 88
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filter", ["type" => "Runningout"]);
         echo " \">Running Out Soon</a></li>
                   </ul> 
@@ -197,21 +212,21 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
     </nav>
 </div>
   ";
-        // line 92
+        // line 100
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 92, $this->source); })()), "flashes", [], "any", false, false, false, 92));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 100, $this->source); })()), "flashes", [], "any", false, false, false, 100));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 93
+            // line 101
             echo "      ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 94
+                // line 102
                 echo "          <div class=\"alert alert-";
                 echo twig_escape_filter($this->env, $context["type"], "html", null, true);
-                echo "\" style=\"text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;float:center\">
+                echo "\" style=\"text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;margin : 0 auto;\">
               ";
-                // line 95
+                // line 103
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "
           </div>
@@ -220,19 +235,19 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 98
+            // line 106
             echo "  ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 107
         echo "      <div class=\"imageContainerContainer\">
       <div class=\"imageContainer\">
       ";
-        // line 101
+        // line 109
         $this->displayBlock('imageContainer', $context, $blocks);
-        // line 132
+        // line 144
         echo "        </div>
 
       </div>
@@ -264,7 +279,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
       <img src=\"icon.png\" alt=\"Logo\" class=\"footer__logo\" />
     </footer>
       <script src = \"";
-        // line 162
+        // line 174
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/eventFilter/script.js"), "html", null, true);
         echo "\"></script>
       <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\" crossorigin=\"anonymous\"></script>
@@ -279,7 +294,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
 
     }
 
-    // line 101
+    // line 109
     public function block_imageContainer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -289,39 +304,54 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "imageContainer"));
 
-        // line 102
+        // line 110
         echo "         ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 102, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 110, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 103
+            // line 111
             echo "      <div class=\"image\" >
           <a href=\"";
-            // line 104
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 104)]), "html", null, true);
+            // line 112
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event_description", ["id" => twig_get_attribute($this->env, $this->source, $context["event"], "id", [], "any", false, false, false, 112)]), "html", null, true);
             echo "\" >
-          <img src = \"";
-            // line 105
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105))), "html", null, true);
-            echo "\" onmouseover=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "gif", [], "any", false, false, false, 105))), "html", null, true);
-            echo "\" onmouseout=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 105))), "html", null, true);
-            echo "\">
-          <div class=\"textOver\">";
-            // line 106
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "name", [], "any", false, false, false, 106), "html", null, true);
+          ";
+            // line 113
+            if (twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 113)) {
+                // line 114
+                echo "                <img src = \"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 114))), "html", null, true);
+                echo "\" onmouseover=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "gif", [], "any", false, false, false, 114))), "html", null, true);
+                echo "\" onmouseout=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/images/uploads/" . twig_get_attribute($this->env, $this->source, $context["event"], "image", [], "any", false, false, false, 114))), "html", null, true);
+                echo "\">
+              ";
+            } else {
+                // line 116
+                echo "                <img src = \"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/Default.jpg"), "html", null, true);
+                echo "\" onmouseover=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/Default.jpg"), "html", null, true);
+                echo "\" onmouseout=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/Default.jpg"), "html", null, true);
+                echo "\">
+          ";
+            }
+            // line 118
+            echo "          <div class=\"textOver\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["event"], "name", [], "any", false, false, false, 118), "html", null, true);
             echo "</div>
           </a>
       </div>
         ";
-            // line 130
+            // line 142
             echo "           ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 131
+        // line 143
         echo "          ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -343,7 +373,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
 
     public function getDebugInfo()
     {
-        return array (  325 => 131,  319 => 130,  313 => 106,  305 => 105,  301 => 104,  298 => 103,  293 => 102,  283 => 101,  268 => 162,  236 => 132,  234 => 101,  230 => 99,  224 => 98,  215 => 95,  210 => 94,  205 => 93,  201 => 92,  186 => 80,  182 => 79,  178 => 78,  174 => 77,  170 => 76,  155 => 64,  151 => 63,  147 => 62,  143 => 61,  139 => 60,  135 => 59,  131 => 58,  112 => 41,  108 => 39,  100 => 34,  94 => 31,  90 => 29,  88 => 28,  83 => 26,  77 => 23,  67 => 16,  63 => 15,  59 => 14,  44 => 1,);
+        return array (  355 => 143,  349 => 142,  342 => 118,  332 => 116,  322 => 114,  320 => 113,  316 => 112,  313 => 111,  308 => 110,  298 => 109,  283 => 174,  251 => 144,  249 => 109,  245 => 107,  239 => 106,  230 => 103,  225 => 102,  220 => 101,  216 => 100,  201 => 88,  197 => 87,  193 => 86,  189 => 85,  185 => 84,  170 => 72,  166 => 71,  162 => 70,  158 => 69,  154 => 68,  150 => 67,  146 => 66,  129 => 51,  121 => 45,  119 => 44,  115 => 42,  109 => 40,  101 => 35,  95 => 32,  91 => 30,  89 => 29,  83 => 26,  77 => 23,  67 => 16,  63 => 15,  59 => 14,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -374,6 +404,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
         <ul class=\"nav__links\">
           <li class=\"nav__item\">
             <a class=\"nav__link\" href=\"{{path ('event')}}\">Events</a>
+            </li>
           <li class=\"nav__item\">
           {% if app.session.get('username') %}
             <div class=\"app-header-actions\">
@@ -386,10 +417,17 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
               </button>
             </div>
             {% else %}
-              <a class=\"nav__link nav__link--btn btn--show-modal\" href=\"#\">Log in</a>
+              <a class=\"btn\" href=\"{{ path('login_signup')}}\">Log in</a>
           {% endif %}
             
-          </li>
+          </li> 
+              {% if app.session.get('username') %}
+      <div class=\"dropdown-user\">
+      <li id=\"update\">Update</li>
+      <li id=\"addevent\">Add Event</li>
+      <li id=\"logout\">Logout</li>
+    </div>
+    {% endif %}
 
         </ul>
       </nav>
@@ -441,7 +479,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
 </div>
   {% for type, messages in app.flashes %}
       {% for message in messages %}
-          <div class=\"alert alert-{{ type }}\" style=\"text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;float:center\">
+          <div class=\"alert alert-{{ type }}\" style=\"text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;margin : 0 auto;\">
               {{ message }}
           </div>
       {% endfor %}
@@ -452,7 +490,11 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
          {% for event in events %}
       <div class=\"image\" >
           <a href=\"{{path ('event_description',{'id' : event.id })}}\" >
-          <img src = \"{{ asset('assets/images/uploads/' ~ event.image) }}\" onmouseover=\"{{ asset('assets/images/uploads/' ~ event.gif) }}\" onmouseout=\"{{ asset('assets/images/uploads/' ~ event.image) }}\">
+          {% if event.image  %}
+                <img src = \"{{ asset('assets/images/uploads/' ~ event.image) }}\" onmouseover=\"{{ asset('assets/images/uploads/' ~ event.gif) }}\" onmouseout=\"{{ asset('assets/images/uploads/' ~ event.image) }}\">
+              {% else %}
+                <img src = \"{{ asset('assets/images/Default.jpg')}}\" onmouseover=\"{{ asset('assets/images/Default.jpg')}}\" onmouseout=\"{{ asset('assets/images/Default.jpg')}}\">
+          {% endif %}
           <div class=\"textOver\">{{event.name}}</div>
           </a>
       </div>
@@ -513,6 +555,6 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
       <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\" crossorigin=\"anonymous\"></script>
 
 </body>
-</html>", "event/index.html.twig", "C:\\Users\\msi\\PhpstormProjects\\ppp\\TicketHive\\templates\\event\\index.html.twig");
+</html>", "event/index.html.twig", "C:\\Users\\ghrib\\OneDrive\\Desktop\\4thpull\\TicketHive\\templates\\event\\index.html.twig");
     }
 }

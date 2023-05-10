@@ -57,13 +57,13 @@
         </div>
         <div class="fakeScreen">
           <p class="line1">
-            &#91;&nbsp;&ldquo;Date : 13th of may 2023&rdquo;,<span
+            &#91;&nbsp;&ldquo;Date : {{ event.date|date('Y-m-d') }}&rdquo;,<span
               class="cursor1"
               >_</span
             >
           </p>
           <p class="line2">
-            &nbsp;&nbsp;&ldquo;Location : Uthina Amphitheatre&rdquo;,<span
+            &nbsp;&nbsp;&ldquo;Location : {#A gerer#} &rdquo;,<span
               class="cursor2"
               >_</span
             >
@@ -89,8 +89,10 @@
       <div class="home-content">
         <h1>
           Next
-          <span class="highlight">Music</span>
-          Festival
+          <span class="highlight">{{event.getEventType()}}</span>
+          Event
+          <br></br>
+          {{event.name}}
         </h1>
         <div class="localisation">
           <div class="location-icon">
@@ -100,13 +102,7 @@
         </div>
         <div>
           <h6 class="lecture">
-            <br /><br />@argyofficial, @bogofficial, @soel_music, @marinocanal,
-            and @dishdash_music are headed towards our amphitheater from <br />
-            some of the world's largest festivals and shows.<br />
-            They bring with them a record consisting of outstanding tracks.
-            <br /><br />
-            Don't miss out the chance to experience the best event ever
-            organized in Tunisia! .
+            <br /><br />{{event.description}}
           </h6>
           </div>
           <button class="btn--text btn--scroll-to" id="bouttonmap">
