@@ -19,19 +19,19 @@ class MainController extends AbstractController
     {
         $reposity = $doctrine -> getRepository(Event::class);
         $today = new DateTime();
-        $today1 = $today->format('Y-m-d') ; 
-        $today1 = DateTimeImmutable::createFromFormat('Y-m-d',$today1);
+        //$today1 = $today->format('Y-m-d') ; 
+        //$today1 = DateTimeImmutable::createFromFormat('Y-m-d',$today1);
 
 
         //dump($today1) ; 
-       // $eventT = $reposity -> findAll();
-        $eventT = $reposity -> findByDate ($today1);
-        dd($eventT);
+      // $eventT = $reposity -> findAll();
+        $eventT = $reposity -> findByDate ($today);
+        // dd($eventT);
         $threeDaysAhead = (new DateTime())->modify('+3 days');
         $eventW = $reposity -> findByDateRange ($threeDaysAhead,$today);
         $date = (new DateTime())->modify('+2 weeks');
         $eventU = $reposity -> findByDateUpcoming ($date);
-        return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventU]);
+    return $this->render('main/index.html.twig',['eventT' => $eventT,'eventW' => $eventW,'eventU' => $eventU]);
     }
 
     #[Route('/main/createevent', name: 'main.create_event')]

@@ -43,8 +43,9 @@ class EventRepository extends ServiceEntityRepository
     /**
     * @return Event[] Returns an array of Event objects
     */
-    public function findByDate($dateString)
+    public function findByDate (DateTime $today) : array 
     {
+<<<<<<< HEAD
         $qb = $this->createQueryBuilder('e');
         
         $qb->select('e')
@@ -55,6 +56,16 @@ class EventRepository extends ServiceEntityRepository
         $query = $qb->getQuery();
         
         return $query->getResult();
+=======
+        $date = $today->format('Y-m-d');
+        return $this->createQueryBuilder('e')
+        ->andWhere('e.date = :dateJ')
+        ->setParameter('dateJ' , $date)
+        ->orderBy('e.nbplaces','Asc')
+        ->setMaxResults(4)
+        ->getQuery()
+        ->getResult();
+>>>>>>> main
     }
     public function findByDateRange (DateTime $threeDaysAhead , Datetime $today) : array
     {

@@ -11,7 +11,7 @@
     /> #}
 
     <!-- favicon -->
-    <link rel="icon" href="/assets/images/faviconM.ico">
+    <link rel="icon" href="{{ asset('assets/images/faviconM.ico') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/main/style.css') }}" />
     <title>TicketHive</title>
@@ -36,9 +36,6 @@
           </li>
           {# check if username=admin unique then show the admin button#}
           {% if app.session.get('username') == 'admin'%}
-            <li class="nav__item">
-              <a class="nav__link" target="_blank" href="{{ path('admin') }}" style="color:#00ffdd;">Admin Dashboard</a>
-            </li>
             <div class="app-header-actions">
               <button class="user-profile" id="userprofile">
                 <span>
@@ -46,7 +43,20 @@
                   </span>
               </button>
             </div>
-
+        </ul>
+      </nav>
+      <div class="header__title">
+        <h1>
+          Enjoy Your
+          <!-- Green highlight effect -->
+          <span class="highlight"> Success </span>
+          Via<br />
+          Consulting
+          <span class="highlight"><a  target="_blank" href="{{ path('admin') }}" style="color:#00ffdd; text-decoration: none">Admin Dashboard</a></span>
+        </h1>
+        <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+      </div>
+    </header>
           {% elseif app.session.get('username') %}
             <div class="app-header-actions">
               <button class="user-profile">
@@ -69,7 +79,7 @@
         </ul>
       </nav>
 
-
+    {% if app.session.get('username') != 'admin'%}
       <div class="header__title">
         <h1>
           Experience
@@ -83,6 +93,7 @@
         <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
       </div>
     </header>
+    {% endif %}
 
     {% if app.session.get('username') %}
       <div class="dropdown-user">
@@ -113,21 +124,63 @@
             <span>03</span>Coming Soon
           </button>
         </div>
-        <div class="slider1">
-        {% if eventT is defined %}
-        {% for event in eventT %}
-          <img src={{event.image}} id="slide"+{{loop.index}}>
-            <a href="#slide"+{{loop.index}}></a>
-          </div>
-          <div class="text">
-            <p>
-              {{event.name}}<br>
-              <span class="small">{{event.date}}</span>
-            </p>
-          </div>
-           {% endfor %}
-           {% endif %}
-        </div>
+         <div class="slider1">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div> 
+         <div class="slider2">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div>
+         <div class="slider3">
+            {% if eventT is defined %}
+            {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="text">
+  {% if eventT is defined %}
+    {% for event in eventT %}
+      <p>
+        {{event.name}}<br>
+        <span class="small"></span>
+      </p>
+    {% endfor %}
+  {% endif %}
+</div>
                
 
       </div>
@@ -379,6 +432,7 @@
     <div class="overlay hidden"></div>
 
 
+
 {#footer#}
     <footer class="footer">
       <ul class="footer__nav">
@@ -395,7 +449,7 @@
           <a class="footer__link" target="_blank" href="contact/index.html.twig">Contact Us</a>
         </li>
       </ul>
-      <img src="/assets/images/faviconP.png" alt="logo" class="nav__logo" id="logo" />
+      <img src="{{ asset('/assets/images/faviconP.png') }}" alt="logo" class="nav__logo" id="logo" />
     </footer>
 
   </body>
