@@ -355,7 +355,7 @@ cartQuantityInputs.forEach((input) => {
 
 /*stoppinng the user from entering invalid quantity not in range of min and max START*/
 const quantityInputs = document.querySelectorAll('.cart-quantity');
-const checkoutButton = document.querySelector('#checkout-btn');
+// const checkoutButton = document.querySelector('#checkout-btn');
 
 
 // Checkout button click event

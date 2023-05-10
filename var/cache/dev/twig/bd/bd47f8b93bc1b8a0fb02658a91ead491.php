@@ -128,7 +128,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
                   <ul class=\"dropdown-menu\">
                     <li><a class=\"dropdown-item\" href=\"";
         // line 58
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sport"]);
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("event.filterType", ["eventType" => "Sports"]);
         echo " \">Sports</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
         // line 59
@@ -405,7 +405,7 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
                     Genre
                   </button>
                   <ul class=\"dropdown-menu\">
-                    <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Sport'}) }} \">Sports</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Sports'}) }} \">Sports</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Festivals'}) }} \">Festivals</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Theatre'}) }} \">Theatre</a></li>
                     <li><a class=\"dropdown-item\" href=\"{{ path ('event.filterType',{'eventType': 'Concerts'}) }} \">Concerts</a></li>
@@ -513,6 +513,6 @@ class __TwigTemplate_79a409e3bfdbd636574eabc5f8062b68 extends Template
       <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\" crossorigin=\"anonymous\"></script>
 
 </body>
-</html>", "event/index.html.twig", "C:\\Users\\msi\\PhpstormProjects\\ppp\\TicketHive\\templates\\event\\index.html.twig");
+</html>", "event/index.html.twig", "C:\\Users\\user\\Desktop\\TicketHive\\templates\\event\\index.html.twig");
     }
 }

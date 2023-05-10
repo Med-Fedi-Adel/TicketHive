@@ -26,7 +26,7 @@ class DescriptionController extends AbstractController
 
         //dd($ticketsRemaining);
 
-        return $this->render('description/index.html.twig', [
+        return $this->render('description/show_event.html.twig', [
             'event' => $event,
             'tickets_remaining' => $ticketsRemaining
         ]);

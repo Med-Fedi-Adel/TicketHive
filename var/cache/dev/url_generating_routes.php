@@ -23,6 +23,7 @@ return [
     'cart_add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/cart/add']], [], [], []],
     'cart_remove' => [['id'], ['_controller' => 'App\\Controller\\CartController::remove'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/cart/remove']], [], [], []],
     'cart_payment' => [[], ['_controller' => 'App\\Controller\\CartController::payment'], [], [['text', '/cart/checkout']], [], [], []],
+    'checkout' => [[], ['_controller' => 'App\\Controller\\CheckoutController::checkout'], [], [['text', '/checkout']], [], [], []],
     'event_description' => [['id'], ['_controller' => 'App\\Controller\\DescriptionController::showEventAction'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/eventDescription']], [], [], []],
     'event' => [[], ['_controller' => 'App\\Controller\\EventController::index'], [], [['text', '/event']], [], [], []],
     'event.filterType' => [['eventType'], ['_controller' => 'App\\Controller\\EventController::filterByType'], [], [['variable', '/', '[^/]++', 'eventType', true], ['text', '/event']], [], [], []],
