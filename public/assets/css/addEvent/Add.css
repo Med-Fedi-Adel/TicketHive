@@ -41,6 +41,8 @@ body {
   color: white;
 }
 
+
+
 .container header::before {
   content: "";
   position: absolute;
@@ -52,6 +54,18 @@ body {
 
 .info {
   margin: 30px;
+}
+
+.info div select{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.info div select option{
+  color: black;
+  border: none;
 }
 
 .info .input_box {

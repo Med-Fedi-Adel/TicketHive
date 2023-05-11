@@ -16,21 +16,21 @@ btnScrollTo.addEventListener("click", function (e) {
 ////////////////////////////
 //////////////////////////////
 // Map initialization
-let latitude = Number(
+let latitude = 
   document
     .querySelector(".line3")
     .textContent.split(":")[1]
-    .trim()
-    .substring(0, 10)
-);
+    .trim() ;
 
-let longitude = Number(
+latitude =  Number(latitude.substring(0,latitude.indexOf(",")-1)) ;
+
+let longitude = 
   document
     .querySelector(".line4")
     .textContent.split(":")[1]
-    .trim()
-    .substring(0, 10)
-);
+    .trim() ; 
+
+longitude = Number(longitude.substring(0,longitude.indexOf(",")-1)) ; 
 
 console.log(latitude);
 console.log(longitude);
@@ -97,6 +97,7 @@ eventName.forEach(function (part, index, theArray) {
 
 console.log(eventName.join(" "));
 
+
 let eventLocation = document.querySelector(".localisation h3").textContent;
 console.log(eventLocation);
 
@@ -104,7 +105,6 @@ let popup = singleMarker
   .bindPopup(
     "<h4>" +
       ` ${eventName.join(" ")}  ::  ` +
-      eventLocation +
       " \n " +
       singleMarker.getLatLng() +
       "</h4>"
@@ -240,3 +240,30 @@ addToCartBtn.addEventListener("click", function () {
 }
 );
 
+
+
+// var geocodeService = L.esri.Geocoding.geocodeService() ; 
+// geocodeService.reverse().latlng([latitude,longitude]).run(function(error,result){
+//   if(error){
+//     return ; 
+//   }
+
+//   console.log(result.address.Match_addr) ; 
+
+//   document.querySelector(".line2").textContent = result.address.Match_addr ; 
+//   document.querySelector(".home-content").textContent = result.address.Match_addr ; 
+// })
+
+var geocodeService = L.esri.Geocoding.geocodeService();
+
+geocodeService
+    .reverse()
+    .latlng([latitude,longitude])
+    .run(function (error, result) {
+        if (error) {
+            return;
+        }
+
+        document.querySelector(".line2").textContent = result.address.Match_addr ; 
+        document.querySelector(".hellohello").textContent = result.address.Match_addr ;
+    });

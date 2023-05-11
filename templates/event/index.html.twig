@@ -24,6 +24,7 @@
         <ul class="nav__links">
           <li class="nav__item">
             <a class="nav__link" href="{{path ('event')}}">Events</a>
+            </li>
           <li class="nav__item">
           {% if app.session.get('username') %}
             <div class="app-header-actions">
@@ -36,10 +37,17 @@
               </button>
             </div>
             {% else %}
-              <a class="nav__link nav__link--btn btn--show-modal" href="#">Log in</a>
+              <a class="btn" href="{{ path('login_signup')}}">Log in</a>
           {% endif %}
             
-          </li>
+          </li> 
+    {% if app.session.get('username') %}
+      <div class="dropdown-user">
+      <li id="update">Update</li>
+      <li id="addevent">Add Event</li>
+      <li id="logout">Logout</li>
+    </div>
+    {% endif %}
 
         </ul>
       </nav>
@@ -55,12 +63,12 @@
                     Genre
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Sports'}) }} ">Sports</a></li>
-                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Festivals'}) }} ">Festivals</a></li>
+                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Sport'}) }} ">Sports</a></li>
+                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Festival'}) }} ">Festivals</a></li>
                     <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Theatre'}) }} ">Theatre</a></li>
-                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Concerts'}) }} ">Concerts</a></li>
+                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Concert'}) }} ">Concerts</a></li>
                     <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Cinema'}) }} ">Cinema</a></li>
-                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Others'}) }} ">Others</a></li>
+                    <li><a class="dropdown-item" href="{{ path ('event.filterType',{'eventType': 'Other'}) }} ">Others</a></li>
                     <li><a class="dropdown-item" href="{{ path ('event')}}">All</a></li>
                   </ul> 
                 </div>
@@ -91,7 +99,7 @@
 </div>
   {% for type, messages in app.flashes %}
       {% for message in messages %}
-          <div class="alert alert-{{ type }}" style="text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;float:center">
+          <div class="alert alert-{{ type }}" style="text-align: center;color:white;background-color: rgba(0, 98, 149, 0.4);width: 1000px;margin : 0 auto;">
               {{ message }}
           </div>
       {% endfor %}
@@ -102,7 +110,11 @@
          {% for event in events %}
       <div class="image" >
           <a href="{{path ('event_description',{'id' : event.id })}}" >
-          <img src = "{{ asset('assets/images/uploads/' ~ event.image) }}" onmouseover="{{ asset('assets/images/uploads/' ~ event.gif) }}" onmouseout="{{ asset('assets/images/uploads/' ~ event.image) }}">
+          {% if event.image  %}
+                <img src = "{{ asset('assets/images/uploads/' ~ event.image) }}" onmouseover="{{ asset('assets/images/uploads/' ~ event.gif) }}" onmouseout="{{ asset('assets/images/uploads/' ~ event.image) }}">
+              {% else %}
+                <img src = "{{ asset('assets/images/Default.jpg')}}" onmouseover="{{ asset('assets/images/Default.jpg')}}" onmouseout="{{ asset('assets/images/Default.jpg')}}">
+          {% endif %}
           <div class="textOver">{{event.name}}</div>
           </a>
       </div>

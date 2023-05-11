@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('assets/images/faviconM.ico') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/contact/contact.css') }}">
     <title>Contact Us</title>
@@ -50,26 +51,24 @@
                 <form>
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="name" required="required" id="fullname">
                         <span>Full Name </span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span>Email </span>
                     </div>
                     <div class="inputBox">
                         <textarea name="textarea"
                         rows="8" cols="48"
-                        placeholder="  Please write your question here...."></textarea>
+                        placeholder="  Please write your question here...." id="message"></textarea>
                        <!-- <span>Type your Message : </span> -->
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="" value="Send">
+                        <input type="submit" name="" value="Send" id="bouton">
                     </div>
                 </form>
             </div> 
         </div>
     </section>
+
+    <script src="{{ asset('assets/js/Contact/script.js') }}"></script>
     
 </body>
 </html>

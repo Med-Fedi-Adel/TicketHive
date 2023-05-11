@@ -103,92 +103,116 @@
       <div class="dropdown-user">
       <li id="update">Update</li>
       <li id="addevent">Add Event</li>
-      <li id="logout">Logout</li>
+      <li id="logout">Logout <i class="fa-solid fa-arrow-right-from-bracket fa-2xs"></i></li>
     </div>
     {% endif %}
 
     <section class="section section--hidden" id="section--1">
-      <div class="section__title">
-        <h2 class="section__description">Events</h2>
-        <h3 class="section__header">Go out and have fun You only live once.</h3>
-      </div>
+  <div class="section__title">
+    <h2 class="section__description">Events</h2>
+    <h3 class="section__header">Go out and have fun. You only live once.</h3>
+  </div>
 
-      <div class="operations">
-        <div class="operations__tab-container">
-          <button
-            class="btn operations__tab operations__tab--1 operations__tab--active"
-            data-tab="1"
-          >
-            <span>01</span>Today
-          </button>
-          <button class="btn operations__tab operations__tab--2" data-tab="2">
-            <span>02</span>This Weekend
-          </button>
-          <button class="btn operations__tab operations__tab--3" data-tab="3">
-            <span>03</span>Coming Soon
-          </button>
+  <div class="operations">
+    <div class="operations__tab-container">
+      <button class="btn operations__tab operations__tab--1 operations__tab--active" data-tab="1">
+        <span>01</span>Today
+      </button>
+      <button class="btn operations__tab operations__tab--2" data-tab="2">
+        <span>02</span>This Weekend
+      </button>
+      <button class="btn operations__tab operations__tab--3" data-tab="3">
+        <span>03</span>Coming Soon
+      </button>
+    </div>
+    <div class="operations__content operations__content--1 operations__content--active">
+      <div class="slider1">
+        {% if eventT is defined %}
+          {% for event in eventT %}
+            <a href="{{path ('event_description',{'id' : event.id })}}">
+              {% if event.image %}
+                <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+              {% else %} 
+                <img src="{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}"> 
+               {% endif %}
+              {# <div class="text" style="color: white;">
+                <p>
+                  {{event.name}}
+                  <span class="small">{{ event.date|date('Y-m-d') }}</span>
+                </p>
+              </div> #}
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="slider1-nav">
+        {% if eventT is defined %}
+          {% for event in eventT %}
+            <a href="#slide{{loop.index}}"></a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="operations__content operations__content--2">
+    <div class="slider2">
+      {% if eventW is defined %}
+        {% for event in eventW %}
+          <a href="{{path ('event_description',{'id' : event.id })}}">
+            {% if event.image %}
+              <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+            {% else %}
+              <img src="{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}">
+            {% endif %}
+            <div class="text" style="color: white;">
+              <p>
+                {{event.name}}
+                <span class="small">{{ event.date|date('Y-m-d') }}</span>
+              </p>
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+<div class="slider2-nav">
+{% if eventT is defined %}
+{% for event in eventT %}
+<a href="#slide{{loop.index}}"></a>
+{% endfor %}
+{% endif %}
+</div>
+
+  </div>
+  <div class="operations__content operations__content--3">
+    <div class="slider3">
+      {% if eventU is defined %}
+      {% for event in eventU %}
+      <a href="{{path ('event_description',{'id' : event.id })}}">
+        {% if event.image %}
+        <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
+        {% else %}
+        <img src="{{ asset('assets/images/Default.jpg')}}" id="slide{{loop.index}}">
+        {% endif %}
+        <div class="text" style="color: white;">
+          <p>
+            {{event.name}}
+            <span class="small">{{ event.date|date('Y-m-d') }}</span>
+          </p>
         </div>
-         <div class="slider1">
-            {% if eventT is defined %}
-            {% for event in eventT %}
-            <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
       </a>
-    {% endfor %}
-  {% endif %}
-</div>
-<div class="text">
-  {% if eventT is defined %}
-    {% for event in eventT %}
-      <p>
-        {{event.name}}<br>
-        <span class="small"></span>
-      </p>
-    {% endfor %}
-  {% endif %}
-</div> 
-         <div class="slider2">
-            {% if eventT is defined %}
-            {% for event in eventT %}
-            <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}"  id="slide{{loop.index}}">
-      </a>
-    {% endfor %}
-  {% endif %}
-</div>
-<div class="text">
-  {% if eventW is defined %}
-    {% for event in eventT %}
-      <p>
-        {{event.name}}<br>
-        <span class="small"></span>
-      </p>
-    {% endfor %}
-  {% endif %}
-</div>
-         <div class="slider3">
-            {% if eventT is defined %}
-            {% for event in eventT %}
-            <a href="{{path ('event_description',{'id' : event.id })}}">
-      <img src="{{ asset('assets/images/uploads/' ~ event.image) }}" id="slide{{loop.index}}">
-      </a>
-    {% endfor %}
-  {% endif %}
-</div>
-<div class="text">
-  {% if eventU is defined %}
-    {% for event in eventT %}
-      <p>
-        {{event.name}}<br>
-        <span class="small"></span>
-      </p>
-    {% endfor %}
-  {% endif %}
-</div>
-               
-
-      </div>
-    </section>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <div class="slider3-nav">
+      {% if eventT is defined %}
+        {% for event in eventT %}
+          <a href="#slide{{loop.index}}"></a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
 
     <section class="flow section" id="section--2">
       <h1 class="catalogueTitle catalogue-animation ">Our Catalogue</h1>
@@ -246,76 +270,26 @@
           New lifestyle coming ahead with our events.
         </h3>
       </div>
-
+ 
       <div class="slider">
-        <div class="slide slide--1">
+      {% if tab is defined %}
+        {% for name,text in tab %}
+        <div class="slide">
           <div class="testimonial">
-            <h5 class="testimonial__header">Best Place ever!</h5>
+            <h5 class="testimonial__header">{{name}}</h5>
             <blockquote class="testimonial__text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium quas quisquam non? Quas voluptate nulla minima
-              deleniti optio ullam nesciunt, numquam corporis et asperiores
-              laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
-              id alias reiciendis, perferendis facere pariatur dolore veniam
-              autem esse non voluptatem saepe provident nihil molestiae.
+              {{text}}
             </blockquote>
-            <!-- <address class="testimonial__author">
-              <img src="img/user-1.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Aarav Lynn</h6>
-              <p class="testimonial__location">San Francisco, USA</p>
-            </address> -->
           </div>
         </div>
-
-        <div class="slide slide--2">
-          <div class="testimonial">
-            <h5 class="testimonial__header">
-              The first step to get above social anxiety!
-            </h5>
-            <blockquote class="testimonial__text">
-              Quisquam itaque deserunt ullam, quia ea repellendus provident,
-              ducimus neque ipsam modi voluptatibus doloremque, corrupti
-              laborum. Incidunt numquam perferendis veritatis neque repellendus.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-              deserunt exercitationem deleniti.
-            </blockquote>
-            <!-- <address class="testimonial__author">
-              <img src="img/user-2.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Miyah Miles</h6>
-              <p class="testimonial__location">London, UK</p>
-            </address> -->
-          </div>
-        </div>
-
-        <div class="slide slide--3">
-          <div class="testimonial">
-            <h5 class="testimonial__header">
-              Finally free from old-school ticket booking!
-            </h5>
-            <blockquote class="testimonial__text">
-              Debitis, nihil sit minus suscipit magni aperiam vel tenetur
-              incidunt commodi architecto numquam omnis nulla autem,
-              necessitatibus blanditiis modi similique quidem. Odio aliquam
-              culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
-              deleniti saepe aliquid quos inventore sequi. Necessitatibus id
-              alias reiciendis, perferendis facere.
-            </blockquote>
-            <!-- <address class="testimonial__author">
-              <img src="img/user-3.jpg" alt="" class="testimonial__photo" />
-              <h6 class="testimonial__name">Francisco Gomes</h6>
-              <p class="testimonial__location">Lisbon, Portugal</p>
-            </address> -->
-          </div>
-        </div>
-
-        <!-- <div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
-        <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
-        <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
-        <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div> -->
-        <button class="slider__btn slider__btn--left"> < </button>
+      {% endfor %}
+      {% endif %}
+      
+        <button class="slider__btn slider__btn--left"><</button>
         <button class="slider__btn slider__btn--right">></button>
         <div class="dots"></div>
-      </div>
+
+
     </section>
 
 
@@ -326,14 +300,20 @@
       </div>
 
       <div class="field-group">
-      <form action="index.html" method="post">
+      <form action="{{path('feedback')}}" method="post">
         <textarea name="feedback" id="feedback" cols="30" rows="10" class="textarea-field" placeholder="Enter Feedback"></textarea>
         <!-- <label for="feedback" class="textarea-label">Enter your message</label> -->
-        <input type="submit" name="fsubmit" class="btn btn--show-modal">
+        {% if app.session.get('username') %}
+          <input type="submit" name="fsubmit" class="btn">
+          {% else %}
+          <input type="submit" name="fsubmit" class="btn btn--show-modal">
+        {% endif %}
       </form>
+      
       </div>
     </section>
 
+{% if not (app.session.get('username')) %}
     <section class="section section--sign-up section--hidden">
       <div class="section__title">
         <h3 class="section__header">
@@ -342,7 +322,7 @@
       </div>
       <button class="btn btn--show-modal">Open your free account today!</button>
     </section>
-
+{% endif %}
 
     <div class="modal hidden">
       <button class="btn--close-modal">&times;</button>
@@ -394,13 +374,13 @@
           {% for item in items %}
             <div class="cart-box">
               {% if item.event.image %}
-                <img src="{{ item.event.image }}" alt="{{ item.event.name }}" class="cart-img">
+                <img src="{{ asset('/assets/images/uploads/'~ item.event.image) }}" alt="{{ item.event.name }}" class="cart-img" style="border-radius: 10px; padding: 0 0; ">
               {% else %}
-                <img src="{{ asset('/assets/images/main/catalogue/concerts.jpg') }}" alt="{{ item.event.name }}" class="cart-img">
+                <img src="{{ asset('/assets/images/main/catalogue/concerts.jpg') }}" alt="{{ item.event.name }}" class="cart-img" style="border-radius: 10px; padding: 0 0;">
               {% endif %}
               <div class="detail-box">
                 <div class="cart-product-title" >{{ item.event.name }} </div>
-                <input type="number" name="quantity" value="{{ item.quantity }}" min="1"  max="{{ item.event.nbPlaces }}" class="cart-quantity">
+                  <input type="number" name="quantity_{{ item.event.id }}" value="{{ item.quantity }}" min="1" max="{{ item.event.nbPlaces }}" class="cart-quantity">
                 <div class="cart-price" data-initial-price="{{ item.event.price }}">{{ item.event.price * item.quantity }}</div>
               </div>
 
@@ -443,7 +423,7 @@
           <a class="footer__link" href="#">Privacy Policy</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" target="_blank" href="contact/index.html.twig">Contact Us</a>
+          <a class="footer__link" target="_blank" href="{{path('contact')}}">Contact Us</a>
         </li>
       </ul>
       <img src="{{ asset('/assets/images/faviconP.png') }}" alt="logo" class="nav__logo" id="logo" />

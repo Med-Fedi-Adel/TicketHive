@@ -46,9 +46,13 @@ class __TwigTemplate_f44fa9e3dccf8007013cc75fbf50b24d extends Template
     <meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <link rel=\"icon\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/images/faviconM.ico"), "html", null, true);
+        echo "\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">
     <link rel=\"stylesheet\" href=\"";
-        // line 8
+        // line 9
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/contact/contact.css"), "html", null, true);
         echo "\">
     <title>Contact Us</title>
@@ -95,26 +99,27 @@ class __TwigTemplate_f44fa9e3dccf8007013cc75fbf50b24d extends Template
                 <form>
                     <h2>Send Message</h2>
                     <div class=\"inputBox\">
-                        <input type=\"text\" name=\"\" required=\"required\">
+                        <input type=\"text\" name=\"name\" required=\"required\" id=\"fullname\">
                         <span>Full Name </span>
-                    </div>
-                    <div class=\"inputBox\">
-                        <input type=\"text\" name=\"\" required=\"required\">
-                        <span>Email </span>
                     </div>
                     <div class=\"inputBox\">
                         <textarea name=\"textarea\"
                         rows=\"8\" cols=\"48\"
-                        placeholder=\"  Please write your question here....\"></textarea>
+                        placeholder=\"  Please write your question here....\" id=\"message\"></textarea>
                        <!-- <span>Type your Message : </span> -->
                     </div>
                     <div class=\"inputBox\">
-                        <input type=\"submit\" name=\"\" value=\"Send\">
+                        <input type=\"submit\" name=\"\" value=\"Send\" id=\"bouton\">
                     </div>
                 </form>
             </div> 
         </div>
     </section>
+
+    <script src=\"";
+        // line 71
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/Contact/script.js"), "html", null, true);
+        echo "\"></script>
     
 </body>
 </html>
@@ -139,7 +144,7 @@ class __TwigTemplate_f44fa9e3dccf8007013cc75fbf50b24d extends Template
 
     public function getDebugInfo()
     {
-        return array (  52 => 8,  43 => 1,);
+        return array (  121 => 71,  56 => 9,  51 => 7,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -150,6 +155,7 @@ class __TwigTemplate_f44fa9e3dccf8007013cc75fbf50b24d extends Template
     <meta charset=\"UTF-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <link rel=\"icon\" href=\"{{ asset('assets/images/faviconM.ico') }}\">
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">
     <link rel=\"stylesheet\" href=\"{{ asset('assets/css/contact/contact.css') }}\">
     <title>Contact Us</title>
@@ -196,29 +202,27 @@ class __TwigTemplate_f44fa9e3dccf8007013cc75fbf50b24d extends Template
                 <form>
                     <h2>Send Message</h2>
                     <div class=\"inputBox\">
-                        <input type=\"text\" name=\"\" required=\"required\">
+                        <input type=\"text\" name=\"name\" required=\"required\" id=\"fullname\">
                         <span>Full Name </span>
-                    </div>
-                    <div class=\"inputBox\">
-                        <input type=\"text\" name=\"\" required=\"required\">
-                        <span>Email </span>
                     </div>
                     <div class=\"inputBox\">
                         <textarea name=\"textarea\"
                         rows=\"8\" cols=\"48\"
-                        placeholder=\"  Please write your question here....\"></textarea>
+                        placeholder=\"  Please write your question here....\" id=\"message\"></textarea>
                        <!-- <span>Type your Message : </span> -->
                     </div>
                     <div class=\"inputBox\">
-                        <input type=\"submit\" name=\"\" value=\"Send\">
+                        <input type=\"submit\" name=\"\" value=\"Send\" id=\"bouton\">
                     </div>
                 </form>
             </div> 
         </div>
     </section>
+
+    <script src=\"{{ asset('assets/js/Contact/script.js') }}\"></script>
     
 </body>
 </html>
-", "contact/index.html.twig", "C:\\Users\\ghrib\\OneDrive\\Desktop\\4thpull\\TicketHive\\templates\\contact\\index.html.twig");
+", "contact/index.html.twig", "C:\\Users\\Mehdi\\Desktop\\lastone\\TicketHive\\templates\\contact\\index.html.twig");
     }
 }

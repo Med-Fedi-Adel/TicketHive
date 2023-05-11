@@ -75,7 +75,7 @@ class AdminController extends AbstractController
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
             ->where('e.event_type  = :EventType')
-            ->setParameter('EventType', 'Festivals')
+            ->setParameter('EventType', 'Festival')
             ->getQuery()
             ->getSingleScalarResult();
         $sport = $entityManager->createQueryBuilder()
@@ -89,7 +89,7 @@ class AdminController extends AbstractController
             ->select('COUNT(e.id)')
             ->from(Event::class, 'e')
             ->where('e.event_type  = :EventType')
-            ->setParameter('EventType', 'Concerts')
+            ->setParameter('EventType', 'Concert')
             ->getQuery()
             ->getSingleScalarResult();
         $theatre = $entityManager->createQueryBuilder()

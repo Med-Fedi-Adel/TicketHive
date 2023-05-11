@@ -182,3 +182,23 @@ html {
 .right .ticket-number {
     color: gray;
 }
+
+.download{
+    position: absolute;
+    top: 550px;
+    width: 200px;
+    height: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background-color: #ffe100;
+    cursor: pointer;
+    transition: all 250ms;
+}
+
+.download:hover{
+    width: 220px;
+    height: 60px;
+    /* transform: scale(1.2); */
+    /* transform: translateX(-50%); */
+}

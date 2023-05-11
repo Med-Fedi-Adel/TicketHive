@@ -267,6 +267,11 @@ const addeventli = document.querySelector('#addevent')
 const logoutli = document.querySelector('#logout')
 
 
+updateli.addEventListener('click',()=>{
+  window.location.href = "http://localhost:8000/update";
+})
+
+
 button_profile.addEventListener('click',()=>{
   document.querySelector('.dropdown-user').style.opacity = 1-document.querySelector('.dropdown-user').style.opacity
 })
@@ -342,6 +347,8 @@ const checkoutButton = document.querySelector('#checkout-btn');
 
 
 // Checkout button click event
+
+if(checkoutButton){
 checkoutButton.addEventListener('click', () => {
   // Check if quantity is valid
   let isValid = true;
@@ -360,11 +367,11 @@ checkoutButton.addEventListener('click', () => {
     checkoutButton.closest('form').submit();
   }
 });
+}
 
 // Close modal when close button or overlay is clicked
 closeButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 /***CART FUNCTIONALITY END***/
-
 
