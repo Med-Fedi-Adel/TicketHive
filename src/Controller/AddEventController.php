@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Client;
 use App\Entity\Event;
+use App\Entity\Ticket;
 use App\Service\PdfService;
 use DateTimeImmutable;
 use Doctrine\Persistence\ManagerRegistry;
@@ -23,6 +24,8 @@ class AddEventController extends AbstractController
     {
         
         $repo = $doctrine->getRepository(Client::class);
+        
+
         $client = $repo->findOneBy(['username'=>$session->get('username')]);
         $check =$request->request->all();
         if (!$check){
@@ -44,6 +47,8 @@ class AddEventController extends AbstractController
             }
         }
 
+
+
         $data = $request->request;
         $event->setName($data->get('name'));
         $event->setEventType($data->get('type'));
@@ -60,6 +65,7 @@ class AddEventController extends AbstractController
         $manager = $doctrine->getManager();
         $manager->persist($event);
         $manager->flush();
+
     
         return $this->redirectToRoute('main');
     }

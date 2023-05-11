@@ -18,6 +18,7 @@ class PaymentController extends AbstractController
         // Récupérer les items et le total depuis payment function in CartController
         $total = $request->query->get('total');
         $items = json_decode($request->query->get('items'), true);
+        //dd($items);
 
         return $this->render('payment/index.html.twig', [
             'total' => $total,

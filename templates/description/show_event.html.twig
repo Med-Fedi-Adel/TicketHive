@@ -20,6 +20,17 @@
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
       crossorigin=""
     />
+  
+
+    <!-- Load Esri Leaflet Geocoder from CDN -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
+            integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
+            crossorigin=""
+        />
+
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
@@ -33,6 +44,23 @@
     src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+<script
+    src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js"
+    integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
+    crossorigin="">
+</script>
+
+
+<!-- Load Esri Leaflet Geocoder from CDN -->
+
+<script
+    src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
+    crossorigin="">
+</script>
+    
    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
    <script src="{{asset('assets/js/Description/Description.js')}}"></script>
 {% endblock %}
@@ -57,24 +85,24 @@
         </div>
         <div class="fakeScreen">
           <p class="line1">
-            &#91;&nbsp;&ldquo;Date : 13th of may 2023&rdquo;,<span
+            &#91;&nbsp;&ldquo;Date : {{ event.date|date('Y-m-d') }}&rdquo;,<span
               class="cursor1"
               >_</span
             >
           </p>
           <p class="line2">
-            &nbsp;&nbsp;&ldquo;Location : Uthina Amphitheatre&rdquo;,<span
+            &nbsp;&nbsp;&ldquo;Location : {#A gerer#} &rdquo;,<span
               class="cursor2"
               >_</span
             >
           </p>
           <p class="line3">
-            &nbsp;&nbsp;&ldquo;Latitude: 36.6086252&rdquo;,<span class="cursor3"
+            &nbsp;&nbsp;&ldquo;Latitude: {{event.latitude}}&rdquo;,<span class="cursor3"
               >_</span
             >
           </p>
           <p class="line4">
-            &nbsp;&nbsp;&ldquo;Longitude: 10.1691775&rdquo;,<span
+            &nbsp;&nbsp;&ldquo;Longitude: {{event.longitude}}&rdquo;,<span
               class="cursor4"
               >_</span
             >
@@ -89,24 +117,19 @@
       <div class="home-content">
         <h1>
           Next
-          <span class="highlight">Music</span>
-          Festival
+          <span class="highlight">{{event.name}}</span>
+          Event
+          {{event.getEventType()}}
         </h1>
         <div class="localisation">
           <div class="location-icon">
             <i class="fa-solid fa-location-dot"></i>
           </div>
-          <h3 class="lecture">Amphiteatre Uthina</h3>
+          <h3 class="lecture hellohello">Amphiteatre Uthina</h3>
         </div>
         <div>
-          <h6 class="lecture">
-            <br /><br />@argyofficial, @bogofficial, @soel_music, @marinocanal,
-            and @dishdash_music are headed towards our amphitheater from <br />
-            some of the world's largest festivals and shows.<br />
-            They bring with them a record consisting of outstanding tracks.
-            <br /><br />
-            Don't miss out the chance to experience the best event ever
-            organized in Tunisia! .
+          <h6 class="lecture" style = "font-size : 1.6rem;">
+            <br /><br />{{event.description}}
           </h6>
           </div>
           <button class="btn--text btn--scroll-to" id="bouttonmap">
@@ -130,7 +153,7 @@
        </section>
 
     <section class="section" id="section--1">
-      <div class="location" id="map">Hello world</div>
+      <div class="location" id="map">NETWORK ERROR TRY NTO ESTABLISH NETWORK WE LOVE YOU!</div>
     </section>
    
 

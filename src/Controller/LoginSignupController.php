@@ -15,8 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LoginSignupController extends AbstractController
 {
+
     #[Route('/loginsignup', name: 'login_signup')]
-    public function index(ManagerRegistry $doctrine,Request $request): Response
+    public function index(ManagerRegistry $doctrine,Request $request,Session $session): Response
     {
 
         $check =$request->request->all();
@@ -35,7 +36,14 @@ class LoginSignupController extends AbstractController
         else{
             $user = new Client();
             $user->setUsername($data->get('username'));
-            $user->setPassword($data->get('password'));
+            //$user->setPassword($data->get('password'));
+
+            
+            //hash the password
+            $hashedPassword = password_hash($data->get('password'),PASSWORD_DEFAULT);
+            $user->setPassword($hashedPassword);
+            
+
             $user->setEmail($data->get('email'));
 
             $manager = $doctrine->getManager();
@@ -43,9 +51,8 @@ class LoginSignupController extends AbstractController
             $manager->flush();
 
         }
-
-
-        return $this->render('main/index.html.twig');
+        $session->set('username',$user->getUsername());
+        return $this->redirect('main');
     }
 
     #[Route('/loginsigin', name: 'login_signin')]
@@ -64,7 +71,9 @@ class LoginSignupController extends AbstractController
         $repo = $doctrine->getRepository(Client::class);
         $user = $repo->findOneBy(['email'=>$data->get('email')]);
         if ($user){
-            if ($data->get('password') == $user->getPassword()){
+            //hash the password
+            $passwordMatches = password_verify($data->get('password'),$user->getPassword());
+            if ($passwordMatches){
                 $session->set('username',$user->getUsername());
             }
             else {

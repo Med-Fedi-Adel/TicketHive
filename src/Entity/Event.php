@@ -194,12 +194,12 @@ class Event
 
     public function getEventType(): ?string
     {
-        return $this->EventType;
+        return $this->event_type;
     }
 
     public function setEventType(?string $EventType): self
     {
-        $this->EventType = $EventType;
+        $this->event_type = $EventType;
 
         return $this;
     }
